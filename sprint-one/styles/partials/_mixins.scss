@@ -1,0 +1,27 @@
+@mixin flex {
+    display: flex;
+    @content;
+}
+
+@mixin block {
+    display: block;
+    @content;
+}
+
+@mixin mobile {
+    @media only screen and (min-width: 320px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: 1280px) {
+        @content;
+    }
+}

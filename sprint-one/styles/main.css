@@ -1,23 +1,31 @@
 @font-face {
   font-family: "AvenirNext LT Pro";
   src: url("/sprint-one/assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/sprint-one/assets/fonts/AvenirNextLTPro-Regular.woff") format("woff");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "AvenirNext LT Pro";
   src: url("/sprint-one/assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/sprint-one/assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
-  font-weight: bold;
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "AvenirNext LT Pro";
   src: url("/sprint-one/assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/sprint-one/assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
-.about__quote-block {
-  font-family: "AvenirNext LT Pro";
-  font-weight: bolder;
-  font-size: 30px;
+html {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "AvenirNext LT Pro", Roboto;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h2 {
+  color: #afafaf;
 }/*# sourceMappingURL=main.css.map */
