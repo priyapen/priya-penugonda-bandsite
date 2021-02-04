@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'AvenirNext LT Pro';
+    src: url('/sprint-one/assets/fonts/AvenirNextLTPro-Regular.woff2') format('woff2'),
+        url('/sprint-one/assets/fonts/AvenirNextLTPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNext LT Pro';
+    src: url('/sprint-one/assets/fonts/AvenirNextLTPro-Demi.woff2') format('woff2'),
+        url('/sprint-one/assets/fonts/AvenirNextLTPro-Demi.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNext LT Pro';
+    src: url('/sprint-one/assets/fonts/AvenirNextLTPro-Bold.woff2') format('woff2'),
+        url('/sprint-one/assets/fonts/AvenirNextLTPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+// font-family: 'Roboto'
+
+
+// testing font face
+// p {
+//     font-family: 'AvenirNext LT Pro';
+//     font-weight: bolder;
+//     font-size: 30px;
+// }
