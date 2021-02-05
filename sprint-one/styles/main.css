@@ -19,6 +19,7 @@
 html {
   box-sizing: border-box;
   font-family: "AvenirNext LT Pro", Roboto;
+  color: #323232;
 }
 
 *, *:before, *:after {
@@ -29,10 +30,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-}
-
-h2 {
-  color: #323232;
 }
 
 .header {
@@ -93,7 +90,7 @@ h2 {
 @media only screen and (min-width: 768px) {
   .header__navlistitem {
     width: 80px;
-    padding-bottom: 20px;
+    padding-bottom: 22px;
     padding-top: 32px;
     margin-top: 0px;
     vertical-align: middle;
@@ -112,6 +109,11 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media only screen and (min-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+}
 .hero__heading {
   margin: 0;
   padding: 0 16px;
@@ -121,12 +123,6 @@ h2 {
   font-weight: 700;
 }
 @media only screen and (min-width: 768px) {
-  .hero__heading {
-    font-size: 60px;
-    line-height: 68px;
-  }
-}
-@media only screen and (min-width: 1280px) {
   .hero__heading {
     font-size: 60px;
     line-height: 68px;
@@ -144,12 +140,33 @@ h2 {
 .about {
   padding: 0 16px;
 }
+@media only screen and (min-width: 768px) {
+  .about {
+    padding: 0 24px;
+  }
+}
 .about .section__heading {
   margin: 32px 0 24px 0;
+  color: #323232;
+}
+@media only screen and (min-width: 768px) {
+  .about .section__heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 .about__image {
   width: 100%;
   margin-bottom: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .about__image {
+    height: 362px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+    margin: auto;
+  }
 }
 .about__quote {
   margin: 0;
@@ -189,11 +206,30 @@ h2 {
   line-height: 18px;
   margin-bottom: 40px;
 }
+@media only screen and (min-width: 768px) {
+  .about__article-text {
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about__article-text {
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+  }
+}
 
 .gallery {
   background-color: #fafafa;
   width: 100%;
   padding: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  .gallery {
+    padding: 0 24px;
+  }
 }
 .gallery .section__heading {
   font-size: 24px;
@@ -202,15 +238,37 @@ h2 {
   padding-bottom: 24px;
   margin: 0;
 }
+.gallery__block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .gallery__image {
   width: 100%;
   margin-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .gallery__image {
+    width: 224px;
+    height: 126px;
+  }
 }
 
 .footer {
   background-color: #323232;
   padding: 0 10px 32px 10px;
   color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 0 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer .contact {
+    display: flex;
+    align-items: center;
+  }
 }
 .footer .section__heading {
   font-size: 24px;
@@ -223,9 +281,37 @@ h2 {
 .footer .icons {
   padding: 0;
 }
+@media only screen and (min-width: 768px) {
+  .footer .icons {
+    height: 28px;
+    display: flex;
+    align-items: end;
+    margin: 0px 48px;
+  }
+}
 .footer .icons__social {
   display: inline-block;
   padding: 0px 6px;
+}
+@media only screen and (min-width: 768px) {
+  .footer .icons__social {
+    padding: 0px 12px;
+  }
+}
+.footer .logo {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .footer .logo {
+    display: inline-block;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer .contact__cards {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .footer .contact__info {
   font-size: 13px;

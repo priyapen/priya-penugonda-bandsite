@@ -1,5 +1,25 @@
 @use './variables' as *;
 
+@mixin global {
+
+    html {
+        box-sizing: border-box;
+        font-family: $fontstack;
+        color: $black;
+    }
+    
+    *, *:before, *:after {
+        box-sizing: inherit; 
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+}
+
 @mixin flexcenter {
     display: flex;
     justify-content: center;
@@ -43,10 +63,10 @@
         font-size: 60px;
         line-height: 68px;
     }
-    @include desktop {
-        font-size: 60px;
-        line-height: 68px;
-    }
+    // @include desktop {
+    //     font-size: 60px;
+    //     line-height: 68px;
+    // }
 }
 
 @mixin font36-tabletonly {
@@ -55,10 +75,10 @@
         font-size: 36px;
         line-height: 44px;
     }
-    @include desktop {
-        font-size: 36px;
-        line-height: 44px;
-    }
+    // @include desktop {
+    //     font-size: 36px;
+    //     line-height: 44px;
+    // }
 }
 
 @mixin font24 {
@@ -66,6 +86,12 @@
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
+    @include tablet {
+        color: $black;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+    }
 }
 
 @mixin subheader {
@@ -77,10 +103,39 @@
         font-size: 16px;
         line-height: 24px;
     }
-    @include desktop {
-        font-size: 16px;
-        line-height: 24px;
+    // @include desktop {
+    //     font-size: 16px;
+    //     line-height: 24px;
+    // }
+}
+
+@mixin para_comments {
+        font-size: 13px;
+        line-height: 18px;
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
+}
+
+@mixin lists_contact {
+    font-size: 13px;
+    line-height: 18px;
+    @include tablet {
+        font-size: 14px;
+        line-height: 20px;
     }
 }
+
+@mixin labels {
+    font-size: 12px;
+    line-height: 20px;
+    @include tablet {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+
 
 

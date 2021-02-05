@@ -31,26 +31,12 @@
 
 // font-family: 'Roboto'
 
+// // test code:
+// h2 {
+//     color: $black;
+// }
 
-html {
-    box-sizing: border-box;
-    font-family: $fontstack;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit; 
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-// test code:
-h2 {
-    color: $black;
-}
+@include global;
 
 .header {
     background-color: $black;
@@ -125,7 +111,7 @@ width: 40%;
         padding-bottom: 8px;
         @include tablet {
             width: 80px;
-            padding-bottom: 20px;
+            padding-bottom: 22px;
 padding-top: 32px;
 margin-top: 0px;
 vertical-align: middle;
@@ -157,6 +143,9 @@ vertical-align: middle;
     background-size: cover;
     // display: flex;
     // align-items: center;
+    @include tablet {
+        height: 400px;
+    }
 
     &__heading {
         margin: 0;
@@ -176,14 +165,26 @@ vertical-align: middle;
 
 .about {
     padding: 0 16px;
+    @include tablet {
+        padding: 0 24px;
+    }
 
     .section__heading {
         margin: 32px 0 24px 0;
+        @include font36-tabletonly;
     }
 
     &__image {
         width: 100%;
         margin-bottom: 24px;
+        @include tablet {
+            height: 362px;
+object-fit: cover;
+// width: 720px;
+// object-position: bottom;
+display: block;
+margin: auto;
+        }
     }
 
     &__quote {
@@ -236,6 +237,13 @@ vertical-align: middle;
             font-size: 13px;
             line-height: 18px;
             margin-bottom: 40px;
+            @include tablet {
+                column-count: 2;
+                column-gap: 24px;
+            }
+            @include desktop {
+                column-gap: 40px;
+            }
         }
     }
 }
@@ -245,6 +253,9 @@ vertical-align: middle;
     width: 100%;
     // height: ;
     padding: 0 16px;
+    @include tablet {
+        padding: 0 24px;
+    }
 
     .section__heading {
         // H1 Header styling-mobile device
@@ -256,9 +267,20 @@ vertical-align: middle;
 
     }
 
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
     &__image {
         width:100%;
         margin-bottom: 16px;
+        @include tablet {
+            width: 224px;
+            height: 126px;
+        }
     }
 }
 
@@ -266,6 +288,16 @@ vertical-align: middle;
     background-color: $black;
     padding: 0 10px 32px 10px;
     color: $white;
+    @include tablet {
+        padding: 0 24px;
+    }
+
+    .contact {
+        @include tablet {
+            display: flex;
+            align-items: center;
+        }
+    }
 
     .section__heading {
         // H1 header-mobile
@@ -280,10 +312,36 @@ vertical-align: middle;
     .icons {
         // display: flex;
         padding: 0;
+        @include tablet {
+            height: 28px;
+            display: flex;
+align-items: end;
+margin: 0px 48px;
+        }
 
         &__social {
             display: inline-block;
             padding: 0px 6px;
+            @include tablet {
+                // height: 28px;
+                // margin: 0 40px;
+                padding: 0px 12px;
+            }
+        }
+    }
+
+    .logo {
+        display: none;
+        @include tablet {
+        display: inline-block;
+        margin-left: auto;
+        }
+    }
+
+    .contact__cards {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
         }
     }
 
