@@ -107,6 +107,9 @@ h2 {
   quotes: initial;
   margin: 0 0 32px 0;
   padding: 0;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 700;
 }
 .about__quote-block::before {
   content: open-quote;
@@ -119,11 +122,15 @@ h2 {
 }
 .about__quote-author {
   margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
 }
 .about__article-title {
   margin-bottom: 24px;
   font-size: 14px;
   line-height: 22px;
+  font-weight: 700;
 }
 .about__article-text {
   font-size: 13px;
@@ -150,7 +157,7 @@ h2 {
 
 .footer {
   background-color: #323232;
-  padding: 0 10px;
+  padding: 0 10px 32px 10px;
   color: #fff;
 }
 .footer .section__heading {
@@ -176,4 +183,8 @@ h2 {
 .footer .contact__info-company, .footer .contact__info-name {
   margin: 0;
   font-weight: 600;
+}
+.footer .copyright {
+  font-size: 13px;
+  line-height: 18px;
 }/*# sourceMappingURL=main.css.map */

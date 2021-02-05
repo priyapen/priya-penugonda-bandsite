@@ -144,6 +144,9 @@ h2 {
         quotes: initial;
         margin: 0 0 32px 0;
         padding: 0;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 700;
         // text-transform: capitalize;
     }
 
@@ -160,6 +163,11 @@ h2 {
 
     &__quote-author {
         margin-bottom: 40px;
+        // H2 subheader- mobile styling
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
+
     }
 
     &__article{
@@ -169,6 +177,7 @@ h2 {
         // H2 subheader- mobile styling
         font-size: 14px;
         line-height: 22px;
+        font-weight:700;
         }
 
         &-text {
@@ -178,7 +187,6 @@ h2 {
             margin-bottom: 40px;
         }
     }
-
 }
 
 .gallery {
@@ -205,7 +213,7 @@ h2 {
 
 .footer {
     background-color: $black;
-    padding: 0 10px;
+    padding: 0 10px 32px 10px;
     color: $white;
 
     .section__heading {
@@ -237,9 +245,12 @@ h2 {
             margin: 0;
             font-weight: 600;
         }
-
-
     }
 
+    .copyright {
+        // padding-bottom: 32px;
+        font-size: 13px;
+        line-height: 18px;
+    }
 
 }
