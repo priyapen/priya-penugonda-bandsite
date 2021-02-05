@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 @mixin flexcenter {
     display: flex;
     justify-content: center;
@@ -21,13 +23,64 @@
 // }
 
 @mixin tablet {
-    @media only screen and (max-width: 768px) {
+    @media only screen and (min-width: 768px) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media only screen and (max-width: 1280px) {
+    @media only screen and (min-width: 1280px) {
         @content;
     }
 }
+
+@mixin font60-tabletonly {
+    color: $white;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    @include tablet {
+        font-size: 60px;
+        line-height: 68px;
+    }
+    @include desktop {
+        font-size: 60px;
+        line-height: 68px;
+    }
+}
+
+@mixin font36-tabletonly {
+    color: $black;
+    @include tablet {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    @include desktop {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+@mixin font24 {
+    color: $black;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+@mixin subheader {
+    color: $black;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    @include tablet {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    @include desktop {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+
