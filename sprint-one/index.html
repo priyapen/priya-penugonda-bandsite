@@ -10,11 +10,11 @@
 <body>
     <header class="header">
         <a href="/sprint-one/index.html">
-            <img src="/sprint-one/assets/Logo/Logo-bandsite.png" class="logo" alt="">
+            <img src="./assets/Logo/Logo-bandsite.svg" class="logo" alt="">
         </a>
         <nav class="header__nav">
             <ul class="header__navlist">
-                <li class="header__navlistitem">Biography</li>
+                <li class="header__navlistitem current">Biography</li>
                 <li class="header__navlistitem">Shows</li>
             </ul>
         </nav>
@@ -23,46 +23,82 @@
     <main class="main">
         <!-- HERO section -->
         <section class="hero">
-            <h1 class="hero__heading">Gaspard Auge & Xavier de Rosnay</h1>
+            <div class="overlay">
+                <h1 class="hero__heading">Gaspard Auge &<br> Xavier de Rosnay</h1>
+            </div>
         </section>
 
         <!-- ABOUT THE MUSICIANS section-->
         <section class="about">
             <h2 class="section__heading">About the Musicians</h2>
-            <img src="" alt="">
+            <img src="./assets/Images/artists.jpg" alt="" class="about__image">
             <!-- Quote block -->
             <figure class="about__quote">
-                <blockquote class="about__quote-block">
-                    we are more comfortable with not fighting what comes naturally. Before er might have thought,<q>We need to be smarter than this</q>
+                <blockquote class="about__quote-block">We are more comfortable with not fighting what comes naturally. Before er might have thought,<q class="about__inline-quote">We need to be smarter than this</q>
                 </blockquote>
-                <figcaption>
+                <figcaption class="about__quote-author">
                   &mdash; Xavier de Rosnay
                 </figcaption>
             </figure>
             <article class="about__article">
                 <h3 class="about__article-title">Xavier de Rosnay & Gaspard Auge</h3>
-                <p class="about__article-text">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.<br>Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</p>
+                <p class="about__article-text">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.<br><br>Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</p>
             </article>
         </section>
 
         <!-- Photo Gallery -->
         <section class="gallery">
             <h2 class="section__heading">Photo Gallery</h2>
-            <img src="" alt="">
+            <img src="./assets/Images/Photo-gallery-1.jpg" alt="" class="gallery__image">
+            <img src="./assets/Images/Photo-gallery-2.jpg" alt="" class="gallery__image">
+            <img src="./assets/Images/Photo-gallery-3.jpg" alt="" class="gallery__image">
+            <img src="./assets/Images/Photo-gallery-4.jpg" alt="" class="gallery__image">
+            <img src="./assets/Images/Photo-gallery-5.jpg" alt="" class="gallery__image">
+            <img src="./assets/Images/Photo-gallery-6.jpg" alt="" class="gallery__image">
+            <img src="./assets/Images/Photo-gallery-7.jpg" alt="" class="gallery__image">
+            <img src="./assets/Images/Photo-gallery-8.jpg" alt="" class="gallery__image">
+            <img src="./assets/Images/Photo-gallery-9.jpg" alt="" class="gallery__image">
         </section>
 
     <footer class="footer">
         <section class="contact">
             <h2 class="section__heading">Get In Touch</h2>
-            <img src="" alt="Instagram icon">
-            <img src="" alt="Facebook icon">
-            <img src="" alt="Twitter icon">
+            <div class="icons">
+                <img src="./assets/Icons/Icon-instagram.svg" alt="Instagram icon" class="icons__social social1">
+                <img src="./assets/Icons/Icon-facebook.svg" alt="Facebook icon" class="icons__social social2">
+                <img src="./assets/Icons/Icon-twitter.svg" alt="Twitter icon" class="icons__social social3">
+            </div>
         </section>
 
         <section class="contact_cards">
             <article class="contact__info">
-
+                <p class="contact__info-name">Richard Rovner</p>
+                <p class="contact__info-company">The Bees Knees Management
+                </p>
+                <p class="contact__info-region">460 King Street West<br>Toronto, Ontario M5V 1L7</p>
+                <p class="contact__info-email">info@thebeesknees.com</p>
             </article>
+
+            <article class="contact__info">
+                <p class="contact__info-name">Marsha Vlasic</p>
+                <p class="contact__info-company">Artist Group International
+                </p>
+                <p class="contact__info-region">Booking Agent for<br>US / South America / Japan</p>
+                <p class="contact__info-email">marsha.vlasic@artistgrp.com</p>
+            </article>
+
+            <article class="contact__info">
+                <p class="contact__info-name">Russel Warby</p>
+                <p class="contact__info-company">William Morrir Entertainment
+                </p>
+                <p class="contact__info-region">Booking Agent for<br>UK / EU / AU</p>
+                <p class="contact__info-email">RLW@wmeentertainment.com</p>
+            </article>
+
+            <small class="copyright">Copyright The Bees Knees &copy; 2018<br>All Rights Reserved
+            </small>
+
+
         </section>
 
 

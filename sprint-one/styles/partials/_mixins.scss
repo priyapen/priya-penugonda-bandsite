@@ -1,27 +1,33 @@
-@mixin flex {
+@mixin flexcenter {
     display: flex;
+    justify-content: center;
+    align-items: center;
     @content;
 }
 
-@mixin block {
-    display: block;
-    @content;
+// @mixin block {
+//     display: block;
+//     @content;
+// }
+
+@mixin calcrem($size) {
+
 }
 
-@mixin mobile {
-    @media only screen and (min-width: 320px) {
-        @content;
-    }
-}
+// @mixin mobile {
+//     @media only screen and (max-width: 320px) {
+//         @content;
+//     }
+// }
 
 @mixin tablet {
-    @media only screen and (min-width: 768px) {
+    @media only screen and (max-width: 768px) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (max-width: 1280px) {
         @content;
     }
 }
