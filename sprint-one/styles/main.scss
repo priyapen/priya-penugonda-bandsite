@@ -8,7 +8,7 @@
 
 .header {
   background-color: $global;
-  height: 80px;
+  height: 8rem;
   padding-top: 10px;
   @include tablet {
     padding: 24px;
@@ -72,6 +72,11 @@
       flex-grow: 19;
     }
 
+    .current {
+      border-bottom: 4px solid $primary-light;
+      color: $primary-light;
+    }
+
     &item {
       width: 50%;
       text-align: center;
@@ -79,7 +84,7 @@
       @include subheader;
       font-weight: 600;
       @include tablet {
-        width: 80px;
+        width: 8rem;
         padding-bottom: 22px;
         padding-top: 32px;
         margin-top: 0px;
@@ -90,21 +95,22 @@
       @include desktop {
         margin: 0 calc(56px / 2);
       }
+      &:hover {
+        @extend .current;
+        background-color: rgba(226, 182, 182, 0.384);
+        transition: all 1s linear;
+      }
     }
-  }
-
-  .current {
-    border-bottom: 4px solid $primary-light;
-    color: $primary-light;
   }
 }
 
 .hero {
   background-image: url("../assets/Images/hero-justice3.jpg");
   width: 100%;
-  height: 183px;
+  height: 30vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   @include tablet {
     height: 400px;
   }
@@ -114,14 +120,8 @@
 
   &__heading {
     margin: 0;
-    padding: 0 16px;
     @include font24-60;
-    @include tablet {
-      padding: 0 24px;
-    }
-    @include desktop {
-      padding: 0 100px;
-    }
+    @extend %resp-padding;
 
     &span:before {
       content: "\A";
@@ -140,13 +140,14 @@
 }
 
 .about {
-  padding: 0 16px;
-  @include tablet {
-    padding: 0 24px;
-  }
-  @include desktop {
-    padding: 0 100px;
-  }
+  @extend %resp-padding;
+  //   padding: 0 16px;
+  //   @include tablet {
+  //     padding: 0 24px;
+  //   }
+  //   @include desktop {
+  //     padding: 0 100px;
+  //   }
 
   &__heading {
     margin: 32px 0 24px 0;
@@ -252,13 +253,14 @@
 .gallery {
   background-color: $primary-light;
   width: 100%;
-  padding: 0 16px;
-  @include tablet {
-    padding: 0 24px;
-  }
-  @include desktop {
-    padding: 0 100px;
-  }
+  @extend %resp-padding;
+  //   padding: 0 16px;
+  //   @include tablet {
+  //     padding: 0 24px;
+  //   }
+  //   @include desktop {
+  //     padding: 0 100px;
+  //   }
 
   &__heading {
     // H1 Header styling-mobile device
@@ -279,6 +281,7 @@
   &__image {
     width: 100%;
     margin-bottom: 16px;
+    filter: grayscale(100%);
     @include tablet {
       width: 224px;
       height: 126px;
@@ -287,6 +290,10 @@
       width: 344px;
       height: 193px;
       margin-bottom: 24px;
+    }
+    &:hover {
+      filter: grayscale(0);
+      transition: all 1s linear;
     }
   }
 }
@@ -395,6 +402,16 @@
     &-region,
     &-email {
       @include lists_contact;
+    }
+
+    // DIVING DEEP- mailto
+    &-mailto {
+      text-decoration: none;
+      color: $secondary-accent;
+      &:hover {
+        text-decoration: underline;
+        color: $accent-hover;
+      }
     }
   }
 

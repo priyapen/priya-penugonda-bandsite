@@ -16,10 +16,25 @@
   font-weight: 700;
   font-style: normal;
 }
+.hero__heading, .about, .gallery {
+  padding: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  .hero__heading, .about, .gallery {
+    padding: 0 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__heading, .about, .gallery {
+    padding: 0 100px;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-family: "AvenirNext LT Pro", Roboto;
   color: #323232;
+  font-size: 62.5%;
 }
 
 *,
@@ -36,7 +51,7 @@ body {
 
 .header {
   background-color: #323232;
-  height: 80px;
+  height: 8rem;
   padding-top: 10px;
 }
 @media only screen and (min-width: 768px) {
@@ -111,24 +126,28 @@ body {
     flex-grow: 19;
   }
 }
+.header__navlist .current, .header__navlist .header__navlistitem:hover {
+  border-bottom: 4px solid #fafafa;
+  color: #fafafa;
+}
 .header__navlistitem {
   width: 50%;
   text-align: center;
   padding-bottom: 8px;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   font-weight: 600;
   font-weight: 600;
 }
 @media only screen and (min-width: 768px) {
   .header__navlistitem {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 2.4rem;
   }
 }
 @media only screen and (min-width: 768px) {
   .header__navlistitem {
-    width: 80px;
+    width: 8rem;
     padding-bottom: 22px;
     padding-top: 32px;
     margin-top: 0px;
@@ -142,17 +161,18 @@ body {
     margin: 0 calc(56px / 2);
   }
 }
-.header .current {
-  border-bottom: 4px solid #fafafa;
-  color: #fafafa;
+.header__navlistitem:hover {
+  background-color: rgba(226, 182, 182, 0.384);
+  transition: all 1s linear;
 }
 
 .hero {
   background-image: url("../assets/Images/hero-justice3.jpg");
   width: 100%;
-  height: 183px;
+  height: 30vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 @media only screen and (min-width: 768px) {
   .hero {
@@ -166,26 +186,15 @@ body {
 }
 .hero__heading {
   margin: 0;
-  padding: 0 16px;
   color: #fff;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 7vw;
+  line-height: 10vw;
   font-weight: 700;
 }
 @media only screen and (min-width: 768px) {
   .hero__heading {
-    font-size: 60px;
-    line-height: 68px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .hero__heading {
-    padding: 0 24px;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .hero__heading {
-    padding: 0 100px;
+    font-size: 6rem;
+    line-height: 6.8rem;
   }
 }
 .hero__headingspan:before {
@@ -201,29 +210,16 @@ body {
   align-items: center;
 }
 
-.about {
-  padding: 0 16px;
-}
-@media only screen and (min-width: 768px) {
-  .about {
-    padding: 0 24px;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .about {
-    padding: 0 100px;
-  }
-}
 .about__heading {
   margin: 32px 0 24px 0;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
   font-weight: 700;
 }
 @media only screen and (min-width: 768px) {
   .about__heading {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 3.6rem;
+    line-height: 4.4rem;
   }
 }
 .about__image {
@@ -261,8 +257,8 @@ body {
   padding: 0;
   font-size: 14px;
   line-height: 22px;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
   font-weight: 700;
   font-size: 15px;
   line-height: 24px;
@@ -271,8 +267,8 @@ body {
 @media only screen and (min-width: 768px) {
   .about__quote-block {
     color: #323232;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
   }
 }
 .about__quote-block::before {
@@ -289,14 +285,14 @@ body {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   font-weight: 600;
 }
 @media only screen and (min-width: 768px) {
   .about__quote-author {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 2.4rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -309,28 +305,28 @@ body {
   margin-bottom: 24px;
   font-size: 14px;
   line-height: 22px;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
   font-weight: 700;
 }
 @media only screen and (min-width: 768px) {
   .about__article-title {
     color: #323232;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
   }
 }
 .about__article-text {
   font-size: 13px;
   line-height: 18px;
   margin-bottom: 40px;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
 }
 @media only screen and (min-width: 768px) {
   .about__article-text {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -361,23 +357,12 @@ body {
 .gallery {
   background-color: #fafafa;
   width: 100%;
-  padding: 0 16px;
-}
-@media only screen and (min-width: 768px) {
-  .gallery {
-    padding: 0 24px;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .gallery {
-    padding: 0 100px;
-  }
 }
 .gallery__heading {
   font-size: 24px;
   line-height: 32px;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
   font-weight: 700;
   padding-top: 32px;
   padding-bottom: 24px;
@@ -385,8 +370,8 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .gallery__heading {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 3.6rem;
+    line-height: 4.4rem;
   }
 }
 .gallery__block {
@@ -397,6 +382,7 @@ body {
 .gallery__image {
   width: 100%;
   margin-bottom: 16px;
+  filter: grayscale(100%);
 }
 @media only screen and (min-width: 768px) {
   .gallery__image {
@@ -410,6 +396,10 @@ body {
     height: 193px;
     margin-bottom: 24px;
   }
+}
+.gallery__image:hover {
+  filter: grayscale(0);
+  transition: all 1s linear;
 }
 
 .footer {
@@ -436,8 +426,8 @@ body {
 .footer__contact-heading {
   font-size: 24px;
   line-height: 32px;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
   font-weight: 700;
   padding-top: 32px;
   padding-bottom: 24px;
@@ -446,8 +436,8 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .footer__contact-heading {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 3.6rem;
+    line-height: 4.4rem;
   }
 }
 .footer__contact-icons {
@@ -525,36 +515,44 @@ body {
 .footercontact__info-company, .footercontact__info-name {
   margin: 0;
   font-weight: 600;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   font-weight: 600;
 }
 @media only screen and (min-width: 768px) {
   .footercontact__info-company, .footercontact__info-name {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 2.4rem;
   }
 }
 .footercontact__info-region, .footercontact__info-email {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
 }
 @media only screen and (min-width: 768px) {
   .footercontact__info-region, .footercontact__info-email {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1.4rem;
+    line-height: 2rem;
   }
+}
+.footercontact__info-mailto {
+  text-decoration: none;
+  color: #e1e1e1;
+}
+.footercontact__info-mailto:hover {
+  text-decoration: underline;
+  color: #0065ad;
 }
 .footer__copyright {
   font-size: 13px;
   line-height: 18px;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
 }
 @media only screen and (min-width: 768px) {
   .footer__copyright {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1.4rem;
+    line-height: 2rem;
   }
 }
 .footer__copyright-span:before {
