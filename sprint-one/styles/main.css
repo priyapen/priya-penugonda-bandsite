@@ -41,6 +41,11 @@ body {
     padding: 24px;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .header {
+    padding: 0 100px;
+  }
+}
 .header__nav {
   width: 100%;
 }
@@ -60,6 +65,11 @@ body {
 @media only screen and (min-width: 768px) {
   .header .logo {
     padding: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .header .logo {
+    margin-right: calc(56px / 2);
   }
 }
 .header__navlist {
@@ -98,6 +108,11 @@ body {
     display: inline;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .header__navlistitem {
+    margin: 0 calc(56px / 2);
+  }
+}
 .header .current {
   border-bottom: 4px solid #fafafa;
   color: #fafafa;
@@ -114,6 +129,11 @@ body {
     height: 400px;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .hero {
+    height: 670px;
+  }
+}
 .hero__heading {
   margin: 0;
   padding: 0 16px;
@@ -126,6 +146,11 @@ body {
   .hero__heading {
     font-size: 60px;
     line-height: 68px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__heading {
+    padding: 0 100px;
   }
 }
 .hero .overlay {
@@ -143,6 +168,11 @@ body {
 @media only screen and (min-width: 768px) {
   .about {
     padding: 0 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about {
+    padding: 0 100px;
   }
 }
 .about .section__heading {
@@ -168,9 +198,21 @@ body {
     margin: auto;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .about__image {
+    width: 896px;
+    height: 450px;
+  }
+}
 .about__quote {
   margin: 0;
   padding: 0;
+}
+@media only screen and (min-width: 1280px) {
+  .about__quote {
+    width: 876px;
+    margin: auto;
+  }
 }
 .about__quote-block {
   quotes: initial;
@@ -194,6 +236,12 @@ body {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
+}
+@media only screen and (min-width: 1280px) {
+  .about__article {
+    width: 876px;
+    margin: auto;
+  }
 }
 .about__article-title {
   margin-bottom: 24px;
@@ -220,6 +268,16 @@ body {
          column-gap: 40px;
   }
 }
+.about__article-text span:before {
+  content: "\a";
+  white-space: pre;
+}
+@media only screen and (min-width: 768px) {
+  .about__article-text span:before {
+    content: none;
+    white-space: none;
+  }
+}
 
 .gallery {
   background-color: #fafafa;
@@ -229,6 +287,11 @@ body {
 @media only screen and (min-width: 768px) {
   .gallery {
     padding: 0 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .gallery {
+    padding: 0 100px;
   }
 }
 .gallery .section__heading {
@@ -253,6 +316,13 @@ body {
     height: 126px;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .gallery__image {
+    width: 344px;
+    height: 193px;
+    margin-bottom: 24px;
+  }
+}
 
 .footer {
   background-color: #323232;
@@ -262,6 +332,11 @@ body {
 @media only screen and (min-width: 768px) {
   .footer {
     padding: 0 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .footer {
+    padding: 0 100px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -298,6 +373,11 @@ body {
     padding: 0px 12px;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .footer .icons__social {
+    padding: 0px calc(32px / 2);
+  }
+}
 .footer .logo {
   display: none;
 }
@@ -307,16 +387,32 @@ body {
     margin-left: auto;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .footer .logo {
+    height: 24px;
+    width: 120px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .footer .contact__cards {
     display: flex;
     justify-content: space-between;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .footer .contact__cards {
+    justify-content: normal;
+  }
+}
 .footer .contact__info {
   font-size: 13px;
   line-height: 18px;
   margin: 32px 0;
+}
+@media only screen and (min-width: 1280px) {
+  .footer .contact__info {
+    margin-right: 56px;
+  }
 }
 .footer .contact__info-company, .footer .contact__info-name {
   margin: 0;
@@ -325,4 +421,14 @@ body {
 .footer .copyright {
   font-size: 13px;
   line-height: 18px;
+}
+.footer span:before {
+  content: "\a";
+  white-space: pre;
+}
+@media only screen and (min-width: 768px) {
+  .footer span:before {
+    content: none;
+    white-space: none;
+  }
 }/*# sourceMappingURL=main.css.map */
