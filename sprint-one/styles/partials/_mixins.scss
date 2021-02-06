@@ -15,8 +15,6 @@
 // Hero font- H1-Header-mobile and H1-Hero-Header-tablet
 @mixin font24-60 {
   color: $global-light;
-  // font-size: 2.4rem;
-  // line-height: 3.2rem;
   // making font responsive between 320px to 768px
   font-size: 7.5vw;
   line-height: 10vw;
@@ -85,4 +83,10 @@
 @mixin labels {
   font-size: 1.2rem;
   line-height: 2rem;
+}
+
+@mixin custom-mobilefont {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 600;
 }

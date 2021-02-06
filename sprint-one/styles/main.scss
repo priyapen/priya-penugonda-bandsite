@@ -10,15 +10,10 @@
   background-color: $global;
   height: 8rem;
   padding-top: 10px;
-  @include tablet {
-    padding: 24px;
-  }
-  @include desktop {
-    padding: 0 100px;
-  }
 
   &__nav {
     width: 100%;
+    @extend %wrapper;
     @include tablet {
       display: flex;
       align-items: center;
@@ -99,7 +94,7 @@
       }
       &:hover {
         @extend .current;
-        background-color: rgba(226, 182, 182, 0.384);
+        background-color: $accent-hover-transparent;
         transition: all 1s linear;
       }
     }
@@ -123,7 +118,7 @@
   &__heading {
     margin: 0;
     @include font24-60;
-    @extend %resp-padding;
+    @extend %wrapper;
 
     &span:before {
       content: "\A";
@@ -142,15 +137,8 @@
 }
 
 .about {
-  @extend %resp-padding;
+  // @extend %resp-padding;
   @extend %wrapper;
-  //   padding: 0 16px;
-  //   @include tablet {
-  //     padding: 0 24px;
-  //   }
-  //   @include desktop {
-  //     padding: 0 100px;
-  //   }
 
   &__heading {
     margin: 24px 0 18px 0;
@@ -179,8 +167,6 @@
     @include desktop {
       width: 896px;
       height: 450px;
-      // padding-bottom: 0;
-      // margin-bottom: 48px;
     }
   }
 
@@ -197,12 +183,8 @@
     quotes: initial;
     margin: 0 0 28px 0;
     padding: 0;
-    font-size: 1.6rem;
-    line-height: 22px;
     @include font14-24;
-    font-size: 1.6rem;
-    line-height: 24px;
-    font-weight: 600;
+    @include custom-mobilefont;
     @include tablet {
       font-weight: 700;
     }
@@ -221,7 +203,6 @@
 
   &__quote-author {
     margin-bottom: 32px;
-
     line-height: 22px;
     font-weight: 600;
     @include subheader;
@@ -240,8 +221,7 @@
       font-size: 14px;
       line-height: 22px;
       @include font14-24;
-      font-weight: 600;
-      font-size: 1.6rem;
+      @include custom-mobilefont;
       @include tablet {
         font-weight: 700;
       }
@@ -252,7 +232,6 @@
       font-size: 13px;
       line-height: 18px;
       margin-bottom: 40px;
-
       @include para_comments;
       letter-spacing: 0.01px;
       line-height: 18px;
@@ -265,13 +244,8 @@
         column-gap: 40px;
       }
 
-      &span:before {
-        content: "\A";
-        white-space: pre;
-        @include tablet {
-          content: none;
-          white-space: none;
-        }
+      &span {
+        @extend %linebreak;
       }
     }
   }
@@ -281,23 +255,12 @@
   background-color: $primary-light;
   width: 100%;
   padding-bottom: 30px;
-  @extend %resp-padding;
   @include desktop {
     padding-bottom: 40px;
   }
   @extend %wrapper;
-  //   padding: 0 16px;
-  //   @include tablet {
-  //     padding: 0 24px;
-  //   }
-  //   @include desktop {
-  //     padding: 0 100px;
-  //   }
 
   &__heading {
-    // H1 Header styling-mobile device
-    font-size: 24px;
-    line-height: 32px;
     @include font24-36;
     padding: 24px 0 18px 0;
     text-transform: capitalize;
@@ -361,7 +324,6 @@
 
     &-heading {
       // H1 header-mobile
-
       line-height: 32px;
       @include font24-36;
       padding-top: 52px;
@@ -372,7 +334,6 @@
       @include tablet {
         padding-top: 0;
         padding-bottom: 0;
-        // padding: 28px 0;
       }
     }
 
@@ -380,7 +341,7 @@
       padding: 0;
       display: flex;
       justify-content: space-between;
-      width: 44%;
+      width: 40%;
       @include tablet {
         height: 28px;
         align-items: end;
@@ -393,13 +354,9 @@
       display: inline-block;
       padding: 0px 6px;
       @include tablet {
-        // height: 28px;
-        // margin: 0 40px;
         padding: 0px 12px;
       }
       @include desktop {
-        // height: 28px;
-        // margin: 0 40px;
         padding: 0px calc(32px / 2);
       }
     }
@@ -474,13 +431,8 @@
     font-size: 13px;
     line-height: 18px;
     @include lists_contact;
-    &-span:before {
-      content: "\A";
-      white-space: pre;
-      @include tablet {
-        content: none;
-        white-space: none;
-      }
+    &span {
+      @extend %linebreak;
     }
   }
 }
