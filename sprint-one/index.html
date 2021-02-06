@@ -10,17 +10,10 @@
 </head>
 
 <body>
-    <!-- a bunch of divs -->
-
-
-
     <header class="header">
-        <!-- <a href="/sprint-one/index.html">
-            <img src="./assets/Logo/Logo-bandsite.svg" class="logo" alt="">
-        </a> -->
         <nav class="header__nav">
             <a href="/sprint-one/index.html" class="header__nav-link">
-                <img src="./assets/Logo/Logo-bandsite.svg" class="logo" alt="">
+                <img src="./assets/Logo/Logo-bandsite.svg" class="header__nav-logo" alt="">
             </a>
             <ul class="header__navlist">
                 <li class="header__navlistitem current">Biography</li>
@@ -32,19 +25,19 @@
     <main class="main">
         <!-- HERO section -->
         <section class="hero">
-            <div class="overlay">
-                <h1 class="hero__heading">Gaspard Auge &<br> Xavier de Rosnay</h1>
+            <div class="hero__overlay overlay">
+                <h1 class="hero__heading">Gaspard Auge &<span class="hero__headingspan">
+                    Xavier de Rosnay</span></h1>
             </div>
         </section>
 
         <!-- ABOUT THE MUSICIANS section-->
         <section class="about">
-            <h2 class="section__heading">About the Musicians</h2>
+            <h2 class="about__heading">About the Musicians</h2>
             <img src="./assets/Images/artists.jpg" alt="" class="about__image">
             <!-- Quote block -->
             <figure class="about__quote">
-                <blockquote class="about__quote-block">We are more comfortable with not fighting what comes naturally.
-                    Before er might have thought,<q class="about__inline-quote">We need to be smarter than this</q>
+                <blockquote class="about__quote-block">We are more comfortable with not fighting what comes naturally. Before we might have thought,<q class="about__inline-quote">We need to be smarter than this</q>
                 </blockquote>
                 <figcaption class="about__quote-author">
                     &mdash; Xavier de Rosnay
@@ -57,7 +50,7 @@
                     decided to try their hand at making a song. That’s when they created their breakout single, We Are
                     Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the
                     attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as
-                    former clients. One week later, they were in his office, signing a record deal.<br><span>
+                    former clients. One week later, they were in his office, signing a record deal.<br><span class="about__article-textspan">
                     Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks
                     for a compilation. With an immediate connection, the pair decided to try their hand at making a
                     song. That’s when they created their breakout single, We Are Your Friends – a feel-good,
@@ -69,7 +62,7 @@
 
         <!-- Photo Gallery -->
         <section class="gallery">
-            <h2 class="section__heading">Photo Gallery</h2>
+            <h2 class="gallery__heading">Photo Gallery</h2>
             <div class="gallery__block">
                 <img src="./assets/Images/Photo-gallery-1.jpg" alt="" class="gallery__image">
                 <img src="./assets/Images/Photo-gallery-2.jpg" alt="" class="gallery__image">
@@ -84,42 +77,44 @@
         </section>
 
         <footer class="footer">
-            <section class="contact">
-                <h2 class="section__heading">Get In Touch</h2>
-                <div class="icons">
-                    <img src="./assets/Icons/Icon-instagram.svg" alt="Instagram icon" class="icons__social social1">
-                    <img src="./assets/Icons/Icon-facebook.svg" alt="Facebook icon" class="icons__social social2">
-                    <img src="./assets/Icons/Icon-twitter.svg" alt="Twitter icon" class="icons__social social3">
+            <section class="footer__contact">
+                <h2 class="footer__contact-heading">Get In Touch</h2>
+                <div class="footer__contact-icons icons">
+                    <img src="./assets/Icons/Icon-instagram.svg" alt="Instagram" class="footer__contact-social">
+                    <img src="./assets/Icons/Icon-facebook.svg" alt="Facebook" class="footer__contact-social">
+                    <img src="./assets/Icons/Icon-twitter.svg" alt="Twitter" class="footer__contact-social">
                 </div>
-                <img src="./assets/Logo/Logo-bandsite.svg" alt="" class="logo">
+                <div class="footer__logo">
+                    <img src="./assets/Logo/Logo-bandsite.svg" alt="" class="footer__logo-image logo">
+                </div>
             </section>
 
-            <section class="contact__cards">
-                <article class="contact__info">
-                    <p class="contact__info-name">Richard Rovner</p>
-                    <p class="contact__info-company">The Bees Knees Management
+            <section class="footercontact__cards">
+                <article class="footercontact__info">
+                    <p class="footercontact__info-name">Richard Rovner</p>
+                    <p class="footercontact__info-company">The Bees Knees Management
                     </p>
-                    <p class="contact__info-region">460 King Street West<br>Toronto, Ontario M5V 1L7</p>
-                    <p class="contact__info-email">info@thebeesknees.com</p>
+                    <p class="footercontact__info-region">460 King Street West<br>Toronto, Ontario M5V 1L7</p>
+                    <p class="footercontact__info-email">info@thebeesknees.com</p>
                 </article>
 
-                <article class="contact__info">
-                    <p class="contact__info-name">Marsha Vlasic</p>
-                    <p class="contact__info-company">Artist Group International
+                <article class="footercontact__info">
+                    <p class="footercontact__info-name">Marsha Vlasic</p>
+                    <p class="footercontact__info-company">Artist Group International
                     </p>
-                    <p class="contact__info-region">Booking Agent for<br>US / South America / Japan</p>
-                    <p class="contact__info-email">marsha.vlasic@artistgrp.com</p>
+                    <p class="footercontact__info-region">Booking Agent for<br>US / South America / Japan</p>
+                    <p class="footercontact__info-email">marsha.vlasic@artistgrp.com</p>
                 </article>
 
-                <article class="contact__info">
-                    <p class="contact__info-name">Russel Warby</p>
-                    <p class="contact__info-company">William Morrir Entertainment
+                <article class="footercontact__info">
+                    <p class="footercontact__info-name">Russel Warby</p>
+                    <p class="footercontact__info-company">William Morrir Entertainment
                     </p>
-                    <p class="contact__info-region">Booking Agent for<br>UK / EU / AU</p>
-                    <p class="contact__info-email">RLW@wmeentertainment.com</p>
+                    <p class="footercontact__info-region">Booking Agent for<br>UK / EU / AU</p>
+                    <p class="footercontact__info-email">RLW@wmeentertainment.com</p>
                 </article>
             </section>
-            <small class="copyright">Copyright The Bees Knees &copy; 2018 <span>All Rights Reserved</span>
+            <small class="footer__copyright">Copyright The Bees Knees &copy; 2018 <span class="footer__copyright-span">All Rights Reserved</span>
             </small>
 
         </footer>

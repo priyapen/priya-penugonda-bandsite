@@ -22,7 +22,9 @@ html {
   color: #323232;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -35,6 +37,7 @@ body {
 .header {
   background-color: #323232;
   height: 80px;
+  padding-top: 10px;
 }
 @media only screen and (min-width: 768px) {
   .header {
@@ -56,19 +59,34 @@ body {
     height: 100%;
   }
 }
-.header .logo {
+.header__nav-link {
+  width: 120px;
+  height: 24px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .header__nav-link {
+    margin: 0;
+    margin-right: auto;
+    flex-grow: 1;
+  }
+}
+.header__nav-logo {
   margin: 0 auto;
   display: block;
   text-align: center;
-  padding: 16px 0;
+  height: 100%;
 }
 @media only screen and (min-width: 768px) {
-  .header .logo {
+  .header__nav-logo {
     padding: 0;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .header .logo {
+  .header__nav-logo {
     margin-right: calc(56px / 2);
   }
 }
@@ -90,12 +108,23 @@ body {
     line-height: 22px;
     font-weight: 600;
     width: 40%;
+    flex-grow: 19;
   }
 }
 .header__navlistitem {
   width: 50%;
   text-align: center;
   padding-bottom: 8px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .header__navlistitem {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .header__navlistitem {
@@ -117,6 +146,7 @@ body {
   border-bottom: 4px solid #fafafa;
   color: #fafafa;
 }
+
 .hero {
   background-image: url("../assets/Images/hero-justice3.jpg");
   width: 100%;
@@ -148,12 +178,21 @@ body {
     line-height: 68px;
   }
 }
+@media only screen and (min-width: 768px) {
+  .hero__heading {
+    padding: 0 24px;
+  }
+}
 @media only screen and (min-width: 1280px) {
   .hero__heading {
     padding: 0 100px;
   }
 }
-.hero .overlay {
+.hero__headingspan:before {
+  content: "\a";
+  white-space: pre;
+}
+.hero__overlay {
   background: rgba(50, 50, 50, 0.5);
   width: 100%;
   height: 100%;
@@ -175,12 +214,14 @@ body {
     padding: 0 100px;
   }
 }
-.about .section__heading {
+.about__heading {
   margin: 32px 0 24px 0;
-  color: #323232;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
 }
 @media only screen and (min-width: 768px) {
-  .about .section__heading {
+  .about__heading {
     font-size: 36px;
     line-height: 44px;
   }
@@ -220,7 +261,19 @@ body {
   padding: 0;
   font-size: 14px;
   line-height: 22px;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .about__quote-block {
+    color: #323232;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 .about__quote-block::before {
   content: open-quote;
@@ -236,6 +289,15 @@ body {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .about__quote-author {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .about__article {
@@ -247,12 +309,29 @@ body {
   margin-bottom: 24px;
   font-size: 14px;
   line-height: 22px;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 700;
+}
+@media only screen and (min-width: 768px) {
+  .about__article-title {
+    color: #323232;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 .about__article-text {
   font-size: 13px;
   line-height: 18px;
   margin-bottom: 40px;
+  font-size: 13px;
+  line-height: 18px;
+}
+@media only screen and (min-width: 768px) {
+  .about__article-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .about__article-text {
@@ -268,12 +347,12 @@ body {
          column-gap: 40px;
   }
 }
-.about__article-text span:before {
+.about__article-textspan:before {
   content: "\a";
   white-space: pre;
 }
 @media only screen and (min-width: 768px) {
-  .about__article-text span:before {
+  .about__article-textspan:before {
     content: none;
     white-space: none;
   }
@@ -294,12 +373,21 @@ body {
     padding: 0 100px;
   }
 }
-.gallery .section__heading {
+.gallery__heading {
   font-size: 24px;
   line-height: 32px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
   padding-top: 32px;
   padding-bottom: 24px;
   margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  .gallery__heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 .gallery__block {
   display: flex;
@@ -331,103 +419,150 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .footer {
-    padding: 0 24px;
+    padding: 0 24px 32px 24px;
   }
 }
 @media only screen and (min-width: 1280px) {
   .footer {
-    padding: 0 100px;
+    padding: 0 100px 100px 100px;
   }
 }
 @media only screen and (min-width: 768px) {
-  .footer .contact {
+  .footer__contact {
     display: flex;
-    align-items: center;
+    align-items: first baseline;
   }
 }
-.footer .section__heading {
+.footer__contact-heading {
   font-size: 24px;
   line-height: 32px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
   padding-top: 32px;
   padding-bottom: 24px;
   margin: 0;
   color: #fff;
 }
-.footer .icons {
+@media only screen and (min-width: 768px) {
+  .footer__contact-heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+.footer__contact-icons {
   padding: 0;
 }
 @media only screen and (min-width: 768px) {
-  .footer .icons {
+  .footer__contact-icons {
     height: 28px;
     display: flex;
     align-items: end;
     margin: 0px 48px;
   }
 }
-.footer .icons__social {
+.footer__contact-social {
   display: inline-block;
   padding: 0px 6px;
 }
 @media only screen and (min-width: 768px) {
-  .footer .icons__social {
+  .footer__contact-social {
     padding: 0px 12px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .footer .icons__social {
+  .footer__contact-social {
     padding: 0px calc(32px / 2);
   }
 }
-.footer .logo {
+.footer__logo {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  .footer .logo {
+  .footer__logo {
+    display: block;
+    height: 24px;
+    width: 120px;
+    margin-left: auto;
+  }
+}
+.footer__logo-image {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .footer__logo-image {
     display: inline-block;
     margin-left: auto;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .footer .logo {
-    height: 24px;
+  .footer__logo-image {
+    height: 100%;
     width: 120px;
   }
 }
 @media only screen and (min-width: 768px) {
-  .footer .contact__cards {
+  .footercontact__cards {
     display: flex;
     justify-content: space-between;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .footer .contact__cards {
+  .footercontact__cards {
     justify-content: normal;
   }
 }
-.footer .contact__info {
+.footercontact__info {
   font-size: 13px;
   line-height: 18px;
   margin: 32px 0;
 }
 @media only screen and (min-width: 1280px) {
-  .footer .contact__info {
+  .footercontact__info {
     margin-right: 56px;
   }
 }
-.footer .contact__info-company, .footer .contact__info-name {
+.footercontact__info-company, .footercontact__info-name {
   margin: 0;
   font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
 }
-.footer .copyright {
+@media only screen and (min-width: 768px) {
+  .footercontact__info-company, .footercontact__info-name {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+.footercontact__info-region, .footercontact__info-email {
   font-size: 13px;
   line-height: 18px;
 }
-.footer span:before {
+@media only screen and (min-width: 768px) {
+  .footercontact__info-region, .footercontact__info-email {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.footer__copyright {
+  font-size: 13px;
+  line-height: 18px;
+  font-size: 13px;
+  line-height: 18px;
+}
+@media only screen and (min-width: 768px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.footer__copyright-span:before {
   content: "\a";
   white-space: pre;
 }
 @media only screen and (min-width: 768px) {
-  .footer span:before {
+  .footer__copyright-span:before {
     content: none;
     white-space: none;
   }

@@ -2,55 +2,15 @@
 
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
-
-//Including fonts per style guide
-
-@font-face {
-  font-family: "AvenirNext LT Pro";
-  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"),
-    url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNext LT Pro";
-  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"),
-    url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNext LT Pro";
-  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"),
-    url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-// font-family: 'Roboto'
-
-// // test code:
-// h2 {
-//     color: $black;
-// }
+@use './partials/global' as *;
 
 @include global;
 
-// body {
-//     @include desktop {
-//         padding: 0 100px;
-//     }
-// }
-
 .header {
-  background-color: $black;
+  background-color: $global;
   height: 80px;
-  // padding:16px;
+  padding-top: 10px;
   @include tablet {
-    // display: flex;
-    // align-items: center;
     padding: 24px;
   }
   @include desktop {
@@ -60,44 +20,44 @@
   &__nav {
     width: 100%;
     @include tablet {
-      // width: 30%;
       display: flex;
       align-items: center;
       height: 100%;
     }
-  }
 
-  &__nav-link {
-    @include tablet {
-      // justify-content: flex-start;
-      // width: 100%;
-      // margin-right: 56px;
+    &-link {
+      width: 120px;
+      height: 24px;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 0px;
+      margin-bottom: 16px;
+      @include tablet {
+        margin: 0;
+        margin-right: auto;
+        flex-grow: 1;
+      }
     }
-    // @include desktop {
-    //     margin: 0 calc(56px/2) 0 56;
-    // }
-  }
 
-  .logo {
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    padding: 16px 0;
-    @include tablet {
-      padding: 0;
-      // display: block;
-    }
-    @include desktop {
-      margin-right: calc(56px / 2);
+    &-logo {
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      height: 100%;
+      @include tablet {
+        padding: 0;
+      }
+      @include desktop {
+        margin-right: calc(56px / 2);
+      }
     }
   }
 
   &__navlist {
     list-style: none;
     display: flex;
-    // justify-content: space-around;
     font-size: 13px;
-    color: $silver;
+    color: $primary-accent;
     line-height: 18px;
     font-weight: 600;
     margin: 0;
@@ -109,34 +69,33 @@
       line-height: 22px;
       font-weight: 600;
       width: 40%;
+      flex-grow: 19;
     }
-  }
 
-  &__navlistitem {
-    width: 50%;
-    text-align: center;
-    padding-bottom: 8px;
-    @include tablet {
-      width: 80px;
-      padding-bottom: 22px;
-      padding-top: 32px;
-      margin-top: 0px;
-      vertical-align: middle;
-      margin: 0 40px;
-      display: inline;
-    }
-    @include desktop {
-      margin: 0 calc(56px / 2);
+    &item {
+      width: 50%;
+      text-align: center;
+      padding-bottom: 8px;
+      @include subheader;
+      font-weight: 600;
+      @include tablet {
+        width: 80px;
+        padding-bottom: 22px;
+        padding-top: 32px;
+        margin-top: 0px;
+        vertical-align: middle;
+        margin: 0 40px;
+        display: inline;
+      }
+      @include desktop {
+        margin: 0 calc(56px / 2);
+      }
     }
   }
 
   .current {
-    // border-width: 160px;
-    border-bottom: 4px solid $alabaster;
-    color: $alabaster;
-    @include tablet {
-      // padding: auto 0;
-    }
+    border-bottom: 4px solid $primary-light;
+    color: $primary-light;
   }
 }
 
@@ -146,8 +105,6 @@
   height: 183px;
   background-repeat: no-repeat;
   background-size: cover;
-  // display: flex;
-  // align-items: center;
   @include tablet {
     height: 400px;
   }
@@ -158,13 +115,21 @@
   &__heading {
     margin: 0;
     padding: 0 16px;
-    @include font60-tabletonly;
+    @include font24-60;
+    @include tablet {
+      padding: 0 24px;
+    }
     @include desktop {
       padding: 0 100px;
     }
+
+    &span:before {
+      content: "\A";
+      white-space: pre;
+    }
   }
 
-  .overlay {
+  &__overlay {
     background: rgba(50, 50, 50, 0.5);
     width: 100%;
     height: 100%;
@@ -183,9 +148,9 @@
     padding: 0 100px;
   }
 
-  .section__heading {
+  &__heading {
     margin: 32px 0 24px 0;
-    @include font36-tabletonly;
+    @include font24-36;
   }
 
   &__image {
@@ -194,8 +159,6 @@
     @include tablet {
       height: 362px;
       object-fit: cover;
-      // width: 720px;
-      // object-position: bottom;
       display: block;
       margin: auto;
     }
@@ -220,8 +183,10 @@
     padding: 0;
     font-size: 14px;
     line-height: 22px;
-    font-weight: 700;
-    // text-transform: capitalize;
+    @include font14-24;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 600;
   }
 
   &__quote-block::before {
@@ -237,10 +202,10 @@
 
   &__quote-author {
     margin-bottom: 40px;
-    // H2 subheader- mobile styling
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
+    @include subheader;
   }
 
   &__article {
@@ -254,7 +219,7 @@
       // H2 subheader- mobile styling
       font-size: 14px;
       line-height: 22px;
-      font-weight: 700;
+      @include font14-24;
     }
 
     &-text {
@@ -262,6 +227,7 @@
       font-size: 13px;
       line-height: 18px;
       margin-bottom: 40px;
+      @include para_comments;
 
       @include tablet {
         column-count: 2;
@@ -271,11 +237,7 @@
         column-gap: 40px;
       }
 
-      //   .para2 {
-      //     white-space: pre-line;
-      //   }
-
-      span:before {
+      &span:before {
         content: "\A";
         white-space: pre;
         @include tablet {
@@ -286,12 +248,10 @@
     }
   }
 }
-// }
 
 .gallery {
-  background-color: $alabaster;
+  background-color: $primary-light;
   width: 100%;
-  // height: ;
   padding: 0 16px;
   @include tablet {
     padding: 0 24px;
@@ -300,10 +260,11 @@
     padding: 0 100px;
   }
 
-  .section__heading {
+  &__heading {
     // H1 Header styling-mobile device
     font-size: 24px;
     line-height: 32px;
+    @include font24-36;
     padding-top: 32px;
     padding-bottom: 24px;
     margin: 0;
@@ -331,44 +292,44 @@
 }
 
 .footer {
-  background-color: $black;
+  background-color: $global;
   padding: 0 10px 32px 10px;
-  color: $white;
+  color: $global-light;
   @include tablet {
-    padding: 0 24px;
+    padding: 0 24px 32px 24px;
   }
   @include desktop {
-    padding: 0 100px;
+    padding: 0 100px 100px 100px;
   }
 
-  .contact {
+  &__contact {
     @include tablet {
       display: flex;
-      align-items: center;
-    }
-  }
-
-  .section__heading {
-    // H1 header-mobile
-    font-size: 24px;
-    line-height: 32px;
-    padding-top: 32px;
-    padding-bottom: 24px;
-    margin: 0;
-    color: $white;
-  }
-
-  .icons {
-    // display: flex;
-    padding: 0;
-    @include tablet {
-      height: 28px;
-      display: flex;
-      align-items: end;
-      margin: 0px 48px;
+      align-items: first baseline;
     }
 
-    &__social {
+    &-heading {
+      // H1 header-mobile
+      font-size: 24px;
+      line-height: 32px;
+      @include font24-36;
+      padding-top: 32px;
+      padding-bottom: 24px;
+      margin: 0;
+      color: $global-light;
+    }
+
+    &-icons {
+      padding: 0;
+      @include tablet {
+        height: 28px;
+        display: flex;
+        align-items: end;
+        margin: 0px 48px;
+      }
+    }
+
+    &-social {
       display: inline-block;
       padding: 0px 6px;
       @include tablet {
@@ -384,19 +345,29 @@
     }
   }
 
-  .logo {
+  &__logo {
     display: none;
     @include tablet {
-      display: inline-block;
-      margin-left: auto;
-    }
-    @include desktop {
+      display: block;
       height: 24px;
       width: 120px;
+      margin-left: auto;
+    }
+
+    &-image {
+      display: none;
+      @include tablet {
+        display: inline-block;
+        margin-left: auto;
+      }
+      @include desktop {
+        height: 100%;
+        width: 120px;
+      }
     }
   }
 
-  .contact__cards {
+  &contact__cards {
     @include tablet {
       display: flex;
       justify-content: space-between;
@@ -406,7 +377,7 @@
     }
   }
 
-  .contact__info {
+  &contact__info {
     font-size: 13px;
     line-height: 18px;
     margin: 32px 0;
@@ -418,21 +389,26 @@
     &-name {
       margin: 0;
       font-weight: 600;
+      @include subheader;
+    }
+
+    &-region,
+    &-email {
+      @include lists_contact;
     }
   }
 
-  .copyright {
-    // padding-bottom: 32px;
+  &__copyright {
     font-size: 13px;
     line-height: 18px;
-  }
-
-  span:before {
-    content: "\A";
-    white-space: pre;
-    @include tablet {
-      content: none;
-      white-space: none;
+    @include lists_contact;
+    &-span:before {
+      content: "\A";
+      white-space: pre;
+      @include tablet {
+        content: none;
+        white-space: none;
+      }
     }
   }
 }
