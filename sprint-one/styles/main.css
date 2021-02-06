@@ -327,8 +327,6 @@ body {
 }
 .about__article-title {
   margin-bottom: 18px;
-  font-size: 14px;
-  line-height: 22px;
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 700;
@@ -349,8 +347,6 @@ body {
   }
 }
 .about__article-text {
-  font-size: 13px;
-  line-height: 18px;
   margin-bottom: 40px;
   font-size: 1.3rem;
   line-height: 1.8rem;
@@ -557,8 +553,8 @@ body {
   }
 }
 .footercontact__info {
-  font-size: 13px;
-  line-height: 22px;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
   margin: 32px 0 24px 0;
 }
 @media only screen and (min-width: 1280px) {
@@ -600,8 +596,8 @@ body {
   color: #0065ad;
 }
 .footer__copyright {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   font-size: 1.3rem;
   line-height: 1.8rem;
 }
