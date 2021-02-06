@@ -30,6 +30,22 @@
   }
 }
 
+.about, .gallery, .footer {
+  padding: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  .about, .gallery, .footer {
+    padding: 0 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about, .gallery, .footer {
+    padding: 0 100;
+    max-width: calc(1280px - 100px);
+    margin: auto;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-family: "AvenirNext LT Pro", Roboto;
@@ -75,8 +91,6 @@ body {
   }
 }
 .header__nav-link {
-  width: 120px;
-  height: 24px;
   display: block;
   margin: 0 auto;
   margin-bottom: 0px;
@@ -87,6 +101,12 @@ body {
     margin: 0;
     margin-right: auto;
     flex-grow: 1;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .header__nav-link {
+    width: 120px;
+    height: 24px;
   }
 }
 .header__nav-logo {
@@ -169,7 +189,7 @@ body {
 .hero {
   background-image: url("../assets/Images/hero-justice3.jpg");
   width: 100%;
-  height: 30vh;
+  height: 58vw;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -187,7 +207,7 @@ body {
 .hero__heading {
   margin: 0;
   color: #fff;
-  font-size: 7vw;
+  font-size: 7.5vw;
   line-height: 10vw;
   font-weight: 700;
 }
@@ -211,7 +231,8 @@ body {
 }
 
 .about__heading {
-  margin: 32px 0 24px 0;
+  margin: 24px 0 18px 0;
+  text-transform: capitalize;
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: 700;
@@ -222,9 +243,21 @@ body {
     line-height: 4.4rem;
   }
 }
+@media only screen and (min-width: 768px) {
+  .about__heading {
+    padding: 40px 0 32px 0;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about__heading {
+    padding: 48px 0 48px 0;
+  }
+}
 .about__image {
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  height: 44vw;
 }
 @media only screen and (min-width: 768px) {
   .about__image {
@@ -233,6 +266,7 @@ body {
        object-fit: cover;
     display: block;
     margin: auto;
+    margin-bottom: 48px;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -253,14 +287,14 @@ body {
 }
 .about__quote-block {
   quotes: initial;
-  margin: 0 0 32px 0;
+  margin: 0 0 28px 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 1.6rem;
   line-height: 22px;
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 1.6rem;
   line-height: 24px;
   font-weight: 600;
 }
@@ -269,6 +303,11 @@ body {
     color: #323232;
     font-size: 2.4rem;
     line-height: 3.2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about__quote-block {
+    font-weight: 700;
   }
 }
 .about__quote-block::before {
@@ -281,13 +320,13 @@ body {
   content: close-quote;
 }
 .about__quote-author {
-  margin-bottom: 40px;
-  font-size: 14px;
+  margin-bottom: 32px;
   line-height: 22px;
   font-weight: 600;
   font-size: 1.3rem;
   line-height: 1.8rem;
   font-weight: 600;
+  font-size: 1.4rem;
 }
 @media only screen and (min-width: 768px) {
   .about__quote-author {
@@ -302,12 +341,14 @@ body {
   }
 }
 .about__article-title {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   font-size: 14px;
   line-height: 22px;
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: 700;
+  font-weight: 600;
+  font-size: 1.6rem;
 }
 @media only screen and (min-width: 768px) {
   .about__article-title {
@@ -316,12 +357,20 @@ body {
     line-height: 3.2rem;
   }
 }
+@media only screen and (min-width: 768px) {
+  .about__article-title {
+    font-weight: 700;
+  }
+}
 .about__article-text {
   font-size: 13px;
   line-height: 18px;
   margin-bottom: 40px;
   font-size: 1.3rem;
   line-height: 1.8rem;
+  letter-spacing: 0.01px;
+  line-height: 18px;
+  font-size: 12px;
 }
 @media only screen and (min-width: 768px) {
   .about__article-text {
@@ -357,6 +406,12 @@ body {
 .gallery {
   background-color: #fafafa;
   width: 100%;
+  padding-bottom: 30px;
+}
+@media only screen and (min-width: 1280px) {
+  .gallery {
+    padding-bottom: 40px;
+  }
 }
 .gallery__heading {
   font-size: 24px;
@@ -364,14 +419,25 @@ body {
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: 700;
-  padding-top: 32px;
-  padding-bottom: 24px;
+  padding: 24px 0 18px 0;
+  text-transform: capitalize;
   margin: 0;
 }
 @media only screen and (min-width: 768px) {
   .gallery__heading {
     font-size: 3.6rem;
     line-height: 4.4rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .gallery__heading {
+    padding: 44px 0 54px 0;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .gallery__heading {
+    padding: 48px 0 64px 0;
   }
 }
 .gallery__block {
@@ -421,18 +487,24 @@ body {
   .footer__contact {
     display: flex;
     align-items: first baseline;
+    padding-top: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .footer__contact {
+    padding-top: 48px;
   }
 }
 .footer__contact-heading {
-  font-size: 24px;
   line-height: 32px;
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: 700;
-  padding-top: 32px;
-  padding-bottom: 24px;
+  padding-top: 52px;
+  padding-bottom: 28px;
   margin: 0;
   color: #fff;
+  font-size: 3.6rem;
 }
 @media only screen and (min-width: 768px) {
   .footer__contact-heading {
@@ -440,15 +512,24 @@ body {
     line-height: 4.4rem;
   }
 }
+@media only screen and (min-width: 768px) {
+  .footer__contact-heading {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
 .footer__contact-icons {
   padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 44%;
 }
 @media only screen and (min-width: 768px) {
   .footer__contact-icons {
     height: 28px;
-    display: flex;
     align-items: end;
     margin: 0px 48px;
+    width: auto;
   }
 }
 .footer__contact-social {
@@ -504,8 +585,8 @@ body {
 }
 .footercontact__info {
   font-size: 13px;
-  line-height: 18px;
-  margin: 32px 0;
+  line-height: 22px;
+  margin: 32px 0 24px 0;
 }
 @media only screen and (min-width: 1280px) {
   .footercontact__info {
@@ -528,6 +609,8 @@ body {
 .footercontact__info-region, .footercontact__info-email {
   font-size: 1.3rem;
   line-height: 1.8rem;
+  font-size: 1.2rem;
+  margin: 18px 0;
 }
 @media only screen and (min-width: 768px) {
   .footercontact__info-region, .footercontact__info-email {
