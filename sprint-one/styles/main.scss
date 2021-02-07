@@ -1,3 +1,6 @@
+/* Ran main.css through W3C CSS Validator results for TextArea are as follows:
+ Congratulations! No Error Found. */
+
 // Importing variables and partials
 
 @use './partials/variables' as *;
@@ -389,6 +392,7 @@
 
   &contact__info {
     font-size: 1.3rem;
+    font-style: normal;
     line-height: 2.2rem;
     margin: 32px 0 24px 0;
     @include desktop {
@@ -407,6 +411,7 @@
       @include lists_contact;
       font-size: 1.2rem;
       margin: 18px 0;
+      font-style: normal;
     }
 
     // DIVING DEEP- mailto

@@ -64,7 +64,7 @@
     white-space: pre;
     @include tablet {
       content: none;
-      white-space: none;
+      white-space: normal;
     }
   }
 }

@@ -39,10 +39,12 @@
 @media only screen and (min-width: 768px) {
   .about__article-textspan:before, .footer__copyrightspan:before {
     content: none;
-    white-space: none;
+    white-space: normal;
   }
 }
 
+/* Ran main.css through W3C CSS Validator results for TextArea are as follows:
+ Congratulations! No Error Found. */
 html {
   box-sizing: border-box;
   font-family: "AvenirNext LT Pro", Roboto;
@@ -554,6 +556,7 @@ body {
 }
 .footercontact__info {
   font-size: 1.3rem;
+  font-style: normal;
   line-height: 2.2rem;
   margin: 32px 0 24px 0;
 }
@@ -580,6 +583,7 @@ body {
   line-height: 1.8rem;
   font-size: 1.2rem;
   margin: 18px 0;
+  font-style: normal;
 }
 @media only screen and (min-width: 768px) {
   .footercontact__info-region, .footercontact__info-email {
