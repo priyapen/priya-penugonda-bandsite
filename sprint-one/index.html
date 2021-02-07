@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!-- Navigation -->
     <header class="header">
         <nav class="header__nav">
             <a href="index.html" class="header__nav-link">
@@ -35,7 +36,7 @@
         <section class="about">
             <h2 class="about__heading">About the Musicians</h2>
             <img src="./assets/Images/artists.jpg" alt="picture of artists performing on stage" class="about__image">
-            <!-- Quote block -->
+            <!-- Quote block: Per my research a quotation needs to be in a block quote inside a figure tag, thats why this is used. Used a 'q' tag for inline quote for semantics. Using the figure tag helps when we need to mention the source of the quote using a figcaption.-->
             <figure class="about__quote">
                 <blockquote class="about__quote-block">We are more comfortable with not fighting what comes naturally. Before we might have thought,<q class="about__inline-quote">We need to be smarter than this</q>
                 </blockquote>
@@ -43,24 +44,22 @@
                     &mdash; Xavier de Rosnay
                 </figcaption>
             </figure>
+            <!-- Based on my research, i found a lot of discussions and debate on whether articles can be nested inside sections. Since there was no conclusive evidence anywhere, i decided to use an article block here. Additionally, i read that article tags can be helpful when a block of text needs to sent as RSS feeds, are self-standing and don't need to depend on other elements of the webpage for context.-->
             <article class="about__article">
+                <!-- &eacute; is used for the accented e -->
                 <h3 class="about__article-title">Xavier de Rosnay & Gaspard Aug&eacute;</h3>
                 <p class="about__article-text">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened
                     to run a record label, seeking tracks for a compilation. With an immediate connection, the pair
                     decided to try their hand at making a song. That’s when they created their breakout single, We Are
                     Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the
-                    attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as
-                    former clients. One week later, they were in his office, signing a record deal.<br><span class="about__article-textspan">
-                    Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks
-                    for a compilation. With an immediate connection, the pair decided to try their hand at making a
-                    song. That’s when they created their breakout single, We Are Your Friends – a feel-good,
-                    funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter,
-                    director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week
-                    later, they were in his office, signing a record deal.</span></p>
+                    attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.<br>
+                    <!-- The following span class here to introduce an additional line break for the paragraph using pseudoelements. -->
+                    <span class="about__article-textspan">
+                    Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</span></p>
             </article>
         </section>
 
-        <!-- Photo Gallery -->
+        <!-- PHOTO GALLERY SECTION -->
         <section class="gallery">
             <h2 class="gallery__heading">Photo Gallery</h2>
             <div class="gallery__block">
@@ -94,6 +93,7 @@
                     <p class="footercontact__info-name">Richard Rovner</p>
                     <p class="footercontact__info-company">The Bees Knees Management
                     </p>
+                    <!-- From my research, i read that br tags used for address line breaks are semantically correct -->
                     <p class="footercontact__info-region">460 King Street West<br>Toronto, Ontario M5V 1L7</p>
                     <p class="footercontact__info-email"><a href="mailto:info@thebeesknees.com" target="_blank" class="footercontact__info-mailto">info@thebeesknees.com</a></p>
                 </article>
@@ -114,7 +114,9 @@
                     <p class="footercontact__info-email"><a href="mailto:RLW@wmeentertainment.com" target="_blank" class="footercontact__info-mailto">RLW@wmeentertainment.com</a></p>
                 </article>
             </section>
-            <small class="footer__copyright">Copyright The Bees Knees &copy; 2018 <span class="footer__copyrightspan">All Rights Reserved</span>
+            <small class="footer__copyright">Copyright The Bees Knees &copy; 2018 
+                <!-- The following span class here to introduce a line break for screen sizes smaller than 768px using pseudoelements. -->
+                <span class="footer__copyrightspan">All Rights Reserved</span>
             </small>
         </footer>
     </main>
