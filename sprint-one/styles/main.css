@@ -16,18 +16,18 @@
   font-weight: 700;
   font-style: normal;
 }
-.header__nav, .hero__heading, .about, .gallery, .footer {
+.hero__heading, .about, .gallery, .footer {
   padding: 0 16px;
 }
 @media only screen and (min-width: 768px) {
-  .header__nav, .hero__heading, .about, .gallery, .footer {
+  .hero__heading, .about, .gallery, .footer {
     padding: 0 24px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .header__nav, .hero__heading, .about, .gallery, .footer {
+  .hero__heading, .about, .gallery, .footer {
     padding: 0 100px;
-    max-width: calc(1400px - 100px);
+    max-width: 1300px;
     margin: auto;
   }
 }
@@ -45,6 +45,7 @@
 
 /* Ran main.css through W3C CSS Validator results for TextArea are as follows:
  Congratulations! No Error Found. */
+/* Some of the measurements and dimensions are not exactly as provided in the styleguides. I tried to match the UI to the mockups in terms of the design so I did not follow the measurements to the t.*/
 html {
   box-sizing: border-box;
   font-family: "AvenirNext LT Pro", Roboto;
@@ -67,16 +68,30 @@ body {
 .header {
   background-color: #323232;
   height: 8rem;
-  padding-top: 10px;
+  padding: 15px 0 0 0;
+}
+@media only screen and (min-width: 768px) {
+  .header {
+    padding: 0;
+  }
 }
 .header__nav {
   width: 100%;
 }
 @media only screen and (min-width: 768px) {
   .header__nav {
+    padding: 0 24px;
     display: flex;
     align-items: center;
     height: 100%;
+    padding-top: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .header__nav {
+    padding: 0 100px;
+    max-width: calc(1400px - 100px);
+    margin: auto;
   }
 }
 .header__nav-link {
@@ -161,13 +176,13 @@ body {
     padding-top: 32px;
     margin-top: 0px;
     vertical-align: middle;
-    margin: 0 40px;
+    margin: 0 0 0 42px;
     display: inline;
   }
 }
 @media only screen and (min-width: 1280px) {
   .header__navlistitem {
-    margin: 0 calc(56px / 2);
+    margin: 0 0 0 56px;
   }
 }
 .header__navlistitem:hover {
@@ -191,6 +206,12 @@ body {
 @media only screen and (min-width: 1280px) {
   .hero {
     height: 670px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__headerblock {
+    width: 1300px;
+    margin: 0 auto;
   }
 }
 .hero__heading {
@@ -451,7 +472,7 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .footer {
-    padding: 0 100px 100px 100px;
+    padding: 0 100px 48px 100px;
   }
 }
 @media only screen and (min-width: 768px) {
