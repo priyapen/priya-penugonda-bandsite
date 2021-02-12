@@ -77,57 +77,59 @@ const commentArr = [
 
 displayComment();
 
-// commentArr.forEach(comment => {
-//     console.log(comment);
+commentArr.forEach(comment => {
+    console.log(comment);
 
-//     let commentSectionEl = document.querySelector('.comment');
+    let commentSectionEl = document.querySelector('.comment');
 
-//     // create article in comment section
-//     let articleEl = document.createElement('article');
-//     articleEl.classList.add('publ__comment');
-//     commentSectionEl.appendChild(articleEl);
+    // create article in comment section
+    let articleEl = document.createElement('article');
+    articleEl.classList.add('publ__comment');
+    commentSectionEl.appendChild(articleEl);
 
-//     // creating an image block
-//     let imageblkEl = document.createElement('div');
-//     imageblkEl.classList.add('publ__imageblock');
-//     articleEl.appendChild(imageblkEl);
+    // creating an image block
+    let imageblkEl = document.createElement('div');
+    imageblkEl.classList.add('publ__imageblock');
+    articleEl.appendChild(imageblkEl);
 
-//     //creating an image
-//     let imgEl = document.createElement('img');
-//     imgEl.classList.add('publ__img');
-//     imageblkEl.appendChild(imgEl);
-//     imgEl.setAttribute('src', comment.image);
+    //creating an image
+    let imgEl = document.createElement('img');
+    imgEl.classList.add('publ__img');
+    imageblkEl.appendChild(imgEl);
+    imgEl.setAttribute('src', comment.image);
 
-//     // creating a text block for content
-//     let contentEl = document.createElement('div');
-//     contentEl.classList.add('publ__content');
-//     articleEl.appendChild(contentEl);
+    // creating a text block for content
+    let contentEl = document.createElement('div');
+    contentEl.classList.add('publ__content');
+    articleEl.appendChild(contentEl);
 
-//     //creating name element
-//     let nameEl = document.createElement('p');
-//     nameEl.classList.add('publ__name');
-//     contentEl.appendChild(nameEl);
-//     nameEl.innerText = comment.name;
+    //creating name element
+    let nameEl = document.createElement('p');
+    nameEl.classList.add('publ__name');
+    contentEl.appendChild(nameEl);
+    nameEl.innerText = comment.name;
 
-//     //creating a date element
-//     let dateEl = document.createElement('time');
-//     dateEl.classList.add('publ__date');
-//     contentEl.appendChild(dateEl);
-//     dateEl.innerText = comment.date;
-//     console.log(typeof(comment.date));
+    //creating a date element
+    let dateEl = document.createElement('time');
+    dateEl.classList.add('publ__date');
+    contentEl.appendChild(dateEl);
+    dateEl.innerText = comment.date;
+    console.log(typeof(comment.date));
 
-//     //creating comment text element
-//     let comtextEl = document.createElement('p');
-//     comtextEl.classList.add('publ__text');
-//     contentEl.appendChild(comtextEl);
-//     comtextEl.innerText = comment.commentText;
+    //creating comment text element
+    let comtextEl = document.createElement('p');
+    comtextEl.classList.add('publ__text');
+    contentEl.appendChild(comtextEl);
+    comtextEl.innerText = comment.commentText;
+    commentArr.shift(comment);
+    console.log(commentArr);
 
-// });
+});
 
 function pushcomment() {
-    console.log(event.target.fname.value);
-    console.log(event.target.comment.value);
-    console.log(commentArr);
+    // console.log(event.target.fname.value);
+    // console.log(event.target.comment.value);
+    // console.log(commentArr);
 
     commentArr.unshift(
         {
@@ -140,9 +142,7 @@ function pushcomment() {
 }
     
 function displayComment() {
-    commentArr.forEach(comment => {
-        console.log(comment);
-    
+        commentArr.forEach(comment => {
         let commentSectionEl = document.querySelector('.comment');
     
         // create article in comment section
@@ -187,3 +187,6 @@ function displayComment() {
     
     });
 };
+
+
+// create element function  here;

@@ -93,12 +93,12 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
                 </div>
                 <div class="comment__detail">
                     <form class="comment__form">
-                        <label for="fname">Name</label>
-                        <input type="text" id="fname" name="fname">
-                        <label for="comment">Comment</label>
-                        <textarea name="comment" id="" cols="30" rows="10">Add a new comment</textarea>
+                        <label class="comment__namelabel" for="fname">Name</label>
+                        <input class="comment__nameinput" type="text" id="fname" name="fname">
+                        <label class="comment__commenttextlabel"    for="comment">Comment</label>
+                        <textarea name="comment" class="comment__commenttextinput" cols="30" rows="10">Add a new comment</textarea>
                         <!-- <input name="date" id="date" type="hidden"> -->
-                        <button type="submit" class="btn">Comment</button>
+                        <button type="submit" class="comment__btn">Comment</button>
                     </form>
                 </div>
             </article>
@@ -116,6 +116,7 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
 
         <!-- FOOTER section -->
         <footer class="footer">
+            <div class="footer__wrapper">
             <section class="footer__contact">
                 <h2 class="footer__contact-heading">Get In Touch</h2>
                 <div class="footer__contact-icons icons">
@@ -159,6 +160,7 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
                 <!-- The following span class here to introduce a line break for screen sizes smaller than 768px using pseudoelements. -->
                 <span class="footer__copyrightspan">All Rights Reserved</span>
             </small>
+        </div>
         </footer>
     </main>
 

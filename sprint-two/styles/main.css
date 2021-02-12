@@ -16,16 +16,16 @@
   font-weight: 700;
   font-style: normal;
 }
-.hero__heading, .about, .gallery, .comment, .footer {
+.hero__heading, .about, .gallery, .comment, .footer__wrapper {
   padding: 0 16px;
 }
 @media only screen and (min-width: 768px) {
-  .hero__heading, .about, .gallery, .comment, .footer {
+  .hero__heading, .about, .gallery, .comment, .footer__wrapper {
     padding: 0 24px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .hero__heading, .about, .gallery, .comment, .footer {
+  .hero__heading, .about, .gallery, .comment, .footer__wrapper {
     padding: 0 100px;
     max-width: 1300px;
     margin: auto;
@@ -439,7 +439,10 @@ body {
 }
 .gallery__image {
   width: 100%;
+  margin-right: 16px;
   margin-bottom: 16px;
+  flex-shrink: 0;
+  flex-grow: 0;
   filter: grayscale(100%);
 }
 @media only screen and (min-width: 768px) {
@@ -500,7 +503,23 @@ body {
 .comment__form > * {
   display: block;
 }
-
+.comment__nameinput, .comment__commenttextinput {
+  height: 40px;
+  width: 224px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+}
+.comment__commenttextinput {
+  height: auto;
+  resize: none;
+}
+.comment__namelabel, .comment__commenttextlabel {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #afafaf;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
 .footer {
   background-color: #323232;
   padding: 0 10px 32px 10px;
