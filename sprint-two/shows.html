@@ -1,0 +1,122 @@
+<!-- Passed HTML through W3C validator. It showed the following warning 
+    ====warning message=====
+Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.
+From line 91, column 13; to line 91, column 50
+          <section class="footercontact__cards">↩ 
+    ==== end of message ==== 
+However i am not going to fix that since i cannot find a more appropriate tag for that section and i read that a deading is not necessary for a section   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandSite - Biography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/shows.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">
+                <img src="./assets/Logo/Logo-bandsite.svg" class="header__nav-logo" alt="Bandsite logo">
+            </a>
+            <ul class="header__navlist">
+                <li class="header__navlistitem"><a href="./index.html">Biography</a></li>
+                <li class="header__navlistitem  current">Shows</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- HERO section -->
+        <section class="hero">
+            <div class="hero__overlay">
+                <div class="hero__headerblock">
+                    <h1 class="hero__heading">Woman Worldwide Album<span class="hero__headingspan">
+                    Waters of Nazareth x We Are your Friends x Phantom</span></h1>
+                    <!-- <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/741345922&color=%23443d5d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/kadebostany" title="Kadebostany_official" target="_blank" style="color: #cccccc; text-decoration: none;">Kadebostany_official</a> · <a href="https://soundcloud.com/kadebostany/early-morning-dreams-mahmut" title="Early Morning Dreams (Mahmut Orhan Remix)" target="_blank" style="color: #cccccc; text-decoration: none;">Early Morning Dreams (Mahmut Orhan Remix)</a></div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOWS section-->
+        <section class="shows">
+            <h2 class="shows__heading">Shows</h2>
+            <!-- <article class="shows__card">
+                <p class="shows__date">Mon Dec 17 2018</p>
+                <p class="shows__venue">Ronald Lane</p>
+                <p class="location">Sanfrancisco, CA</p>
+                <button type="submit">Buy Tickets</button>
+            </article>
+
+            <article class="shows__card">
+                <p class="shows__date">Mon Dec 17 2018</p>
+                <p class="shows__venue">Ronald Lane</p>
+                <p class="location">Sanfrancisco, CA</p>
+                <button type="submit">Buy Tickets</button>
+        </article>
+            <article class="shows__card">
+                <p class="shows__date">Mon Dec 17 2018</p>
+                <p class="shows__venue">Ronald Lane</p>
+                <p class="location">Sanfrancisco, CA</p>
+                <button type="submit">Buy Tickets</button>
+        </article> -->
+        </section>
+
+       
+
+        <!-- FOOTER section -->
+        <footer class="footer">
+            <section class="footer__contact">
+                <h2 class="footer__contact-heading">Get In Touch</h2>
+                <div class="footer__contact-icons icons">
+                    <img src="./assets/Icons/Icon-instagram.svg" alt="Instagram" class="footer__contact-social">
+                    <img src="./assets/Icons/Icon-facebook.svg" alt="Facebook" class="footer__contact-social">
+                    <img src="./assets/Icons/Icon-twitter.svg" alt="Twitter" class="footer__contact-social">
+                </div>
+                <div class="footer__logo">
+                    <img src="./assets/Logo/Logo-bandsite.svg" alt="bandsite logo" class="footer__logo-image">
+                </div>
+            </section>
+            <!-- CONTACT INFO cards -->
+            <section class="footercontact__cards">
+                <address class="footercontact__info">
+                    <p class="footercontact__info-name">Richard Rovner</p>
+                    <p class="footercontact__info-company">The Bees Knees Management
+                    </p>
+                    <!-- From my research, i read that br tags used for address line breaks are semantically correct -->
+                    <!-- In the following line i could have used an address tag, however, address cannot be nested inside an address so went ahead with p tag instead. -->
+                    <p class="footercontact__info-region">460 King Street West<br>Toronto, Ontario M5V 1L7</p>
+                    <p class="footercontact__info-email"><a href="mailto:info@thebeesknees.com" target="_blank" class="footercontact__info-mailto">info@thebeesknees.com</a></p>
+                </address>
+
+                <address class="footercontact__info">
+                    <p class="footercontact__info-name">Marsha Vlasic</p>
+                    <p class="footercontact__info-company">Artist Group International
+                    </p>
+                    <p class="footercontact__info-region">Booking Agent for<br>US / South America / Japan</p>
+                    <p class="footercontact__info-email"><a href="mailto:marsha.vlasic@artistgrp.com" target="_blank" class="footercontact__info-mailto">marsha.vlasic@artistgrp.com</a></p>
+                </address>
+
+                <address class="footercontact__info">
+                    <p class="footercontact__info-name">Russel Warby</p>
+                    <p class="footercontact__info-company">William Morrir Entertainment
+                    </p>
+                    <p class="footercontact__info-region">Booking Agent for<br>UK / EU / AU</p>
+                    <p class="footercontact__info-email"><a href="mailto:RLW@wmeentertainment.com" target="_blank" class="footercontact__info-mailto">RLW@wmeentertainment.com</a></p>
+                </address>
+            </section>
+            <small class="footer__copyright">Copyright The Bees Knees &copy; 2018 
+                <!-- The following span class here to introduce a line break for screen sizes smaller than 768px using pseudoelements. -->
+                <span class="footer__copyrightspan">All Rights Reserved</span>
+            </small>
+        </footer>
+    </main>
+    <script src="./scripts/shows-script.js"></script>
+</body>
+
+</html>

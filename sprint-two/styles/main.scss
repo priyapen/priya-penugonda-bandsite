@@ -1,0 +1,493 @@
+/* Ran main.css through W3C CSS Validator results for TextArea are as follows:
+ Congratulations! No Error Found. */
+
+/* Some of the measurements and dimensions are not exactly as provided in the styleguides. I tried to match the UI to the mockups in terms of the design so I did not follow the measurements to the t.*/
+
+// Importing variables and partials
+
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/global' as *;
+
+@include global;
+
+.header {
+  background-color: $global;
+  height: 8rem;
+  padding: 15px 0 0 0;
+  @include tablet {
+    padding: 0;
+  }
+
+  &__nav {
+    width: 100%;
+    @include tablet {
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-top: 0;
+    }
+    @include desktop {
+      padding: 0 100px;
+      max-width: calc(1400px - 100px);
+      margin: auto;
+    }
+
+    &-link {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 0px;
+      margin-bottom: 16px;
+      @include tablet {
+        margin: 0;
+        margin-right: auto;
+        flex-grow: 1;
+      }
+      @include desktop {
+        width: 120px;
+        height: 24px;
+      }
+    }
+
+    &-logo {
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      height: 100%;
+      @include tablet {
+        padding: 0;
+      }
+      @include desktop {
+        margin-right: calc(56px / 2);
+      }
+    }
+  }
+
+  &__navlist {
+    list-style: none;
+    display: flex;
+    font-size: 13px;
+    color: $primary-accent;
+    line-height: 18px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    @include tablet {
+      height: 100%;
+      align-items: center;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 600;
+      width: 40%;
+      flex-grow: 19;
+    }
+
+    .current {
+      border-bottom: 4px solid $primary-light;
+      color: $primary-light;
+    }
+
+    &item {
+      width: 50%;
+      text-align: center;
+      padding-bottom: 8px;
+      @include subheader;
+      font-weight: 600;
+      @include tablet {
+        width: 8rem;
+        padding-bottom: 22px;
+        padding-top: 32px;
+        margin-top: 0px;
+        vertical-align: middle;
+        margin: 0 0 0 42px;
+        display: inline;
+      }
+      @include desktop {
+        margin: 0 0 0 56px;
+      }
+      &:hover {
+        @extend .current;
+        background-color: $accent-hover-transparent;
+        transition: all 1s linear;
+      }
+    }
+  }
+}
+
+.hero {
+  background-image: url("../assets/Images/hero-justice3.jpg");
+  width: 100%;
+  height: 58vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include tablet {
+    height: 400px;
+  }
+  @include desktop {
+    height: 670px;
+  }
+
+  &__headerblock {
+    @include desktop {
+      width: 1300px;
+      margin: 0 auto;
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    @include font24-60;
+    @extend %wrapper;
+
+    &span:before {
+      content: "\A";
+      white-space: pre;
+    }
+  }
+
+  &__overlay {
+    background: rgba(50, 50, 50, 0.5);
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.about {
+  @extend %wrapper;
+
+  &__heading {
+    margin: 24px 0 18px 0;
+    text-transform: capitalize;
+    @include font24-36;
+    @include tablet {
+      padding: 40px 0 32px 0;
+      margin: 0;
+    }
+    @include desktop {
+      padding: 48px 0 48px 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 44vw;
+    @include tablet {
+      height: 362px;
+      object-fit: cover;
+      display: block;
+      margin: auto;
+      margin-bottom: 48px;
+    }
+    @include desktop {
+      width: 896px;
+      height: 450px;
+    }
+  }
+
+  &__quote {
+    margin: 0;
+    padding: 0;
+    @include desktop {
+      width: 876px;
+      margin: auto;
+    }
+  }
+
+  &__quote-block {
+    quotes: initial;
+    margin: 0 0 28px 0;
+    padding: 0;
+    @include font14-24;
+    @include custom-mobilefont;
+    @include tablet {
+      font-weight: 700;
+    }
+  }
+
+  &__quote-block::before {
+    content: open-quote;
+  }
+  &__inline-quote {
+    quotes: "'" "'";
+  }
+
+  &__quote-block::after {
+    content: close-quote;
+  }
+
+  &__quote-author {
+    margin-bottom: 32px;
+    line-height: 22px;
+    font-weight: 600;
+    @include subheader;
+    font-size: 1.4rem;
+  }
+
+  &__article {
+    @include desktop {
+      width: 876px;
+      margin: auto;
+    }
+
+    &-title {
+      margin-bottom: 18px;
+      @include font14-24;
+      @include custom-mobilefont;
+      @include tablet {
+        font-weight: 700;
+      }
+    }
+
+    &-text {
+      margin-bottom: 40px;
+      @include para_comments;
+      letter-spacing: 0.01px;
+      line-height: 18px;
+      font-size: 12px;
+      @include tablet {
+        column-count: 2;
+        column-gap: 24px;
+      }
+      @include desktop {
+        column-gap: 40px;
+      }
+
+      &span {
+        @extend %linebreak;
+      }
+    }
+  }
+}
+
+.gallery {
+  // I wasn't sure what background color was really applied to this section because in the mockup the background color looks like a shade between #e1e1e1 and #fafafa. Since on my monitors it looks closer to #fafafa i used that.
+
+  background-color: $primary-light;
+  width: 100%;
+  padding-bottom: 30px;
+  @include desktop {
+    padding-bottom: 40px;
+  }
+  @extend %wrapper;
+
+  &__heading {
+    @include font24-36;
+    padding: 24px 0 18px 0;
+    text-transform: capitalize;
+    margin: 0;
+    @include tablet {
+      padding: 44px 0 54px 0;
+      margin: 0;
+    }
+    @include desktop {
+      padding: 48px 0 64px 0;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 16px;
+    filter: grayscale(100%);
+    @include tablet {
+      width: 224px;
+      height: 126px;
+    }
+    @include desktop {
+      width: 344px;
+      height: 193px;
+      margin-bottom: 24px;
+    }
+    &:hover {
+      filter: grayscale(0);
+      transition: all 1s linear;
+    }
+  }
+}
+
+.comment {
+  @extend %wrapper;
+
+  &__heading {
+    @include font24-36;
+    padding: 24px 0 18px 0;
+    text-transform: capitalize;
+    margin: 0;
+    @include tablet {
+      padding: 44px 0 54px 0;
+      margin: 0;
+    }
+    @include desktop {
+      padding: 48px 0 64px 0;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__imageblock {
+    display: block;
+  }
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &__form > * {
+    display: block;
+  }
+}
+
+.footer {
+  background-color: $global;
+  padding: 0 10px 32px 10px;
+  color: $global-light;
+  @include tablet {
+    padding: 0 24px 32px 24px;
+  }
+  @include desktop {
+    padding: 0 100px 48px 100px;
+  }
+  @extend %wrapper;
+
+  &__contact {
+    @include tablet {
+      display: flex;
+      align-items: first baseline;
+      padding-top: 36px;
+    }
+    @include desktop {
+      padding-top: 48px;
+    }
+
+    &-heading {
+      // H1 header-mobile
+      line-height: 32px;
+      @include font24-36;
+      padding-top: 52px;
+      padding-bottom: 28px;
+      margin: 0;
+      color: $global-light;
+      font-size: 3.6rem;
+      @include tablet {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &-icons {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+      @include tablet {
+        height: 28px;
+        align-items: end;
+        margin: 0px 48px;
+        width: auto;
+      }
+    }
+
+    &-social {
+      display: inline-block;
+      padding: 0px 6px;
+      @include tablet {
+        padding: 0px 12px;
+      }
+      @include desktop {
+        padding: 0px calc(32px / 2);
+      }
+    }
+  }
+
+  &__logo {
+    display: none;
+    @include tablet {
+      display: block;
+      height: 24px;
+      width: 120px;
+      margin-left: auto;
+    }
+
+    &-image {
+      display: none;
+      @include tablet {
+        display: inline-block;
+        margin-left: auto;
+      }
+      @include desktop {
+        height: 100%;
+        width: 120px;
+      }
+    }
+  }
+
+  &contact__cards {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include desktop {
+      justify-content: normal;
+    }
+  }
+
+  &contact__info {
+    font-size: 1.3rem;
+    font-style: normal;
+    line-height: 2.2rem;
+    margin: 32px 0 24px 0;
+    @include desktop {
+      margin-right: 56px;
+    }
+
+    &-company,
+    &-name {
+      margin: 0;
+      font-weight: 600;
+      @include subheader;
+    }
+
+    &-region,
+    &-email {
+      @include lists_contact;
+      font-size: 1.2rem;
+      margin: 18px 0;
+      font-style: normal;
+    }
+
+    // DIVING DEEP- mailto
+    &-mailto {
+      text-decoration: none;
+      color: $secondary-accent;
+      &:hover {
+        text-decoration: underline;
+        color: $accent-hover;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    @include lists_contact;
+    &span {
+      @extend %linebreak;
+    }
+  }
+}
