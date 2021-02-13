@@ -23,10 +23,7 @@ let showArray = [{
         }]
 
 const showSection = document.querySelector('.shows');
-let screenSize = screen.width;
-console.log(screenSize);
 
-// while (screenSize > 768) {
     for (let i = 0; i <= showArray.length - 1; i++) {
         // const event = showEvent(showArray[i]);
         // showSection.appendChild(event);
@@ -49,9 +46,6 @@ console.log(screenSize);
             showDefn.appendChild(dateLabel);
         dateLabel.innerText = 'Date';
         
-        // if (i < showArray.length - 1) {
-            
-        // }
 
 
         // //show date element
@@ -94,11 +88,11 @@ console.log(screenSize);
         buttonEl.setAttribute('https', showArray[i].button);
 
         // horizontal line
-        if (i < showArray.length - 1) {
-            const lineEl = document.createElement('hr');
-            lineEl.classList.add("shows__line");
-            showCard.appendChild(lineEl);
-        }
+        // if (i < showArray.length - 1) {
+        //     const lineEl = document.createElement('hr');
+        //     lineEl.classList.add("shows__line");
+        //     showCard.appendChild(lineEl);
+        // }
     }
 // }
 

@@ -1,21 +1,6 @@
 // let todate = new Date().toLocaleString('en-US');
+// function scriptrun(){
 
-// console.log(todate);
-
-// function getdate() {
-//     let newdate = new Date().format;
-//     console.log(newdate);
-//     newdate.t
-
-// }
-
-// getdate();
-
-
-
-
-// window.onload = function(){myScript};
-{/* <body onload="functionToBeExecuted"> */}
 
 // Pseudocode:
 /*
@@ -45,15 +30,6 @@ create
 
 */
 
-let formEl = document.querySelector('.comment__form');
-formEl.addEventListener('submit', (event)=>{
-    // event.preventDefault();
-    // event.stopPropagation();
-    event.preventDefault();
-    console.log("default behaviour prevented");
-    pushcomment();
-});
-
 const commentArr = [
     {
         image: '../assets/images/something.jpg',
@@ -73,15 +49,57 @@ const commentArr = [
         commentText: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He\'s definitely my favorite ever!',
         date: '11/15/2018',
     },
-]
+] 
 
-displayComment();
+let formEl = document.querySelector('.comment__form');
+formEl.addEventListener('submit', (event)=>{
+    // event.preventDefault();
+    // event.stopPropagation();
+    event.preventDefault();
+    console.log("default behaviour prevented");
+    pushcomment();
+    formEl.reset();
+});
 
-commentArr.forEach(comment => {
-    console.log(comment);
+// commentArr.sort((x,y) => {
+//     let a = new Date(x.dateex);
+//     let b = new Date(y.dateex);
+//     return a - b;
+// })
 
-    let commentSectionEl = document.querySelector('.comment');
+// console.log("this is the sort message", commentArr);
 
+comment(commentArr);
+
+function pushcomment() {
+    let dateReg = new Date().toLocaleDateString('en-US');
+    
+    commentArr.unshift(
+        {
+            img: "something",
+            name: event.target.fname.value, commentText: event.target.comment.value, 
+            dateex: dateReg,
+            });
+    
+    console.log(commentArr[0].date);
+    comment(commentArr);
+}
+
+// create element function  here;
+
+function comment(arr)
+{
+    let commentSectionEl = document.querySelector('.publ__comblock');
+    commentSectionEl.textContent = '';
+
+    arr.forEach(element => {
+
+        arr.sort((x,y) => {
+            let a = new Date(x.dateex);
+            let b = new Date(y.dateex);
+            return b - a;
+        })
+        
     // create article in comment section
     let articleEl = document.createElement('article');
     articleEl.classList.add('publ__comment');
@@ -96,7 +114,7 @@ commentArr.forEach(comment => {
     let imgEl = document.createElement('img');
     imgEl.classList.add('publ__img');
     imageblkEl.appendChild(imgEl);
-    imgEl.setAttribute('src', comment.image);
+    imgEl.setAttribute('src', element.image);
 
     // creating a text block for content
     let contentEl = document.createElement('div');
@@ -107,86 +125,24 @@ commentArr.forEach(comment => {
     let nameEl = document.createElement('p');
     nameEl.classList.add('publ__name');
     contentEl.appendChild(nameEl);
-    nameEl.innerText = comment.name;
+    nameEl.innerText = element.name;
 
     //creating a date element
     let dateEl = document.createElement('time');
     dateEl.classList.add('publ__date');
     contentEl.appendChild(dateEl);
-    dateEl.innerText = comment.date;
-    console.log(typeof(comment.date));
+    dateEl.innerText = element.dateex;
+    // console.log(typeof(comment.date));
 
     //creating comment text element
     let comtextEl = document.createElement('p');
     comtextEl.classList.add('publ__text');
     contentEl.appendChild(comtextEl);
-    comtextEl.innerText = comment.commentText;
-    commentArr.shift(comment);
-    console.log(commentArr);
-
-});
-
-function pushcomment() {
-    // console.log(event.target.fname.value);
-    // console.log(event.target.comment.value);
-    // console.log(commentArr);
-
-    commentArr.unshift(
-        {
-            img: "something",
-            name: event.target.fname.value, commentText: event.target.comment.value, date: new Date().toLocaleString('en-US'),
-        });
-
-    console.log(commentArr[0].date);
-    displayComment();
-}
-    
-function displayComment() {
-        commentArr.forEach(comment => {
-        let commentSectionEl = document.querySelector('.comment');
-    
-        // create article in comment section
-        let articleEl = document.createElement('article');
-        articleEl.classList.add('publ__comment');
-        commentSectionEl.appendChild(articleEl);
-    
-        // creating an image block
-        let imageblkEl = document.createElement('div');
-        imageblkEl.classList.add('publ__imageblock');
-        articleEl.appendChild(imageblkEl);
-    
-        //creating an image
-        let imgEl = document.createElement('img');
-        imgEl.classList.add('publ__img');
-        imageblkEl.appendChild(imgEl);
-        imgEl.setAttribute('src', comment.image);
-    
-        // creating a text block for content
-        let contentEl = document.createElement('div');
-        contentEl.classList.add('publ__content');
-        articleEl.appendChild(contentEl);
-    
-        //creating name element
-        let nameEl = document.createElement('p');
-        nameEl.classList.add('publ__name');
-        contentEl.appendChild(nameEl);
-        nameEl.innerText = comment.name;
-    
-        //creating a date element
-        let dateEl = document.createElement('time');
-        dateEl.classList.add('publ__date');
-        contentEl.appendChild(dateEl);
-        dateEl.innerText = comment.date;
-        console.log(typeof (comment.date));
-    
-        //creating comment text element
-        let comtextEl = document.createElement('p');
-        comtextEl.classList.add('publ__text');
-        contentEl.appendChild(comtextEl);
-        comtextEl.innerText = comment.commentText;
-    
+    comtextEl.innerText = element.commentText;
+    // commentArr.shift(comment);
+        console.log(commentArr);
+        
     });
-};
+}
 
-
-// create element function  here;
+// };//window onload closure

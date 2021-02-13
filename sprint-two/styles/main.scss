@@ -325,7 +325,7 @@
 
   &__heading {
     @include font24-36;
-    padding: 24px 0 18px 0;
+    padding: 32px 0 40px 0;
     text-transform: capitalize;
     margin: 0;
     @include tablet {
@@ -343,13 +343,16 @@
   }
 
   &__imageblock {
-    display: block;
+    padding-top: 28px;
+    margin-right: 20px;
   }
 
   &__img {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
+    object-position: center;
+    object-fit: fill;
   }
 
   &__form > * {
@@ -357,15 +360,16 @@
   }
 
   &__nameinput {
-    height: 40px;
+    height: 48px;
     width: 224px;
     border: 1px solid $secondary-accent;
     border-radius: 4px;
+    margin-bottom: 24px;
   }
 
   &__commenttextinput {
     @extend .comment__nameinput;
-    height: auto;
+    height: 96px;
     resize: none;
   }
 
@@ -374,6 +378,7 @@
     font-weight: 600;
     color: $primary-accent;
     @include labels;
+    margin-bottom: 8px;
   }
 
   &__commenttextlabel {
