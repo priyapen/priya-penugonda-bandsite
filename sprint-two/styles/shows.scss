@@ -172,6 +172,7 @@
 
 .shows {
   @extend %wrapper;
+  margin-bottom: 48px;
   @include desktop {
     display: flex;
     justify-content: space-between;
@@ -192,11 +193,11 @@
     }
   }
 
-  &__details {
-    // @include desktop {
+  // &__details {
+  //   // @include desktop {
 
-    // }
-  }
+  //   // }
+  // }
 
   &__label {
     display: none;
@@ -287,6 +288,7 @@
 
   &__venue {
     @extend .shows__date;
+    font-weight: 100;
   }
 
   &__locationlabel {
@@ -295,6 +297,7 @@
 
   &__location {
     @extend .shows__date;
+    font-weight: 100;
   }
 
   &__button {

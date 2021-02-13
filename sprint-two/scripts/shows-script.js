@@ -15,12 +15,32 @@ let showArray = [{
     Venue: 'Pier 3 East',
     Location: 'San Francisco, CA',
     button: 'link to button',
-    }, {
-        Date: 'Tue Jul 18 2019',
-        Venue: 'Pier 3 East',
+    },
+    {
+        Date: 'Fri Jul 22 2019',
+        Venue: 'View Loungue',
         Location: 'San Francisco, CA',
         button: 'link to button',
-        }]
+    },
+    {
+        Date: 'Sat Aug 12 2019',
+        Venue: 'Hyatt Agency',
+        Location: 'San Francisco, CA',
+        button: 'link to button',
+    },
+    {
+        Date: 'Fri Sep 05 2019',
+        Venue: 'Moscow Center',
+        Location: 'San Francisco, CA',
+        button: 'link to button',
+    },
+    {
+        Date: 'Wed Aug 11 2019',
+        Venue: 'Pres Club',
+        Location: 'San Francisco, CA',
+        button: 'link to button',
+    },
+]
 
 const showDetails = document.querySelector('.show__details');
 

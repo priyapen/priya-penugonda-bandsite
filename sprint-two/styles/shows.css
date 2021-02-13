@@ -76,13 +76,14 @@
   background-color: #323232;
   color: #fff;
   font-weight: 600;
+  text-transform: uppercase;
   font-size: 1.3rem;
   line-height: 1.8rem;
   border-radius: 4px;
   border: none;
   flex-shrink: 0;
   padding: 12px;
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 @media only screen and (min-width: 768px) {
   .shows__button {
@@ -317,6 +318,9 @@ body {
   height: 100px;
 }
 
+.shows {
+  margin-bottom: 48px;
+}
 @media only screen and (min-width: 1280px) {
   .shows {
     display: flex;
@@ -401,6 +405,12 @@ body {
   .shows__date, .shows__location, .shows__venue {
     width: calc(100% / 3);
   }
+}
+.shows__venue {
+  font-weight: 100;
+}
+.shows__location {
+  font-weight: 100;
 }
 @media only screen and (min-width: 768px) {
   .shows__button {

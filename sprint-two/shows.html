@@ -82,52 +82,54 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
 
        
 
-        <!-- FOOTER section -->
-        <footer class="footer">
-            <section class="footer__contact">
-                <h2 class="footer__contact-heading">Get In Touch</h2>
-                <div class="footer__contact-icons icons">
-                    <img src="./assets/Icons/Icon-instagram.svg" alt="Instagram" class="footer__contact-social">
-                    <img src="./assets/Icons/Icon-facebook.svg" alt="Facebook" class="footer__contact-social">
-                    <img src="./assets/Icons/Icon-twitter.svg" alt="Twitter" class="footer__contact-social">
+                <!-- FOOTER section -->
+                <footer class="footer">
+                    <div class="footer__wrapper">
+                    <section class="footer__contact">
+                        <h2 class="footer__contact-heading">Get In Touch</h2>
+                        <div class="footer__contact-icons icons">
+                            <img src="./assets/Icons/Icon-instagram.svg" alt="Instagram" class="footer__contact-social">
+                            <img src="./assets/Icons/Icon-facebook.svg" alt="Facebook" class="footer__contact-social">
+                            <img src="./assets/Icons/Icon-twitter.svg" alt="Twitter" class="footer__contact-social">
+                        </div>
+                        <div class="footer__logo">
+                            <img src="./assets/Logo/Logo-bandsite.svg" alt="bandsite logo" class="footer__logo-image">
+                        </div>
+                    </section>
+                    <!-- CONTACT INFO cards -->
+                    <section class="footercontact__cards">
+                        <address class="footercontact__info">
+                            <p class="footercontact__info-name">Richard Rovner</p>
+                            <p class="footercontact__info-company">The Bees Knees Management
+                            </p>
+                            <!-- From my research, i read that br tags used for address line breaks are semantically correct -->
+                            <!-- In the following line i could have used an address tag, however, address cannot be nested inside an address so went ahead with p tag instead. -->
+                            <p class="footercontact__info-region">460 King Street West<br>Toronto, Ontario M5V 1L7</p>
+                            <p class="footercontact__info-email"><a href="mailto:info@thebeesknees.com" target="_blank" class="footercontact__info-mailto">info@thebeesknees.com</a></p>
+                        </address>
+        
+                        <address class="footercontact__info">
+                            <p class="footercontact__info-name">Marsha Vlasic</p>
+                            <p class="footercontact__info-company">Artist Group International
+                            </p>
+                            <p class="footercontact__info-region">Booking Agent for<br>US / South America / Japan</p>
+                            <p class="footercontact__info-email"><a href="mailto:marsha.vlasic@artistgrp.com" target="_blank" class="footercontact__info-mailto">marsha.vlasic@artistgrp.com</a></p>
+                        </address>
+        
+                        <address class="footercontact__info">
+                            <p class="footercontact__info-name">Russel Warby</p>
+                            <p class="footercontact__info-company">William Morrir Entertainment
+                            </p>
+                            <p class="footercontact__info-region">Booking Agent for<br>UK / EU / AU</p>
+                            <p class="footercontact__info-email"><a href="mailto:RLW@wmeentertainment.com" target="_blank" class="footercontact__info-mailto">RLW@wmeentertainment.com</a></p>
+                        </address>
+                    </section>
+                    <small class="footer__copyright">Copyright The Bees Knees &copy; 2018 
+                        <!-- The following span class here to introduce a line break for screen sizes smaller than 768px using pseudoelements. -->
+                        <span class="footer__copyrightspan">All Rights Reserved</span>
+                    </small>
                 </div>
-                <div class="footer__logo">
-                    <img src="./assets/Logo/Logo-bandsite.svg" alt="bandsite logo" class="footer__logo-image">
-                </div>
-            </section>
-            <!-- CONTACT INFO cards -->
-            <section class="footercontact__cards">
-                <address class="footercontact__info">
-                    <p class="footercontact__info-name">Richard Rovner</p>
-                    <p class="footercontact__info-company">The Bees Knees Management
-                    </p>
-                    <!-- From my research, i read that br tags used for address line breaks are semantically correct -->
-                    <!-- In the following line i could have used an address tag, however, address cannot be nested inside an address so went ahead with p tag instead. -->
-                    <p class="footercontact__info-region">460 King Street West<br>Toronto, Ontario M5V 1L7</p>
-                    <p class="footercontact__info-email"><a href="mailto:info@thebeesknees.com" target="_blank" class="footercontact__info-mailto">info@thebeesknees.com</a></p>
-                </address>
-
-                <address class="footercontact__info">
-                    <p class="footercontact__info-name">Marsha Vlasic</p>
-                    <p class="footercontact__info-company">Artist Group International
-                    </p>
-                    <p class="footercontact__info-region">Booking Agent for<br>US / South America / Japan</p>
-                    <p class="footercontact__info-email"><a href="mailto:marsha.vlasic@artistgrp.com" target="_blank" class="footercontact__info-mailto">marsha.vlasic@artistgrp.com</a></p>
-                </address>
-
-                <address class="footercontact__info">
-                    <p class="footercontact__info-name">Russel Warby</p>
-                    <p class="footercontact__info-company">William Morrir Entertainment
-                    </p>
-                    <p class="footercontact__info-region">Booking Agent for<br>UK / EU / AU</p>
-                    <p class="footercontact__info-email"><a href="mailto:RLW@wmeentertainment.com" target="_blank" class="footercontact__info-mailto">RLW@wmeentertainment.com</a></p>
-                </address>
-            </section>
-            <small class="footer__copyright">Copyright The Bees Knees &copy; 2018 
-                <!-- The following span class here to introduce a line break for screen sizes smaller than 768px using pseudoelements. -->
-                <span class="footer__copyrightspan">All Rights Reserved</span>
-            </small>
-        </footer>
+                </footer>
     </main>
     <script src="./scripts/shows-script.js"></script>
 </body>

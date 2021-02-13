@@ -92,12 +92,13 @@
   background-color: $global;
   color: $global-light;
   font-weight: 600;
+  text-transform: uppercase;
   @include lists_contact;
   border-radius: 4px;
   border: none;
   flex-shrink: 0;
   padding: 12px;
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 
 %dividerline {
