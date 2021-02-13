@@ -78,6 +78,7 @@
   margin-bottom: 16px;
   @include tablet {
     display: none;
+    margin-bottom: 0;
   }
 }
 
@@ -85,6 +86,10 @@
   margin: 0;
   @include lists_contact;
   margin-top: 16px;
+  @include tablet {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
 }
 
 %showsbutton {
