@@ -52,6 +52,12 @@
   margin-top: 24px;
   margin-bottom: 16px;
 }
+@media only screen and (min-width: 768px) {
+  .shows__labeldate, .shows__labelvenue, .shows__labellocat, .shows__datelabel, .shows__venuelabel, .shows__locationlabel {
+    display: none;
+  }
+}
+
 .shows__date, .shows__venue, .shows__location {
   margin: 0;
   font-size: 1.3rem;
@@ -74,6 +80,7 @@
   line-height: 1.8rem;
   border-radius: 4px;
   border: none;
+  flex-shrink: 0;
   padding: 12px;
   margin-bottom: 16px;
 }
@@ -264,6 +271,11 @@ body {
     height: 670px;
   }
 }
+.hero__headerblock {
+  width: 100%;
+  height: 100%;
+  margin-top: 6.4rem;
+}
 @media only screen and (min-width: 1280px) {
   .hero__headerblock {
     width: 1300px;
@@ -272,10 +284,14 @@ body {
 }
 .hero__heading {
   margin: 0;
+  margin-bottom: 5.4rem;
   color: #fff;
   font-size: 7.5vw;
   line-height: 10vw;
   font-weight: 700;
+  font-size: 11.2vw;
+  line-height: 15.5vw;
+  letter-spacing: 0px;
 }
 @media only screen and (min-width: 768px) {
   .hero__heading {
@@ -283,9 +299,10 @@ body {
     line-height: 6.8rem;
   }
 }
-.hero__headingspan:before {
-  content: "\a";
-  white-space: pre;
+.hero__headingspan {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 6.4rem;
 }
 .hero__overlay {
   background: rgba(50, 50, 50, 0.5);
@@ -295,7 +312,17 @@ body {
   display: flex;
   align-items: center;
 }
+.hero__soundcloud {
+  padding: 0 16px;
+  height: 100px;
+}
 
+@media only screen and (min-width: 1280px) {
+  .shows {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .shows__heading {
   margin: 32px 0 40px 0;
   text-transform: capitalize;
@@ -327,10 +354,36 @@ body {
   .shows__label {
     display: flex;
     justify-content: space-between;
+    width: calc(100% - 160px);
+    flex-shrink: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .shows__labeldate, .shows__labellocat, .shows__labelvenue {
+    display: unset;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__labeldate, .shows__labellocat, .shows__labelvenue {
+    margin-top: 4rem;
   }
 }
 .shows__card {
   border-bottom: 1px solid #e1e1e1;
+}
+@media only screen and (min-width: 768px) {
+  .shows__card {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__card {
+    width: 80.4rem;
+    flex-shrink: 0;
+  }
 }
 .shows__defn {
   list-style: none;
@@ -340,15 +393,21 @@ body {
 @media only screen and (min-width: 768px) {
   .shows__defn {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 768px) {
-  .shows article:not(:nth-child(2)) dt {
-    display: none;
+  .shows__date, .shows__location, .shows__venue {
+    width: calc(100% / 3);
   }
 }
-.shows__location {
-  margin-bottom: 32px;
+@media only screen and (min-width: 768px) {
+  .shows__button {
+    width: 16rem;
+    height: 4.8rem;
+    margin-bottom: 1.6rem;
+  }
 }
 .footer {
   background-color: #323232;

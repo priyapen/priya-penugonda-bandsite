@@ -22,7 +22,7 @@ let showArray = [{
         button: 'link to button',
         }]
 
-const showSection = document.querySelector('.shows');
+const showDetails = document.querySelector('.show__details');
 
     for (let i = 0; i <= showArray.length - 1; i++) {
         // const event = showEvent(showArray[i]);
@@ -32,7 +32,7 @@ const showSection = document.querySelector('.shows');
         const showCard = document.createElement('article');
         // console.log(showCard);
         showCard.classList.add('shows__card');
-        showSection.appendChild(showCard);
+        showDetails.appendChild(showCard);
 
         // list of shows
         const showDefn = document.createElement('dl');
@@ -83,7 +83,8 @@ const showSection = document.querySelector('.shows');
         //show button element
         const buttonEl = document.createElement('button');
         buttonEl.classList.add('shows__button');
-        showDefn.appendChild(buttonEl);
+        // showDefn.appendChild(buttonEl);
+        showCard.appendChild(buttonEl);
         buttonEl.innerText = 'Buy Tickets';
         buttonEl.setAttribute('https', showArray[i].button);
 
