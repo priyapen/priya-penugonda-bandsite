@@ -32,13 +32,13 @@ create
 
 const commentArr = [
     {
-        image: '../assets/images/something.jpg',
+        image: '',
         name: 'Micahel Lyons',
         commentText: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.',
         date: '12/18/2018',
     },
     {
-        image: '../assets/images/something.jpg',
+        image: '',
         name: 'Gary Wong',
         commentText: 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!',
         date: '12/12/2018',
@@ -61,42 +61,38 @@ formEl.addEventListener('submit', (event)=>{
     formEl.reset();
 });
 
-// commentArr.sort((x,y) => {
-//     let a = new Date(x.dateex);
-//     let b = new Date(y.dateex);
-//     return a - b;
-// })
-
-// console.log("this is the sort message", commentArr);
-
-comment(commentArr);
+displayComment(commentArr);
 
 function pushcomment() {
     let dateReg = new Date().toLocaleDateString('en-US');
+    let userimg = document.querySelector('.comment__img');
+    console.log(userimg);
+    console.log(userimg.src);
     
     commentArr.unshift(
         {
-            img: "something",
+            img: './assets/images/Mohan-muruge.jpg',
             name: event.target.fname.value, commentText: event.target.comment.value, 
-            dateex: dateReg,
+            date: dateReg,
             });
     
     console.log(commentArr[0].date);
-    comment(commentArr);
+    displayComment(commentArr);
 }
 
+pushcomment();
 // create element function  here;
 
-function comment(arr)
+function displayComment(arr)
 {
-    let commentSectionEl = document.querySelector('.publ__comblock');
+    let commentSectionEl = document.querySelector('.publ');
     commentSectionEl.textContent = '';
 
     arr.forEach(element => {
 
         arr.sort((x,y) => {
-            let a = new Date(x.dateex);
-            let b = new Date(y.dateex);
+            let a = new Date(x.date);
+            let b = new Date(y.date);
             return b - a;
         })
         
@@ -114,24 +110,29 @@ function comment(arr)
     let imgEl = document.createElement('img');
     imgEl.classList.add('publ__img');
     imageblkEl.appendChild(imgEl);
-    imgEl.setAttribute('src', element.image);
+    imgEl.setAttribute('src', element.img);
 
     // creating a text block for content
     let contentEl = document.createElement('div');
     contentEl.classList.add('publ__content');
-    articleEl.appendChild(contentEl);
+        articleEl.appendChild(contentEl);
+        
+    // creating a div for name and date
+    let nametimeEl = document.createElement('div');
+    nametimeEl.classList.add('publ__nametime');
+    contentEl.appendChild(nametimeEl);
 
     //creating name element
     let nameEl = document.createElement('p');
     nameEl.classList.add('publ__name');
-    contentEl.appendChild(nameEl);
+    nametimeEl.appendChild(nameEl);
     nameEl.innerText = element.name;
 
     //creating a date element
     let dateEl = document.createElement('time');
     dateEl.classList.add('publ__date');
-    contentEl.appendChild(dateEl);
-    dateEl.innerText = element.dateex;
+    nametimeEl.appendChild(dateEl);
+    dateEl.innerText = element.date;
     // console.log(typeof(comment.date));
 
     //creating comment text element

@@ -16,18 +16,20 @@
   font-weight: 700;
   font-style: normal;
 }
-.hero__heading, .about, .gallery, .comment, .footer__wrapper {
-  padding: 0 16px;
+.hero__heading, .about, .gallery__block, .comment, .footer__wrapper {
+  padding: 0 1.6rem;
 }
 @media only screen and (min-width: 768px) {
-  .hero__heading, .about, .gallery, .comment, .footer__wrapper {
-    padding: 0 24px;
+  .hero__heading, .about, .gallery__block, .comment, .footer__wrapper {
+    max-width: 76.8rem;
+    padding: 0 2.4rem;
+    margin: auto;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .hero__heading, .about, .gallery, .comment, .footer__wrapper {
-    padding: 0 100px;
-    max-width: 1300px;
+  .hero__heading, .about, .gallery__block, .comment, .footer__wrapper {
+    padding: 0 10rem;
+    max-width: 130rem;
     margin: auto;
   }
 }
@@ -40,6 +42,69 @@
   .about__article-textspan:before, .footer__copyrightspan:before {
     content: none;
     white-space: normal;
+  }
+}
+
+.comment__btn {
+  width: 100%;
+  background-color: #323232;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  border-radius: 4px;
+  border: none;
+  flex-shrink: 0;
+  padding: 1.2rem;
+  margin: 1.6rem 0;
+  max-width: 28.8rem;
+}
+@media only screen and (min-width: 768px) {
+  .comment__btn {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .comment__btn {
+    width: 16rem;
+    margin-left: auto;
+  }
+}
+
+::-moz-placeholder {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-family: "AvenirNext LT Pro", Roboto;
+  color: #323232;
+}
+
+:-ms-input-placeholder {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-family: "AvenirNext LT Pro", Roboto;
+  color: #323232;
+}
+
+::placeholder {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-family: "AvenirNext LT Pro", Roboto;
+  color: #323232;
+}
+@media only screen and (min-width: 768px) {
+  ::-moz-placeholder {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+  :-ms-input-placeholder {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+  ::placeholder {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
   }
 }
 
@@ -68,7 +133,7 @@ body {
 .header {
   background-color: #323232;
   height: 8rem;
-  padding: 15px 0 0 0;
+  padding: 1.5rem 0 0 0;
 }
 @media only screen and (min-width: 768px) {
   .header {
@@ -80,7 +145,7 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .header__nav {
-    padding: 0 24px;
+    padding: 0 2.4rem;
     display: flex;
     align-items: center;
     height: 100%;
@@ -89,8 +154,8 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .header__nav {
-    padding: 0 100px;
-    max-width: calc(1400px - 100px);
+    padding: 0 10rem;
+    max-width: 130rem;
     margin: auto;
   }
 }
@@ -98,7 +163,7 @@ body {
   display: block;
   margin: 0 auto;
   margin-bottom: 0px;
-  margin-bottom: 16px;
+  margin-bottom: 1.6rem;
 }
 @media only screen and (min-width: 768px) {
   .header__nav-link {
@@ -109,8 +174,8 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .header__nav-link {
-    width: 120px;
-    height: 24px;
+    width: 12rem;
+    height: 2.4rem;
   }
 }
 .header__nav-logo {
@@ -126,15 +191,15 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .header__nav-logo {
-    margin-right: calc(56px / 2);
+    margin-right: 2.8rem;
   }
 }
 .header__navlist {
   list-style: none;
   display: flex;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: #afafaf;
-  line-height: 18px;
+  line-height: 1.8rem;
   font-weight: 600;
   margin: 0;
   padding: 0;
@@ -143,21 +208,21 @@ body {
   .header__navlist {
     height: 100%;
     align-items: center;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
     font-weight: 600;
     width: 40%;
     flex-grow: 19;
   }
 }
-.header__navlist .current, .header__navlist .header__navlistitem:hover {
+.header__navlistitem--current, .header__navlistitem:hover {
   border-bottom: 4px solid #fafafa;
   color: #fafafa;
 }
 .header__navlistitem {
   width: 50%;
   text-align: center;
-  padding-bottom: 8px;
+  padding-bottom: 0.8rem;
   font-size: 1.3rem;
   line-height: 1.8rem;
   font-weight: 600;
@@ -172,18 +237,22 @@ body {
 @media only screen and (min-width: 768px) {
   .header__navlistitem {
     width: 8rem;
-    padding-bottom: 22px;
-    padding-top: 32px;
-    margin-top: 0px;
+    padding-bottom: 2.2rem;
+    padding-top: 3.2rem;
+    margin-top: 0rem;
     vertical-align: middle;
-    margin: 0 0 0 42px;
+    margin: 0 0 0 4.2rem;
     display: inline;
   }
 }
 @media only screen and (min-width: 1280px) {
   .header__navlistitem {
-    margin: 0 0 0 56px;
+    margin: 0 0 0 5.6rem;
   }
+}
+.header__link {
+  text-decoration: none;
+  color: #fff;
 }
 .header__navlistitem:hover {
   background-color: #0065ad5b;
@@ -411,7 +480,7 @@ body {
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: 700;
-  padding: 24px 0 18px 0;
+  padding: 24px 16px 18px 16px;
   text-transform: capitalize;
   margin: 0;
 }
@@ -423,19 +492,26 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .gallery__heading {
-    padding: 44px 0 54px 0;
-    margin: 0;
+    padding: 44px 24px 54px 24px;
+    max-width: 768px;
+    margin: auto;
   }
 }
 @media only screen and (min-width: 1280px) {
   .gallery__heading {
-    padding: 48px 0 64px 0;
+    padding: 48px 100px 64px 100px;
+    max-width: 130rem;
+    margin: auto;
   }
 }
 .gallery__block {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+}
+@media only screen and (min-width: 768px) {
+  .gallery__block {
+    justify-content: space-between;
+  }
 }
 .gallery__image {
   width: 100%;
@@ -444,6 +520,20 @@ body {
   flex-shrink: 0;
   flex-grow: 0;
   filter: grayscale(100%);
+}
+@media only screen and (min-width: 768px) {
+  .gallery__image {
+    width: 224px;
+    height: 126px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .gallery__image {
+    width: 344px;
+    height: 193px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .gallery__image {
@@ -462,7 +552,11 @@ body {
   filter: grayscale(0);
   transition: all 1s linear;
 }
-
+@media only screen and (min-width: 768px) {
+  .gallery__image--margin {
+    margin: 0 24px 24px 24px;
+  }
+}
 .comment__heading {
   font-size: 2.4rem;
   line-height: 3.2rem;
@@ -488,15 +582,21 @@ body {
     padding: 48px 0 64px 0;
   }
 }
-.comment__block {
+.comment__block, .publ__comment {
   display: flex;
-  justify-content: center;
+  border-bottom: 1px solid #e1e1e1;
 }
-.comment__imageblock {
+@media only screen and (min-width: 768px) {
+  .comment__block, .publ__comment {
+    width: 52.8rem;
+    margin: auto;
+  }
+}
+.comment__imageblock, .publ__imageblock {
   padding-top: 28px;
   margin-right: 20px;
 }
-.comment__img {
+.comment__img, .publ__img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -514,10 +614,50 @@ body {
   border: 1px solid #e1e1e1;
   border-radius: 4px;
   margin-bottom: 24px;
+  font-family: "AvenirNext LT Pro", Roboto;
+  color: #323232;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  padding: 1.6rem;
+}
+@media only screen and (min-width: 768px) {
+  .comment__nameinput, .comment__commenttextinput {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .comment__nameinput, .comment__commenttextinput {
+    width: 460px;
+  }
+}
+.comment__nameinput:focus, .comment__commenttextinput:focus {
+  border: 2px solid #323232;
+  outline: none;
+}
+.comment__nameinput:active, .comment__commenttextinput:active {
+  border: 2px solid #323232;
+  outline: none;
 }
 .comment__commenttextinput {
   height: 96px;
   resize: none;
+  font-family: "AvenirNext LT Pro", Roboto;
+  color: #323232;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  padding: 1.6rem;
+}
+@media only screen and (min-width: 768px) {
+  .comment__commenttextinput {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .comment__commenttextinput {
+    width: 460px;
+  }
 }
 .comment__namelabel, .comment__commenttextlabel {
   text-transform: uppercase;
@@ -527,6 +667,80 @@ body {
   line-height: 2rem;
   margin-bottom: 8px;
 }
+@media only screen and (min-width: 768px) {
+  .publ {
+    width: 52.8rem;
+    margin: auto;
+  }
+}
+.publ__comment {
+  margin: 24px 0;
+  padding-bottom: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .publ__comment {
+    justify-content: left;
+  }
+}
+.publ__imageblock {
+  padding-top: 0;
+}
+.publ__img {
+  background-color: #afafaf;
+  border-radius: 50%;
+}
+.publ__detail {
+  margin: 24px 0;
+}
+.publ__nametime {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 768px) {
+  .publ__nametime {
+    justify-content: unset;
+  }
+}
+.publ__name {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  margin: 0;
+  padding-bottom: 1.6rem;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .publ__name {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .publ__name {
+    margin-right: 1.2rem;
+  }
+}
+.publ__date {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+@media only screen and (min-width: 768px) {
+  .publ__date {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+.publ__text {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  .publ__text {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+
 .footer {
   background-color: #323232;
   padding: 0 10px 32px 10px;

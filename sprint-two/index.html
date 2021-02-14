@@ -22,11 +22,11 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
     <header class="header">
         <nav class="header__nav">
             <a href="index.html" class="header__nav-link">
-                <img src="./assets/Logo/Logo-bandsite.svg" class="header__nav-logo" alt="Bandsite logo">
+                <img src="./assets/logos/Logo-bandsite.svg" class="header__nav-logo" alt="Bandsite logo">
             </a>
             <ul class="header__navlist">
-                <li class="header__navlistitem current" class="header__link">Biography</li>
-                <li class="header__navlistitem"><a href="./shows.html" class="header__link">Shows</a></li>
+                <li class="header__navlistitem header__navlistitem--current" class="header__link">Biography</li>
+                <li class="header__navlistitem"><a href="./pages/shows.html" class="header__link">Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -74,13 +74,13 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
             <h2 class="gallery__heading">Photo Gallery</h2>
             <div class="gallery__block">
                 <img src="./assets/Images/Photo-gallery-1.jpg" alt="audience at artists concert" class="gallery__image">
-                <img src="./assets/Images/Photo-gallery-2.jpg" alt="a young lady dancing at concert" class="gallery__image">
+                <img src="./assets/Images/Photo-gallery-2.jpg" alt="a young lady dancing at concert" class="gallery__image gallery__image--margin">
                 <img src="./assets/Images/Photo-gallery-3.jpg" alt="audiences hands in the air during concert" class="gallery__image">
                 <img src="./assets/Images/Photo-gallery-4.jpg" alt="another lady watching the concert" class="gallery__image">
-                <img src="./assets/Images/Photo-gallery-5.jpg" alt="party poppers and confetti during concert" class="gallery__image">
+                <img src="./assets/Images/Photo-gallery-5.jpg" alt="party poppers and confetti during concert" class="gallery__image gallery__image--margin">
                 <img src="./assets/Images/Photo-gallery-6.jpg" alt="image of the artist singing during a performance" class="gallery__image">
                 <img src="./assets/Images/Photo-gallery-7.jpg" alt="concert performance stage and audience shown in the picture" class="gallery__image">
-                <img src="./assets/Images/Photo-gallery-8.jpg" alt="a picture of a DJ turntable" class="gallery__image">
+                <img src="./assets/Images/Photo-gallery-8.jpg" alt="a picture of a DJ turntable" class="gallery__image gallery__image--margin">
                 <img src="./assets/Images/Photo-gallery-9.jpg" alt="confetti shower on concert audiences" class="gallery__image">
             </div>
         </section>
@@ -94,21 +94,24 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
                 <div class="comment__detail">
                     <form class="comment__form">
                         <label class="comment__namelabel" for="fname">Name</label>
-                        <input class="comment__nameinput" type="text" id="fname" name="fname" placeholder="Full Name">
+                        <input class="comment__nameinput" type="text" id="fname" name="fname" placeholder="Name" minlength="3">
                         <label class="comment__commenttextlabel"    for="comment">Comment</label>
-                        <textarea name="comment" class="comment__commenttextinput" cols="30" rows="10" placeholder="Add a new comment"></textarea>
+                        <textarea name="comment" class="comment__commenttextinput" cols="30" rows="10" placeholder="Add a new comment" minlength="3"></textarea>
                         <!-- <input name="date" id="date" type="hidden"> -->
                         <button type="submit" class="comment__btn">Comment</button>
                     </form>
                 </div>
             </article>
-            <div class="publ__comblock">
+            <div class="publ">
             <article class="publ__comment">
                 <div class="publ__imageblock">
                     <img src="./assets/Images/Mohan-muruge.jpg" alt="" class="publ__img">
                 </div>
                 <div class="publ__content">
-                    <p class="publ__name">Michael Lyons</p>
+                    <div class="publ__nametime">
+                        <p class="publ__name">Michael Lyons</p>
+                    </div>
+                    
                     <p class="publ__text">they blew the roof off at their last show</p>
                 </div>
             </article>
@@ -126,7 +129,7 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
                     <img src="./assets/Icons/Icon-twitter.svg" alt="Twitter" class="footer__contact-social">
                 </div>
                 <div class="footer__logo">
-                    <img src="./assets/Logo/Logo-bandsite.svg" alt="bandsite logo" class="footer__logo-image">
+                    <img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo" class="footer__logo-image">
                 </div>
             </section>
             <!-- CONTACT INFO cards -->
@@ -165,7 +168,7 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
         </footer>
     </main>
 
-<script src="./scripts/index.js"></script>
+<script src="./scripts/index-page.js"></script>
 </body>
 
 </html>

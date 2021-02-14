@@ -14,5 +14,5 @@ node_modules/
 .vscode/*
 *.sublime-workspace
 
-#Ignore .map Sass files
-*.map
+#Ignore scss map files
+*.css.map

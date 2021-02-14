@@ -90,11 +90,3 @@
   line-height: 2.4rem;
   font-weight: 600;
 }
-
-@mixin display-none {
-  @include tablet {
-    .shows__card:first-child {
-      
-    }
-  }
-}

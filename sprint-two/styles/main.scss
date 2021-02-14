@@ -11,10 +11,114 @@
 
 @include global;
 
+// .header {
+//   background-color: $global;
+//   height: 8rem;
+//   padding: 15px 0 0 0;
+//   @include tablet {
+//     padding: 0;
+//   }
+
+//   &__nav {
+//     width: 100%;
+//     @include tablet {
+//       padding: 0 24px;
+//       display: flex;
+//       align-items: center;
+//       height: 100%;
+//       padding-top: 0;
+//     }
+//     @include desktop {
+//       padding: 0 100px;
+//       max-width: calc(1400px - 100px);
+//       margin: auto;
+//     }
+
+//     &-link {
+//       display: block;
+//       margin: 0 auto;
+//       margin-bottom: 0px;
+//       margin-bottom: 16px;
+//       @include tablet {
+//         margin: 0;
+//         margin-right: auto;
+//         flex-grow: 1;
+//       }
+//       @include desktop {
+//         width: 120px;
+//         height: 24px;
+//       }
+//     }
+
+//     &-logo {
+//       margin: 0 auto;
+//       display: block;
+//       text-align: center;
+//       height: 100%;
+//       @include tablet {
+//         padding: 0;
+//       }
+//       @include desktop {
+//         margin-right: calc(56px / 2);
+//       }
+//     }
+//   }
+
+//   &__navlist {
+//     list-style: none;
+//     display: flex;
+//     font-size: 13px;
+//     color: $primary-accent;
+//     line-height: 18px;
+//     font-weight: 600;
+//     margin: 0;
+//     padding: 0;
+//     @include tablet {
+//       height: 100%;
+//       align-items: center;
+//       font-size: 14px;
+//       line-height: 22px;
+//       font-weight: 600;
+//       width: 40%;
+//       flex-grow: 19;
+//     }
+
+//     .current {
+//       border-bottom: 4px solid $primary-light;
+//       color: $primary-light;
+//     }
+
+//     &item {
+//       width: 50%;
+//       text-align: center;
+//       padding-bottom: 8px;
+//       @include subheader;
+//       font-weight: 600;
+//       @include tablet {
+//         width: 8rem;
+//         padding-bottom: 22px;
+//         padding-top: 32px;
+//         margin-top: 0px;
+//         vertical-align: middle;
+//         margin: 0 0 0 42px;
+//         display: inline;
+//       }
+//       @include desktop {
+//         margin: 0 0 0 56px;
+//       }
+//       &:hover {
+//         @extend .current;
+//         background-color: $accent-hover-transparent;
+//         transition: all 1s linear;
+//       }
+//     }
+//   }
+// }
+
 .header {
   background-color: $global;
   height: 8rem;
-  padding: 15px 0 0 0;
+  padding: 1.5rem 0 0 0;
   @include tablet {
     padding: 0;
   }
@@ -22,96 +126,102 @@
   &__nav {
     width: 100%;
     @include tablet {
-      padding: 0 24px;
+      padding: 0 2.4rem;
       display: flex;
       align-items: center;
       height: 100%;
       padding-top: 0;
     }
     @include desktop {
-      padding: 0 100px;
-      max-width: calc(1400px - 100px);
+      padding: 0 10rem;
+      max-width: 130rem;
       margin: auto;
     }
+  }
 
-    &-link {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 0px;
-      margin-bottom: 16px;
-      @include tablet {
-        margin: 0;
-        margin-right: auto;
-        flex-grow: 1;
-      }
-      @include desktop {
-        width: 120px;
-        height: 24px;
-      }
+  &__nav-link {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    margin-bottom: 1.6rem;
+    @include tablet {
+      margin: 0;
+      margin-right: auto;
+      flex-grow: 1;
     }
+    @include desktop {
+      width: 12rem;
+      height: 2.4rem;
+    }
+  }
 
-    &-logo {
-      margin: 0 auto;
-      display: block;
-      text-align: center;
-      height: 100%;
-      @include tablet {
-        padding: 0;
-      }
-      @include desktop {
-        margin-right: calc(56px / 2);
-      }
+  &__nav-logo {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    height: 100%;
+    @include tablet {
+      padding: 0;
+    }
+    @include desktop {
+      margin-right: 2.8rem;
     }
   }
 
   &__navlist {
     list-style: none;
     display: flex;
-    font-size: 13px;
+    font-size: 1.3rem;
     color: $primary-accent;
-    line-height: 18px;
+    line-height: 1.8rem;
     font-weight: 600;
     margin: 0;
     padding: 0;
     @include tablet {
       height: 100%;
       align-items: center;
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 1.4rem;
+      line-height: 2.2rem;
       font-weight: 600;
       width: 40%;
       flex-grow: 19;
     }
+  }
 
-    .current {
-      border-bottom: 4px solid $primary-light;
-      color: $primary-light;
-    }
+  &__navlistitem--current {
+    border-bottom: 4px solid $primary-light;
+    color: $primary-light;
+  }
 
-    &item {
-      width: 50%;
-      text-align: center;
-      padding-bottom: 8px;
-      @include subheader;
-      font-weight: 600;
-      @include tablet {
-        width: 8rem;
-        padding-bottom: 22px;
-        padding-top: 32px;
-        margin-top: 0px;
-        vertical-align: middle;
-        margin: 0 0 0 42px;
-        display: inline;
-      }
-      @include desktop {
-        margin: 0 0 0 56px;
-      }
-      &:hover {
-        @extend .current;
-        background-color: $accent-hover-transparent;
-        transition: all 1s linear;
-      }
+  &__navlistitem {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 0.8rem;
+    @include subheader;
+    font-weight: 600;
+    @include tablet {
+      width: 8rem;
+      padding-bottom: 2.2rem;
+      padding-top: 3.2rem;
+      margin-top: 0rem;
+      vertical-align: middle;
+      margin: 0 0 0 4.2rem;
+      display: inline;
     }
+    @include desktop {
+      margin: 0 0 0 5.6rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $global-light;
+  }
+
+  &__navlistitem:hover {
+    @extend .header__navlistitem--current;
+    background-color: $accent-hover-transparent;
+    transition: all 1s linear;
   }
 }
 
@@ -274,26 +384,32 @@
   @include desktop {
     padding-bottom: 40px;
   }
-  @extend %wrapper;
+  // @extend %wrapper;
 
   &__heading {
     @include font24-36;
-    padding: 24px 0 18px 0;
+    padding: 24px 16px 18px 16px;
     text-transform: capitalize;
     margin: 0;
     @include tablet {
-      padding: 44px 0 54px 0;
-      margin: 0;
+      padding: 44px 24px 54px 24px;
+      max-width: 768px;
+      margin: auto;
     }
     @include desktop {
-      padding: 48px 0 64px 0;
+      padding: 48px 100px 64px 100px;
+      max-width: 130rem;
+      margin: auto;
     }
   }
 
   &__block {
+    @extend %wrapper;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    @include tablet {
+      justify-content: space-between;
+    }
   }
 
   &__image {
@@ -302,6 +418,21 @@
     margin-bottom: 16px;
     flex-shrink: 0;
     flex-grow: 0;
+    @include tablet {
+      width: 224px;
+      height: 126px;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+    @include desktop {
+      width: 344px;
+      height: 193px;
+    }
+    // @include desktop {
+    //   margin-bottom: 24px;
+    //   margin-right: 24px;
+    //   // margin: auto auto;
+    // }
 
     filter: grayscale(100%);
     @include tablet {
@@ -313,9 +444,22 @@
       height: 193px;
       margin-bottom: 24px;
     }
-    &:hover {
-      filter: grayscale(0);
-      transition: all 1s linear;
+  }
+
+  &__image:hover {
+    filter: grayscale(0);
+    transition: all 1s linear;
+  }
+
+  &__image--margin {
+    // margin: 0 16px 16px 16px;
+    @include tablet {
+      margin: 0 24px 24px 24px;
+    }
+    @include desktop {
+      // margin-bottom: 24px;
+      // margin-right: 24px;
+      // margin: auto auto;
     }
   }
 }
@@ -339,7 +483,12 @@
 
   &__block {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+    border-bottom: 1px solid $secondary-accent;
+    @include tablet {
+      width: 52.8rem;
+      margin: auto;
+    }
   }
 
   &__imageblock {
@@ -365,13 +514,42 @@
     border: 1px solid $secondary-accent;
     border-radius: 4px;
     margin-bottom: 24px;
+    font-family: $fontstack;
+    color: $global;
+    @include para_comments;
+    padding: 1.6rem;
+    @include tablet {
+      width: 460px;
+    }
+  }
+
+  &__nameinput:focus {
+    border: 2px solid $global;
+    outline: none;
+  }
+
+  &__nameinput:active {
+    border: 2px solid $global;
+    outline: none;
   }
 
   &__commenttextinput {
     @extend .comment__nameinput;
     height: 96px;
     resize: none;
+    font-family: $fontstack;
+    color: $global;
+    @include para_comments;
+    padding: 1.6rem;
+    @include tablet {
+      width: 460px;
+    }
   }
+
+  // &__commenttextinput::placeholder {
+  //   @include para_comments;
+  //   font-family: $fontstack;
+  // }
 
   &__namelabel {
     text-transform: uppercase;
@@ -383,6 +561,73 @@
 
   &__commenttextlabel {
     @extend .comment__namelabel;
+  }
+
+  &__btn {
+    @extend %showsbutton;
+  }
+}
+
+.publ {
+  @include tablet {
+    width: 52.8rem;
+    margin: auto;
+  }
+
+  &__comment {
+    @extend .comment__block;
+    // align-items: center;
+    margin: 24px 0;
+    padding-bottom: 24px;
+    @include tablet {
+      justify-content: left;
+    }
+  }
+
+  &__imageblock {
+    @extend .comment__imageblock;
+    padding-top: 0;
+  }
+
+  &__img {
+    @extend .comment__img;
+    background-color: $primary-accent;
+    border-radius: 50%;
+  }
+
+  &__detail {
+    margin: 24px 0;
+  }
+
+  &__nametime {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      justify-content: unset;
+    }
+  }
+
+  &__name {
+    @include para_comments;
+    margin: 0;
+    padding-bottom: 1.6rem;
+    font-weight: 600;
+    // display: inline;
+    // margin-right: 0.8rem;
+    @include tablet {
+      margin-right: 1.2rem;
+    }
+  }
+
+  &__date {
+    @include para_comments;
+    // margin-left: auto;
+    // align-self: center;
+  }
+
+  &__text {
+    @include para_comments;
+    margin: 0;
   }
 }
 
