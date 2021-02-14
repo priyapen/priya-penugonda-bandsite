@@ -21,11 +21,11 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
     <!-- Navigation -->
     <header class="header">
         <nav class="header__nav">
-            <a href="index.html" class="header__nav-link">
+            <a href="./index.html" class="header__nav-link">
                 <img src="./assets/logos/Logo-bandsite.svg" class="header__nav-logo" alt="Bandsite logo">
             </a>
             <ul class="header__navlist">
-                <li class="header__navlistitem header__navlistitem--current" class="header__link">Biography</li>
+                <li class="header__navlistitem header__navlistitem--current"><a href="./index.html" class="header__link">Biography</a></li>
                 <li class="header__navlistitem"><a href="./pages/shows.html" class="header__link">Shows</a></li>
             </ul>
         </nav>
@@ -95,26 +95,14 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
                     <form class="comment__form">
                         <label class="comment__namelabel" for="fname">Name</label>
                         <input class="comment__nameinput" type="text" id="fname" name="fname" placeholder="Name" minlength="3">
-                        <label class="comment__commenttextlabel"    for="comment">Comment</label>
+                        <label class="comment__commenttextlabel" for="comment">Comment</label>
                         <textarea name="comment" class="comment__commenttextinput" cols="30" rows="10" placeholder="Add a new comment" minlength="3"></textarea>
-                        <!-- <input name="date" id="date" type="hidden"> -->
                         <button type="submit" class="comment__btn">Comment</button>
                     </form>
                 </div>
             </article>
             <div class="publ">
-            <article class="publ__comment">
-                <div class="publ__imageblock">
-                    <img src="./assets/Images/Mohan-muruge.jpg" alt="" class="publ__img">
-                </div>
-                <div class="publ__content">
-                    <div class="publ__nametime">
-                        <p class="publ__name">Michael Lyons</p>
-                    </div>
-                    
-                    <p class="publ__text">they blew the roof off at their last show</p>
-                </div>
-            </article>
+                <!-- Published comments will be added here through DOM manipulation -->
             </div>
         </section>
 
@@ -167,7 +155,6 @@ However i am not going to fix that since i cannot find a more appropriate tag fo
         </div>
         </footer>
     </main>
-
 <script src="./scripts/index-page.js"></script>
 </body>
 

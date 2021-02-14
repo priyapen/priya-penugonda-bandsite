@@ -209,13 +209,14 @@
       display: inline;
     }
     @include desktop {
-      margin: 0 0 0 5.6rem;
+      margin: 0 0 0 5.8rem;
     }
   }
 
   &__link {
     text-decoration: none;
     color: $global-light;
+    padding: 2.5rem 0rem;
   }
 
   &__navlistitem:hover {
@@ -233,15 +234,15 @@
   background-size: cover;
   background-position: center;
   @include tablet {
-    height: 400px;
+    height: 50vw;
   }
   @include desktop {
-    height: 670px;
+    height: 53vw;
   }
 
   &__headerblock {
     @include desktop {
-      width: 1300px;
+      width: 130rem;
       margin: 0 auto;
     }
   }
@@ -271,32 +272,32 @@
   @extend %wrapper;
 
   &__heading {
-    margin: 24px 0 18px 0;
+    margin: 2.4rem 0 1.8rem 0;
     text-transform: capitalize;
     @include font24-36;
     @include tablet {
-      padding: 40px 0 32px 0;
+      padding: 4rem 0 3.2rem 0;
       margin: 0;
     }
     @include desktop {
-      padding: 48px 0 48px 0;
+      padding: 4.8rem 0 4.8rem 0;
     }
   }
 
   &__image {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     height: 44vw;
     @include tablet {
-      height: 362px;
+      height: 47vw;
       object-fit: cover;
       display: block;
       margin: auto;
-      margin-bottom: 48px;
+      margin-bottom: 4.8rem;
     }
     @include desktop {
-      width: 896px;
-      height: 450px;
+      width: 70vw;
+      height: 35vw;
     }
   }
 
@@ -304,14 +305,14 @@
     margin: 0;
     padding: 0;
     @include desktop {
-      width: 876px;
+      width: 87.6rem;
       margin: auto;
     }
   }
 
   &__quote-block {
     quotes: initial;
-    margin: 0 0 28px 0;
+    margin: 0 0 2.8rem 0;
     padding: 0;
     @include font14-24;
     @include custom-mobilefont;
@@ -332,8 +333,8 @@
   }
 
   &__quote-author {
-    margin-bottom: 32px;
-    line-height: 22px;
+    margin-bottom: 3.2rem;
+    line-height: 2.2rem;
     font-weight: 600;
     @include subheader;
     font-size: 1.4rem;
@@ -341,12 +342,12 @@
 
   &__article {
     @include desktop {
-      width: 876px;
+      width: 87.6rem;
       margin: auto;
     }
 
     &-title {
-      margin-bottom: 18px;
+      margin-bottom: 1.8rem;
       @include font14-24;
       @include custom-mobilefont;
       @include tablet {
@@ -355,17 +356,17 @@
     }
 
     &-text {
-      margin-bottom: 40px;
+      margin-bottom: 4rem;
       @include para_comments;
-      letter-spacing: 0.01px;
-      line-height: 18px;
-      font-size: 12px;
+      letter-spacing: 0.001rem;
+      line-height: 1.8rem;
+      font-size: 1.2rem;
       @include tablet {
         column-count: 2;
-        column-gap: 24px;
+        column-gap: 2.4rem;
       }
       @include desktop {
-        column-gap: 40px;
+        column-gap: 4rem;
       }
 
       &span {
@@ -380,24 +381,24 @@
 
   background-color: $primary-light;
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 3rem;
   @include desktop {
-    padding-bottom: 40px;
+    padding-bottom: 4rem;
   }
   // @extend %wrapper;
 
   &__heading {
     @include font24-36;
-    padding: 24px 16px 18px 16px;
+    padding: 2.4rem 1.6rem 1.8rem 1.6rem;
     text-transform: capitalize;
     margin: 0;
     @include tablet {
-      padding: 44px 24px 54px 24px;
-      max-width: 768px;
+      padding: 4.4rem 2.4rem 5.4rem 2.4rem;
+      max-width: 76.8rem;
       margin: auto;
     }
     @include desktop {
-      padding: 48px 100px 64px 100px;
+      padding: 4.8rem 10rem 6.4rem 10rem;
       max-width: 130rem;
       margin: auto;
     }
@@ -407,42 +408,43 @@
     @extend %wrapper;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     @include tablet {
       justify-content: space-between;
+    }
+    @include desktop {
+      justify-content: center;
     }
   }
 
   &__image {
     width: 100%;
-    margin-right: 16px;
-    margin-bottom: 16px;
+    // margin-right: 16px;
+    margin-bottom: 1.6rem;
     flex-shrink: 0;
     flex-grow: 0;
+    // max-width: 28.8rem;
+    // margin: auto;
     @include tablet {
-      width: 224px;
-      height: 126px;
+      width: 22.4rem;
+      height: 12.6rem;
       margin-right: 0;
       margin-bottom: 0;
     }
     @include desktop {
-      width: 344px;
-      height: 193px;
+      width: 34.4rem;
+      height: 19.3rem;
     }
-    // @include desktop {
-    //   margin-bottom: 24px;
-    //   margin-right: 24px;
-    //   // margin: auto auto;
-    // }
 
     filter: grayscale(100%);
     @include tablet {
-      width: 224px;
-      height: 126px;
+      width: 22.4rem;
+      height: 12.6rem;
     }
     @include desktop {
-      width: 344px;
-      height: 193px;
-      margin-bottom: 24px;
+      width: 34.4rem;
+      height: 19.3rem;
+      margin-bottom: 2.4rem;
     }
   }
 
@@ -454,12 +456,7 @@
   &__image--margin {
     // margin: 0 16px 16px 16px;
     @include tablet {
-      margin: 0 24px 24px 24px;
-    }
-    @include desktop {
-      // margin-bottom: 24px;
-      // margin-right: 24px;
-      // margin: auto auto;
+      margin: 0 2.4rem 2.4rem 2.4rem;
     }
   }
 }
@@ -469,21 +466,21 @@
 
   &__heading {
     @include font24-36;
-    padding: 32px 0 40px 0;
+    padding: 3.2rem 0 4rem 0;
     text-transform: capitalize;
     margin: 0;
     @include tablet {
-      padding: 44px 0 54px 0;
+      padding: 4.4rem 0 5.4rem 0;
       margin: 0;
     }
     @include desktop {
-      padding: 48px 0 64px 0;
+      padding: 4.8rem 0 6.4rem 0;
     }
   }
 
   &__block {
     display: flex;
-    // justify-content: center;
+    justify-content: center;
     border-bottom: 1px solid $secondary-accent;
     @include tablet {
       width: 52.8rem;
@@ -492,13 +489,13 @@
   }
 
   &__imageblock {
-    padding-top: 28px;
-    margin-right: 20px;
+    padding-top: 2.8rem;
+    margin-right: 2rem;
   }
 
   &__img {
-    width: 48px;
-    height: 48px;
+    width: 4.8rem;
+    height: 4.8rem;
     border-radius: 50%;
     object-position: center;
     object-fit: fill;
@@ -509,17 +506,17 @@
   }
 
   &__nameinput {
-    height: 48px;
-    width: 224px;
-    border: 1px solid $secondary-accent;
+    height: 4.8rem;
+    width: 22.4rem;
+    border: 0.1rem solid $secondary-accent;
     border-radius: 4px;
-    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
     font-family: $fontstack;
     color: $global;
     @include para_comments;
     padding: 1.6rem;
     @include tablet {
-      width: 460px;
+      width: 46rem;
     }
   }
 
@@ -535,28 +532,23 @@
 
   &__commenttextinput {
     @extend .comment__nameinput;
-    height: 96px;
+    height: 9.6rem;
     resize: none;
     font-family: $fontstack;
     color: $global;
     @include para_comments;
     padding: 1.6rem;
     @include tablet {
-      width: 460px;
+      width: 46rem;
     }
   }
-
-  // &__commenttextinput::placeholder {
-  //   @include para_comments;
-  //   font-family: $fontstack;
-  // }
 
   &__namelabel {
     text-transform: uppercase;
     font-weight: 600;
     color: $primary-accent;
     @include labels;
-    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
   }
 
   &__commenttextlabel {
@@ -577,8 +569,8 @@
   &__comment {
     @extend .comment__block;
     // align-items: center;
-    margin: 24px 0;
-    padding-bottom: 24px;
+    margin: 2.4rem 0;
+    padding-bottom: 2.4rem;
     @include tablet {
       justify-content: left;
     }
@@ -596,7 +588,7 @@
   }
 
   &__detail {
-    margin: 24px 0;
+    margin: 2.4rem 0;
   }
 
   &__nametime {
@@ -612,8 +604,6 @@
     margin: 0;
     padding-bottom: 1.6rem;
     font-weight: 600;
-    // display: inline;
-    // margin-right: 0.8rem;
     @include tablet {
       margin-right: 1.2rem;
     }
@@ -621,8 +611,6 @@
 
   &__date {
     @include para_comments;
-    // margin-left: auto;
-    // align-self: center;
   }
 
   &__text {
@@ -633,13 +621,13 @@
 
 .footer {
   background-color: $global;
-  padding: 0 10px 32px 10px;
+  padding: 0 1rem 3.2rem 1rem;
   color: $global-light;
   @include tablet {
-    padding: 0 24px 32px 24px;
+    padding: 0 2.4rem 3.2rem 2.4rem;
   }
   @include desktop {
-    padding: 0 100px 48px 100px;
+    padding: 0 10rem 4.8rem 10rem;
   }
 
   &__wrapper {
@@ -650,18 +638,18 @@
     @include tablet {
       display: flex;
       align-items: first baseline;
-      padding-top: 36px;
+      padding-top: 3.6rem;
     }
     @include desktop {
-      padding-top: 48px;
+      padding-top: 4.8rem;
     }
 
     &-heading {
       // H1 header-mobile
-      line-height: 32px;
+      line-height: 3.2rem;
       @include font24-36;
-      padding-top: 52px;
-      padding-bottom: 28px;
+      padding-top: 5.2rem;
+      padding-bottom: 2.8rem;
       margin: 0;
       color: $global-light;
       font-size: 3.6rem;
@@ -677,21 +665,21 @@
       justify-content: space-between;
       width: 40%;
       @include tablet {
-        height: 28px;
+        height: 2.8rem;
         align-items: end;
-        margin: 0px 48px;
+        margin: 0rem 4.8rem;
         width: auto;
       }
     }
 
     &-social {
       display: inline-block;
-      padding: 0px 6px;
+      padding: 0rem 0.6rem;
       @include tablet {
-        padding: 0px 12px;
+        padding: 0rem 1.2rem;
       }
       @include desktop {
-        padding: 0px calc(32px / 2);
+        padding: 0rem calc(3.2rem / 2);
       }
     }
   }
@@ -700,8 +688,8 @@
     display: none;
     @include tablet {
       display: block;
-      height: 24px;
-      width: 120px;
+      height: 2.4rem;
+      width: 12rem;
       margin-left: auto;
     }
 
@@ -713,7 +701,7 @@
       }
       @include desktop {
         height: 100%;
-        width: 120px;
+        width: 12rem;
       }
     }
   }
@@ -732,9 +720,9 @@
     font-size: 1.3rem;
     font-style: normal;
     line-height: 2.2rem;
-    margin: 32px 0 24px 0;
+    margin: 3.2rem 0 2.4rem 0;
     @include desktop {
-      margin-right: 56px;
+      margin-right: 5.6rem;
     }
 
     &-company,
@@ -748,7 +736,7 @@
     &-email {
       @include lists_contact;
       font-size: 1.2rem;
-      margin: 18px 0;
+      margin: 1.8rem 0;
       font-style: normal;
     }
 

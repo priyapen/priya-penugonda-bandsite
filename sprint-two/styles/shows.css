@@ -18,6 +18,8 @@
 }
 .showhero__headerblock, .shows {
   padding: 0 1.6rem;
+  max-width: 45rem;
+  margin: auto;
 }
 @media only screen and (min-width: 768px) {
   .showhero__headerblock, .shows {
@@ -189,6 +191,7 @@ body {
 }
 .showhero__headerblock {
   width: 100%;
+  max-width: none;
 }
 @media only screen and (min-width: 768px) {
   .showhero__headerblock {
