@@ -31,7 +31,7 @@
 @media only screen and (min-width: 1280px) {
   .showhero__headerblock, .shows {
     padding: 0 10rem;
-    max-width: 130rem;
+    max-width: 128rem;
     margin: auto;
   }
 }
@@ -151,7 +151,6 @@
 
 /* Ran main.css through W3C CSS Validator results for TextArea are as follows:
  Congratulations! No Error Found. */
-/* Some of the measurements and dimensions are not exactly as provided in the styleguides. I tried to match the UI to the mockups in terms of the design so I did not follow the measurements to the t.*/
 html {
   box-sizing: border-box;
   font-family: "AvenirNext LT Pro", Roboto;

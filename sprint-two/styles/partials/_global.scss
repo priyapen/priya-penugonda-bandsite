@@ -57,7 +57,7 @@
   }
   @include desktop {
     padding: 0 10rem;
-    max-width: 130rem;
+    max-width: 128rem;
     margin: auto;
   }
 }
@@ -137,8 +137,3 @@
   font-family: $fontstack;
   color: $global;
 }
-
-// input[type="text"] {
-//   font-family: $fontstack;
-//   color: $global;
-// }

@@ -1,8 +1,6 @@
 /* Ran main.css through W3C CSS Validator results for TextArea are as follows:
  Congratulations! No Error Found. */
 
-/* Some of the measurements and dimensions are not exactly as provided in the styleguides. I tried to match the UI to the mockups in terms of the design so I did not follow the measurements to the t.*/
-
 // Importing variables and partials
 
 @use './partials/variables' as *;
@@ -10,116 +8,6 @@
 @use './partials/global' as *;
 
 @include global;
-
-// .header {
-//   background-color: $global;
-//   height: 8rem;
-//   padding: 15px 0 0 0;
-//   @include tablet {
-//     padding: 0;
-//   }
-
-//   &__nav {
-//     width: 100%;
-//     @include tablet {
-//       padding: 0 2.4rem;
-//       display: flex;
-//       align-items: center;
-//       height: 100%;
-//       padding-top: 0;
-//     }
-//     @include desktop {
-//       padding: 0 10rem;
-//       max-width: 130rem;
-//       margin: auto;
-//     }
-//   }
-
-//   &__nav-link {
-//     display: block;
-//     margin: 0 auto;
-//     margin-bottom: 0px;
-//     margin-bottom: 16px;
-//     @include tablet {
-//       margin: 0;
-//       margin-right: auto;
-//       flex-grow: 1;
-//     }
-//     @include desktop {
-//       width: 120px;
-//       height: 24px;
-//     }
-//   }
-
-//   &__nav-logo {
-//     margin: 0 auto;
-//     display: block;
-//     text-align: center;
-//     height: 100%;
-//     @include tablet {
-//       padding: 0;
-//     }
-//     @include desktop {
-//       margin-right: calc(56px / 2);
-//     }
-//   }
-
-//   &__navlist {
-//     list-style: none;
-//     display: flex;
-//     font-size: 13px;
-//     color: $primary-accent;
-//     line-height: 18px;
-//     font-weight: 600;
-//     margin: 0;
-//     padding: 0;
-//     @include tablet {
-//       height: 100%;
-//       align-items: center;
-//       font-size: 14px;
-//       line-height: 22px;
-//       font-weight: 600;
-//       width: 40%;
-//       flex-grow: 19;
-//     }
-//   }
-
-//   &__navlistitem--current {
-//     border-bottom: 4px solid $primary-light;
-//     color: $primary-light;
-//   }
-
-//   &__navlistitem {
-//     width: 50%;
-//     text-align: center;
-//     padding-bottom: 8px;
-//     @include subheader;
-//     font-weight: 600;
-//     @include tablet {
-//       width: 8rem;
-//       padding-bottom: 22px;
-//       padding-top: 32px;
-//       margin-top: 0px;
-//       vertical-align: middle;
-//       margin: 0 0 0 42px;
-//       display: inline;
-//     }
-//     @include desktop {
-//       margin: 0 0 0 56px;
-//     }
-//   }
-
-//   &__link {
-//     text-decoration: none;
-//     color: $global-light;
-//   }
-
-//   &__navlistitem:hover {
-//     @extend .header__navlistitem--current;
-//     background-color: $accent-hover-transparent;
-//     transition: all 1s linear;
-//   }
-// }
 
 .showhero {
   background-image: url("../assets/Images/shows-hero.jpg");
@@ -137,14 +25,11 @@
 
   &__headerblock {
     width: 100%;
-    // height: 100%;
-    // margin-top: 6.4rem;
     @extend %wrapper;
     max-width: none;
     @include tablet {
       width: 90%;
       padding-right: 11rem;
-      // margin-top: 9.6rem;
       display: flex;
       flex-direction: column;
       flex-grow: 0;
@@ -153,24 +38,19 @@
     @include desktop {
       width: 1300px;
       margin: 0 auto;
-      // margin-top: 16rem;
       flex-direction: row;
       justify-content: space-between;
-      // align-items: center;
     }
   }
 
   &__heading {
-    // margin: 0;
     margin-top: 5.4rem;
     margin-bottom: 5.4rem;
     @include font24-60;
-    // @extend %wrapper;
     font-size: 11.2vw;
     line-height: 15.5vw;
     letter-spacing: 0px;
     @include tablet {
-      // padding-right: 14rem;
       line-height: 7.8rem;
       margin-right: auto;
     }
@@ -190,9 +70,6 @@
       font-weight: 700;
       margin-top: 9.6rem;
     }
-    @include desktop {
-      // margin-top: 16rem;
-    }
   }
 
   &__overlay {
@@ -200,13 +77,10 @@
     width: 100%;
     height: 100%;
     display: inline-block;
-    // display: flex;
-    // align-items: center;
   }
 
   &__iframe {
     @include desktop {
-      // align-self: last baseline;
       width: 436px;
       height: 146px;
       margin-top: 16rem;
@@ -214,7 +88,6 @@
   }
 
   &__soundcloud {
-    // padding: 0 16px;
     height: 100px;
     @include tablet {
       width: 46rem;
@@ -225,7 +98,6 @@
       height: 146px;
       position: relative;
       top: 100%;
-      // align-self: baseline;
     }
   }
 }
@@ -236,7 +108,6 @@
   @include desktop {
     display: flex;
     justify-content: space-between;
-    // align-items: baseline;
   }
 
   &__heading {
@@ -249,15 +120,8 @@
     }
     @include desktop {
       padding: 48px 0 48px 0;
-      // align-self:;
     }
   }
-
-  // &__details {
-  //   // @include desktop {
-
-  //   // }
-  // }
 
   &__label {
     display: none;
@@ -267,9 +131,6 @@
       width: calc(100% - 160px);
       flex-shrink: 0;
     }
-    @include desktop {
-      // align-self: flex-start;
-    }
   }
 
   &__labeldate {
@@ -277,12 +138,10 @@
     @include tablet {
       display: unset;
       width: 100%;
-      // margin-bottom: 3rem;
       margin-top: 0;
     }
     @include desktop {
       margin-top: 4rem;
-      // margin-bottom: 3rem;
     }
   }
 
@@ -315,31 +174,15 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      // margin-right: auto;
     }
   }
 
-  // create a mixin or placeholder class for this
   &__datelabel {
-    // @include labels;
-    // text-transform: uppercase;
-    // font-weight: 600;
-    // color: $primary-accent;
     @extend %label;
-    @include tablet {
-    }
   }
-
-  // article:not(:nth-child(2)) dt {
-  //   // display: none;
-  //   @include tablet {
-  //     display: none;
-  //   }
-  // }
 
   &__date {
     @extend %showslist;
-    // margin-bottom: 32px;
     @include tablet {
       width: calc(100% / 3);
     }
@@ -376,284 +219,3 @@
     @extend %dividerline;
   }
 }
-
-// .footer {
-//   background-color: $global;
-//   padding: 0 10px 32px 10px;
-//   color: $global-light;
-//   @include tablet {
-//     padding: 0 24px 32px 24px;
-//   }
-//   @include desktop {
-//     padding: 0 100px 48px 100px;
-//   }
-//   @extend %wrapper;
-
-//   &__contact {
-//     @include tablet {
-//       display: flex;
-//       align-items: first baseline;
-//       padding-top: 4.4rem;
-//     }
-//     @include desktop {
-//       padding-top: 4.8rem;
-//     }
-
-//     &-heading {
-//       // H1 header-mobile
-//       line-height: 32px;
-//       @include font24-36;
-//       padding-top: 52px;
-//       padding-bottom: 28px;
-//       margin: 0;
-//       color: $global-light;
-//       font-size: 3.6rem;
-//       @include tablet {
-//         padding-top: 0;
-//         padding-bottom: 0;
-//       }
-//     }
-
-//     &-icons {
-//       padding: 0;
-//       display: flex;
-//       justify-content: space-between;
-//       width: 40%;
-//       @include tablet {
-//         height: 28px;
-//         align-items: end;
-//         margin: 0px 48px;
-//         width: auto;
-//       }
-//     }
-
-//     &-social {
-//       display: inline-block;
-//       padding: 0px 6px;
-//       @include tablet {
-//         padding: 0px 12px;
-//       }
-//       @include desktop {
-//         padding: 0px calc(32px / 2);
-//       }
-//     }
-//   }
-
-//   &__logo {
-//     display: none;
-//     @include tablet {
-//       display: block;
-//       height: 24px;
-//       width: 120px;
-//       margin-left: auto;
-//     }
-
-//     &-image {
-//       display: none;
-//       @include tablet {
-//         display: inline-block;
-//         margin-left: auto;
-//       }
-//       @include desktop {
-//         height: 100%;
-//         width: 120px;
-//       }
-//     }
-//   }
-
-//   &contact__cards {
-//     @include tablet {
-//       display: flex;
-//       justify-content: space-between;
-//     }
-//     @include desktop {
-//       justify-content: normal;
-//     }
-//   }
-
-//   &contact__info {
-//     font-size: 1.3rem;
-//     font-style: normal;
-//     line-height: 2.2rem;
-//     margin: 32px 0 24px 0;
-//     @include desktop {
-//       margin-right: 56px;
-//     }
-
-//     &-company,
-//     &-name {
-//       margin: 0;
-//       font-weight: 600;
-//       @include subheader;
-//     }
-
-//     &-region,
-//     &-email {
-//       @include lists_contact;
-//       font-size: 1.2rem;
-//       margin: 18px 0;
-//       font-style: normal;
-//     }
-
-//     // DIVING DEEP- mailto
-//     &-mailto {
-//       text-decoration: none;
-//       color: $secondary-accent;
-//       &:hover {
-//         text-decoration: underline;
-//         color: $accent-hover;
-//       }
-//     }
-//   }
-
-//   &__copyright {
-//     font-size: 1.3rem;
-//     line-height: 1.8rem;
-//     @include lists_contact;
-//     &span {
-//       @extend %linebreak;
-//     }
-//   }
-// }
-
-// .footer {
-//   background-color: $global;
-//   padding: 0 10px 32px 10px;
-//   color: $global-light;
-//   @include tablet {
-//     padding: 0 24px 32px 24px;
-//   }
-//   @include desktop {
-//     padding: 0 100px 48px 100px;
-//   }
-
-//   &__wrapper {
-//     @extend %wrapper;
-//   }
-
-//   &__contact {
-//     @include tablet {
-//       display: flex;
-//       align-items: first baseline;
-//       padding-top: 36px;
-//     }
-//     @include desktop {
-//       padding-top: 48px;
-//     }
-
-//     &-heading {
-//       // H1 header-mobile
-//       line-height: 32px;
-//       @include font24-36;
-//       padding-top: 52px;
-//       padding-bottom: 28px;
-//       margin: 0;
-//       color: $global-light;
-//       font-size: 3.6rem;
-//       @include tablet {
-//         padding-top: 0;
-//         padding-bottom: 0;
-//       }
-//     }
-
-//     &-icons {
-//       padding: 0;
-//       display: flex;
-//       justify-content: space-between;
-//       width: 40%;
-//       @include tablet {
-//         height: 28px;
-//         align-items: end;
-//         margin: 0px 48px;
-//         width: auto;
-//       }
-//     }
-
-//     &-social {
-//       display: inline-block;
-//       padding: 0px 6px;
-//       @include tablet {
-//         padding: 0px 12px;
-//       }
-//       @include desktop {
-//         padding: 0px calc(32px / 2);
-//       }
-//     }
-//   }
-
-//   &__logo {
-//     display: none;
-//     @include tablet {
-//       display: block;
-//       height: 24px;
-//       width: 120px;
-//       margin-left: auto;
-//     }
-
-//     &-image {
-//       display: none;
-//       @include tablet {
-//         display: inline-block;
-//         margin-left: auto;
-//       }
-//       @include desktop {
-//         height: 100%;
-//         width: 120px;
-//       }
-//     }
-//   }
-
-//   &contact__cards {
-//     @include tablet {
-//       display: flex;
-//       justify-content: space-between;
-//     }
-//     @include desktop {
-//       justify-content: normal;
-//     }
-//   }
-
-//   &contact__info {
-//     font-size: 1.3rem;
-//     font-style: normal;
-//     line-height: 2.2rem;
-//     margin: 32px 0 24px 0;
-//     @include desktop {
-//       margin-right: 56px;
-//     }
-
-//     &-company,
-//     &-name {
-//       margin: 0;
-//       font-weight: 600;
-//       @include subheader;
-//     }
-
-//     &-region,
-//     &-email {
-//       @include lists_contact;
-//       font-size: 1.2rem;
-//       margin: 18px 0;
-//       font-style: normal;
-//     }
-
-//     // DIVING DEEP- mailto
-//     &-mailto {
-//       text-decoration: none;
-//       color: $secondary-accent;
-//       &:hover {
-//         text-decoration: underline;
-//         color: $accent-hover;
-//       }
-//     }
-//   }
-
-//   &__copyright {
-//     font-size: 1.3rem;
-//     line-height: 1.8rem;
-//     @include lists_contact;
-//     &span {
-//       @extend %linebreak;
-//     }
-//   }
-// }
