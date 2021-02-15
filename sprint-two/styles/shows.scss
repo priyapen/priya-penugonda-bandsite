@@ -28,8 +28,7 @@
     @extend %wrapper;
     max-width: none;
     @include tablet {
-      width: 90%;
-      padding-right: 11rem;
+      padding-right: 18rem;
       display: flex;
       flex-direction: column;
       flex-grow: 0;
@@ -40,6 +39,7 @@
       margin: 0 auto;
       flex-direction: row;
       justify-content: space-between;
+      padding-right: 10rem;
     }
   }
 
@@ -55,6 +55,7 @@
       margin-right: auto;
     }
     @include desktop {
+      // font-size: 7rem;
       padding-right: 0;
       margin-top: 16rem;
       margin-right: 6.4rem;
@@ -100,7 +101,7 @@
       width: 43.6rem;
       height: 14.6rem;
       position: relative;
-      top: 100%;
+      top: 104%;
     }
   }
 }
@@ -122,6 +123,7 @@
       margin: 0;
     }
     @include desktop {
+      font-size: 3.8rem;
       padding: 4.8rem 0 4.8rem 0;
     }
   }

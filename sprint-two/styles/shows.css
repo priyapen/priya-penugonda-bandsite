@@ -194,8 +194,7 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .showhero__headerblock {
-    width: 90%;
-    padding-right: 11rem;
+    padding-right: 18rem;
     display: flex;
     flex-direction: column;
     flex-grow: 0;
@@ -208,6 +207,7 @@ body {
     margin: 0 auto;
     flex-direction: row;
     justify-content: space-between;
+    padding-right: 10rem;
   }
 }
 .showhero__heading {
@@ -282,7 +282,7 @@ body {
     width: 43.6rem;
     height: 14.6rem;
     position: relative;
-    top: 100%;
+    top: 104%;
   }
 }
 
@@ -316,6 +316,7 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .shows__heading {
+    font-size: 3.8rem;
     padding: 4.8rem 0 4.8rem 0;
   }
 }

@@ -59,29 +59,37 @@ formEl.addEventListener('submit', (event)=> {
     event.preventDefault();
     console.log("default behaviour prevented");
     pushcomment();
-    formEl.reset();
 });
 
-displayComment(commentArr);
+    displayComment(commentArr);
 
 // This function pushes the new comment into the comments array above
 function pushcomment() {
     let dateReg = new Date().toLocaleDateString('en-US');
-
-    commentArr.unshift(
-        {
-            image: './assets/images/Mohan-muruge.jpg',
-            name: event.target.fname.value, commentText: event.target.comment.value, 
-            date: dateReg,
-        });
     
+    let userComment = event.target.comment.value;
+
+    if (userComment.length > 0) {
+        let userName = event.target.fname.value;
+        (userName.length > 0) ? userName = event.target.fname.value : userName = "Anonymous";
+        commentArr.unshift(
+            {
+                image: './assets/images/Mohan-muruge.jpg',
+                name: userName,
+                commentText: userComment,
+                date: dateReg,
+            });
+    } else {
+        alert("Please add your comment before posting.");
+    }
+
     displayComment(commentArr);
 }
 
 
 // Function created to display comments
-function displayComment(arr)
-{
+    function displayComment(arr) {
+    formEl.reset();
     let commentSectionEl = document.querySelector('.publ');
     commentSectionEl.textContent = '';
 
@@ -132,6 +140,7 @@ function displayComment(arr)
     contentEl.appendChild(comtextEl);
     comtextEl.innerText = element.commentText;
     });
+    formEl.reset();
 }
 
 };//window onload closure
