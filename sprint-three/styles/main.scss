@@ -508,10 +508,15 @@
     color: $global;
   }
 
-  .fa-heart {
+  &__like {
     display: inline-block;
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: $global;
+    // fill: black;
+  }
+
+  &__like:hover {
+    color: $accent-hover;
   }
 }
 

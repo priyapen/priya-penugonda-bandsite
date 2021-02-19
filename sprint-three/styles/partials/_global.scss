@@ -46,6 +46,13 @@
   }
 }
 
+ul,
+li {
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+
 %wrapper {
   padding: 0 1.6rem;
   max-width: 45rem;

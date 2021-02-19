@@ -28,6 +28,10 @@ create
 7. page should not reload after submit
 
 */
+
+let apiURL = 'https://project-1-api.herokuapp.com';
+let apiKey = '?api_key=2b9b5a96-ed1d-40a8-9268-fea0e31c8936'
+let route = "";
     
     function getResults() {
         axios
@@ -76,7 +80,13 @@ formEl.addEventListener('submit', (event) => {
 });
 
 
+// function likeComment(id) {
+//     axios.put('https://project-1-api.herokuapp.com/comments/:id/like?api_key=2b9b5a96-ed1d-40a8-9268-fea0e31c8936')
+//         .then(
+        
 
+//     )
+// }
 
 // Function created to display comments
     function displayComment(arr) {
@@ -85,18 +95,22 @@ formEl.addEventListener('submit', (event) => {
         console.log(commentSectionEl);
     commentSectionEl.textContent = '';
 
-        arr.reverse().forEach(element => {
+        arr.slice().reverse().forEach(element => {
         
             let elementId = element.id;
             console.log(elementId);
 
     // create article in comment section
-    let articleEl = document.createElement('article');
+    // let articleEl = document.createElement('article');
+    // articleEl.classList.add('publ__comment');
+    // commentSectionEl.appendChild(articleEl);
+    let articleEl = document.createElement('ul');
     articleEl.classList.add('publ__comment');
     commentSectionEl.appendChild(articleEl);
 
     // creating an image block
-    let imageblkEl = document.createElement('div');
+            // let imageblkEl = document.createElement('div');
+            let imageblkEl = document.createElement('li');
     imageblkEl.classList.add('publ__imageblock');
     articleEl.appendChild(imageblkEl);
 
@@ -107,17 +121,20 @@ formEl.addEventListener('submit', (event) => {
     // imgEl.setAttribute('src', element.image);
 
     // creating a text block for content
-    let contentEl = document.createElement('div');
+            // let contentEl = document.createElement('div');
+            let contentEl = document.createElement('li');
     contentEl.classList.add('publ__content');
     articleEl.appendChild(contentEl);
         
     // creating a div for name and date
-    let nametimeEl = document.createElement('div');
+            // let nametimeEl = document.createElement('div');
+            let nametimeEl = document.createElement('li');
     nametimeEl.classList.add('publ__nametime');
     contentEl.appendChild(nametimeEl);
 
     //creating name element
-    let nameEl = document.createElement('p');
+            // let nameEl = document.createElement('p');
+            let nameEl = document.createElement('li');
     nameEl.classList.add('publ__name');
     nametimeEl.appendChild(nameEl);
     nameEl.innerText = element.name;
@@ -131,38 +148,69 @@ formEl.addEventListener('submit', (event) => {
     // console.log(typeof(comment.date));
 
     //creating comment text element
-    let comtextEl = document.createElement('p');
+            // let comtextEl = document.createElement('p');
+            let comtextEl = document.createElement('li');
     comtextEl.classList.add('publ__text');
     contentEl.appendChild(comtextEl);
         comtextEl.innerText = element.comment;
         
 
-        let likeDelIcons = document.createElement('div');
+            // let likeDelIcons = document.createElement('div');
+            let likeDelIcons = document.createElement('li');
         likeDelIcons.classList.add('publ__likedel');
-        // likeDelIcons.classList.add('fa-stack');
             contentEl.appendChild(likeDelIcons);
-            // dont use ineerhtml
-        likeDelIcons.innerHTML = '<i class="far  fa-trash-alt publ__del"></i><i class="far fa-heart publ__like"></i>';
-        let likeEl = document.querySelector('.publ__like');
-        console.log(likeEl);
-
+            
+            
+        let delEl = document.createElement('span');
+        delEl.classList.add('material-icons','publ__delete');
+            likeDelIcons.appendChild(delEl);
+            delEl.innerText = 'delete_outline';
 
             
-        let delEl = document.createElement('image');
-        delEl.classList.add('publ__delete');
+            
+            let likeEl = document.createElement('span');
+            likeEl.classList.add('material-icons', 'publ__like');
+            likeEl.id = element.id;
+            likeDelIcons.appendChild(likeEl);
+            likeEl.innerText = 'favorite';
 
-        likeDelIcons.appendChild(delEl);
+            // let likeCount = document.createElement('p');
+            let likeCount = document.createElement('li');
+                likeCount.classList.add('publ__likeCount');
+                likeDelIcons.appendChild(likeCount);
+                likeCount.innerText = element.likes;
+                console.log(typeof (likeCount.innerText));
+           
 
-        // let delEl = document.createElement('i');
-        // delEl.classList.add('publ__delete');
-        // // delEl.classList.add('far fa-trash-alt');
-        // likeDelIcons.appendChild(delEl);
-        // delEl.innerHTML = '<i class="far fa-trash-alt"></i>';
+            likeEl.addEventListener('click', (e) => { 
+                console.log(event.target);
+                let id = event.target.id;
+                console.log(id);
+                let completeUrl = apiURL + '/comments/' + id + '/like' + apiKey;
+                console.log(completeUrl);
+                axios.put(completeUrl).then(result => {
+                    console.log(result);
+                    likeEl.style.color = '#745669';
+                    // console.log(parseInt(likeCount.innerText) += 1);
+                }
+                ).then(result => {
+                    getResults();
+                    likeCount.innerText = element.likes;
+                    console.log(element.likes);
+                })
+             });
+
+            // let likeCount = document.createElement('p');
+            // likeCount.classList.add('publ__likeCount');
+            // likeDelIcons.appendChild(likeCount);
+            // likeCount.innerText = element.likes;
+
+            // let likedCommEl = document.querySelector('.publ__like');
+            // console.log(likedCommEl);
+            // likedCommEl.addEventListener("click", (event) => { console.log('clicked heart'); });
 
 
-        // let likeEl = document.createElement('i');
-        // delEl.classList.add('publ__like');
-        // likeDelIcons.appendChild(likeEl);
+
 
     });
         
@@ -172,13 +220,17 @@ formEl.addEventListener('submit', (event) => {
     
 //display comment closure
 
+// window.onload = function() {
+//     // let likedCommEl = document.querySelector('.publ__like');
+//     // console.log(likedCommEl);
+//     document.querySelector('.publ__like').addEventListener('click', (event) => { console.log('clicked heart'); })
+// }
     
     // like comment-
 
     // let likeEl = document.querySelector('.publ__like');
     // console.log(likeEl);
-// likeEl.addEventListener("click", (event) => { console.log('clicked heart',event); }
-//     );
+// 
 
 // likeEl.OnClick(console.log("please work!"));
     //     event => {
