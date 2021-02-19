@@ -1,0 +1,226 @@
+/* Ran shows.css through W3C CSS Validator results for TextArea are as follows:
+ Congratulations! No Error Found. */
+
+// Importing variables and partials
+
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/global' as *;
+
+@include global;
+
+.showhero {
+  background-image: url("../assets/Images/shows-hero.jpg");
+  width: 100%;
+  height: 150vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include tablet {
+    height: 67rem;
+  }
+  @include desktop {
+    height: 67rem;
+  }
+
+  &__headerblock {
+    width: 100%;
+    @extend %wrapper;
+    max-width: none;
+    @include tablet {
+      padding-right: 18rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 0;
+      flex-wrap: nowrap;
+    }
+    @include desktop {
+      width: 130rem;
+      margin: 0 auto;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-right: 10rem;
+    }
+  }
+
+  &__heading {
+    margin-top: 5.4rem;
+    margin-bottom: 5.4rem;
+    @include font24-60;
+    font-size: 11.2vw;
+    line-height: 15.5vw;
+    letter-spacing: 0px;
+    @include tablet {
+      line-height: 7.8rem;
+      margin-right: auto;
+    }
+    @include desktop {
+      // font-size: 7rem;
+      padding-right: 0;
+      margin-top: 16rem;
+      margin-right: 6.4rem;
+    }
+  }
+
+  &__headingspan {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 6.4rem;
+    @include tablet {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-top: 9.6rem;
+    }
+  }
+
+  &__overlay {
+    background: rgba(50, 50, 50, 0.5);
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  &__iframe {
+    @include desktop {
+      width: 43.6rem;
+      height: 14.6rem;
+      margin-top: 16rem;
+    }
+  }
+
+  &__soundcloud {
+    width: 100%;
+    height: 10rem;
+    border: none;
+    padding: 0 1rem;
+    @include tablet {
+      width: 46rem;
+      height: 14.8rem;
+    }
+    @include desktop {
+      width: 43.6rem;
+      height: 14.6rem;
+      position: relative;
+      top: 104%;
+    }
+  }
+}
+
+.shows {
+  @extend %wrapper;
+  margin-bottom: 4rem;
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    margin: 3.2rem 0 4rem 0;
+    text-transform: capitalize;
+    @include font24-36;
+    @include tablet {
+      padding: 4rem 0 3.2rem 0;
+      margin: 0;
+    }
+    @include desktop {
+      font-size: 3.8rem;
+      padding: 4.8rem 0 4.8rem 0;
+    }
+  }
+
+  &__label {
+    display: none;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 16rem);
+      flex-shrink: 0;
+    }
+  }
+
+  &__labeldate {
+    @extend %label;
+    @include tablet {
+      display: unset;
+      width: 100%;
+      margin-top: 0;
+    }
+    @include desktop {
+      margin-top: 4rem;
+    }
+  }
+
+  &__labelvenue {
+    @extend .shows__labeldate;
+  }
+
+  &__labellocat {
+    @extend .shows__labeldate;
+  }
+
+  &__card {
+    border-bottom: 1px solid $secondary-accent;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include desktop {
+      width: 80.4rem;
+      flex-shrink: 0;
+    }
+  }
+
+  &__defn {
+    list-style: none;
+    margin: 0;
+    font-weight: 600;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__datelabel {
+    @extend %label;
+  }
+
+  &__date {
+    @extend %showslist;
+    @include tablet {
+      width: calc(100% / 3);
+    }
+  }
+
+  &__venuelabel {
+    @extend %label;
+  }
+
+  &__venue {
+    @extend .shows__date;
+    font-weight: 100;
+  }
+
+  &__locationlabel {
+    @extend %label;
+  }
+
+  &__location {
+    @extend .shows__date;
+    font-weight: 100;
+  }
+
+  &__button {
+    @extend %showsbutton;
+    @include tablet {
+      width: 16rem;
+      height: 4.8rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__line {
+    @extend %dividerline;
+  }
+}

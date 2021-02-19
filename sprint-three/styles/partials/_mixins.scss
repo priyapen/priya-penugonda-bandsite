@@ -1,0 +1,92 @@
+@use './variables' as *;
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+// Hero font- H1-Header-mobile and H1-Hero-Header-tablet
+@mixin font24-60 {
+  color: $global-light;
+  // making font responsive between 320px to 768px
+  font-size: 7.5vw;
+  line-height: 10vw;
+  font-weight: 700;
+  @include tablet {
+    font-size: 6rem;
+    line-height: 6.8rem;
+  }
+}
+
+// H1-header-mobile and H1-header-tablet
+@mixin font24-36 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  @include tablet {
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+  }
+}
+
+// H2-subheader-mobile and H2-Header-tablet
+@mixin font14-24 {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+  @include tablet {
+    color: $global;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+}
+
+// H4-Para-mobile and H3-Subheader-tablet
+@mixin subheader {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+  @include tablet {
+    font-size: 16px;
+    line-height: 2.4rem;
+  }
+}
+
+// H4-para-mobile and H4-Para-tablet
+@mixin para_comments {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  @include tablet {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+
+// H4-list&contact-mobile and H4-list&contact-tablet
+@mixin lists_contact {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  @include tablet {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+}
+
+// H5-labels-mobile and H5-labels-tablet
+@mixin labels {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+@mixin custom-mobilefont {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+}

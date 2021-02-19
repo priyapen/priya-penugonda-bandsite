@@ -1,0 +1,167 @@
+<!-- Passed HTML through W3C validator. It showed the following warning 
+    ====warning message=====
+Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.
+From line 91, column 13; to line 91, column 50
+          <section class="footercontact__cards">↩ 
+    ==== end of message ==== 
+However i am not going to fix that since i cannot find a more appropriate tag for that section and i read that a deading is not necessary for a section   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandSite - Biography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="header__nav">
+            <a href="./index.html" class="header__nav-link">
+                <img src="./assets/logos/Logo-bandsite.svg" class="header__nav-logo" alt="Bandsite logo">
+            </a>
+            <ul class="header__navlist">
+                <li class="header__navlistitem header__navlistitem--current"><a href="./index.html" class="header__link">Biography</a></li>
+                <li class="header__navlistitem"><a href="./pages/shows.html" class="header__link">Shows</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- HERO section -->
+        <section class="hero">
+            <div class="hero__overlay">
+                <div class="hero__headerblock">
+                    <h1 class="hero__heading">Gaspard Auge &<span class="hero__headingspan">
+                    Xavier de Rosnay</span></h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT THE MUSICIANS section-->
+        <section class="about">
+            <h2 class="about__heading">About the Musicians</h2>
+            <img src="./assets/Images/artists.jpg" alt="picture of artists performing on stage" class="about__image">
+            <!-- Quote block: Per my research a quotation needs to be in a block quote inside a figure tag, thats why this is used. Used a 'q' tag for inline quote for semantics. Using the figure tag helps when we need to mention the source of the quote using a figcaption.-->
+            <figure class="about__quote">
+                <blockquote class="about__quote-block">We are more comfortable with not fighting what comes naturally. Before we might have thought,<q class="about__inline-quote">We need to be smarter than this</q>
+                </blockquote>
+                <figcaption class="about__quote-author">
+                    &mdash; Xavier de Rosnay
+                </figcaption>
+            </figure>
+            <!-- Based on my research, i found a lot of discussions and debate on whether articles can be nested inside sections. Since there was no conclusive evidence anywhere, i decided to use an article block here. Additionally, i read that article tags can be helpful when a block of text needs to sent as RSS feeds, are self-standing and don't need to depend on other elements of the webpage for context.-->
+            <article class="about__article">
+                <!-- &eacute; is used for the accented e -->
+                <h3 class="about__article-title">Xavier de Rosnay & Gaspard Aug&eacute;</h3>
+                <p class="about__article-text">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened
+                    to run a record label, seeking tracks for a compilation. With an immediate connection, the pair
+                    decided to try their hand at making a song. That’s when they created their breakout single, We Are
+                    Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the
+                    attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.<br>
+                    <!-- The following span class here to introduce an additional line break for the paragraph using pseudoelements. -->
+                    <span class="about__article-textspan">
+                    Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</span></p>
+            </article>
+        </section>
+
+        <!-- PHOTO GALLERY section -->
+        <section class="gallery">
+            <h2 class="gallery__heading">Photo Gallery</h2>
+            <div class="gallery__block">
+                <img src="./assets/Images/Photo-gallery-1.jpg" alt="audience at artists concert" class="gallery__image">
+                <img src="./assets/Images/Photo-gallery-2.jpg" alt="a young lady dancing at concert" class="gallery__image gallery__image--margin">
+                <img src="./assets/Images/Photo-gallery-3.jpg" alt="audiences hands in the air during concert" class="gallery__image">
+                <img src="./assets/Images/Photo-gallery-4.jpg" alt="another lady watching the concert" class="gallery__image">
+                <img src="./assets/Images/Photo-gallery-5.jpg" alt="party poppers and confetti during concert" class="gallery__image gallery__image--margin">
+                <img src="./assets/Images/Photo-gallery-6.jpg" alt="image of the artist singing during a performance" class="gallery__image">
+                <img src="./assets/Images/Photo-gallery-7.jpg" alt="concert performance stage and audience shown in the picture" class="gallery__image">
+                <img src="./assets/Images/Photo-gallery-8.jpg" alt="a picture of a DJ turntable" class="gallery__image gallery__image--margin">
+                <img src="./assets/Images/Photo-gallery-9.jpg" alt="confetti shower on concert audiences" class="gallery__image">
+            </div>
+        </section>
+
+        <section class="comment">
+            <h2 class="comment__heading">Join the Conversation</h2>
+            <article class="comment__block">
+                <div class="comment__imageblock">
+                    <img src="./assets/Images/Mohan-muruge.jpg" alt="" class="comment__img">
+                </div>
+                <div class="comment__detail">
+                    <form class="comment__form">
+                        <label class="comment__namelabel" for="fname">Name</label>
+                        <input class="comment__nameinput" type="text" id="fname" name="fname" placeholder="Name" minlength="3">
+                        <label class="comment__commenttextlabel" for="comment">Comment
+                        <textarea id="comment" class="comment__commenttextinput" cols="30" rows="10" placeholder="Add a new comment" minlength="3"></textarea>
+                        </label>
+                        <button type="submit" class="comment__btn">Comment</button>
+                    </form>
+                </div>
+            </article>
+            <div class="publ">
+                <!-- Published comments will be added here through DOM manipulation -->
+                
+            </div>
+        </section>
+
+        <!-- FOOTER section -->
+        <footer class="footer">
+            <div class="footer__wrapper">
+            <section class="footer__contact">
+                <h2 class="footer__contact-heading">Get In Touch</h2>
+                <div class="footer__contact-icons icons">
+                    <img src="./assets/Icons/Icon-instagram.svg" alt="Instagram" class="footer__contact-social">
+                    <img src="./assets/Icons/Icon-facebook.svg" alt="Facebook" class="footer__contact-social">
+                    <img src="./assets/Icons/Icon-twitter.svg" alt="Twitter" class="footer__contact-social">
+                </div>
+                <div class="footer__logo">
+                    <img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo" class="footer__logo-image">
+                </div>
+            </section>
+            <!-- CONTACT INFO cards -->
+            <section class="footercontact__cards">
+                <address class="footercontact__info">
+                    <p class="footercontact__info-name">Richard Rovner</p>
+                    <p class="footercontact__info-company">The Bees Knees Management
+                    </p>
+                    <!-- From my research, i read that br tags used for address line breaks are semantically correct -->
+                    <!-- In the following line i could have used an address tag, however, address cannot be nested inside an address so went ahead with p tag instead. -->
+                    <p class="footercontact__info-region">460 King Street West<br>Toronto, Ontario M5V 1L7</p>
+                    <p class="footercontact__info-email"><a href="mailto:info@thebeesknees.com" target="_blank" class="footercontact__info-mailto">info@thebeesknees.com</a></p>
+                </address>
+
+                <address class="footercontact__info">
+                    <p class="footercontact__info-name">Marsha Vlasic</p>
+                    <p class="footercontact__info-company">Artist Group International
+                    </p>
+                    <p class="footercontact__info-region">Booking Agent for<br>US / South America / Japan</p>
+                    <p class="footercontact__info-email"><a href="mailto:marsha.vlasic@artistgrp.com" target="_blank" class="footercontact__info-mailto">marsha.vlasic@artistgrp.com</a></p>
+                </address>
+
+                <address class="footercontact__info">
+                    <p class="footercontact__info-name">Russel Warby</p>
+                    <p class="footercontact__info-company">William Morrir Entertainment
+                    </p>
+                    <p class="footercontact__info-region">Booking Agent for<br>UK / EU / AU</p>
+                    <p class="footercontact__info-email"><a href="mailto:RLW@wmeentertainment.com" target="_blank" class="footercontact__info-mailto">RLW@wmeentertainment.com</a></p>
+                </address>
+            </section>
+            <small class="footer__copyright">Copyright The Bees Knees &copy; 2018 
+                <!-- The following span class here to introduce a line break for screen sizes smaller than 768px using pseudoelements. -->
+                <span class="footer__copyrightspan">All Rights Reserved</span>
+            </small>
+        </div>
+        </footer>
+    </main>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./scripts/index-page.js"></script>
+<script src="https://kit.fontawesome.com/4c1266b019.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
