@@ -160,7 +160,10 @@
 
   &__card {
     border-bottom: 1px solid $secondary-accent;
+    max-width: 32rem;
+    margin: auto;
     @include tablet {
+      max-width: 76.8rem;
       display: flex;
       justify-content: space-between;
     }
@@ -200,6 +203,7 @@
   &__venue {
     @extend .shows__date;
     font-weight: 100;
+    padding-right: 3rem;
   }
 
   &__locationlabel {
@@ -209,6 +213,7 @@
   &__location {
     @extend .shows__date;
     font-weight: 100;
+    padding-right: 3rem;
   }
 
   &__button {

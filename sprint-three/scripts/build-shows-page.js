@@ -57,48 +57,48 @@ window.onload = function () {
 
         for (let i = 0; i <= arr.length - 1; i++) {
     
-            const showCard = document.createElement('article');
+            const showCard = document.createElement('ul');
             // console.log(showCard);
             showCard.classList.add('shows__card');
             showDetails.appendChild(showCard);
 
             // list of shows
-            const showDefn = document.createElement('dl');
+            const showDefn = document.createElement('li');
             showDefn.classList.add('shows__defn');
             showCard.appendChild(showDefn);
         
             // Date Label
-            const dateLabel = document.createElement('dt');
+            const dateLabel = document.createElement('li');
             dateLabel.classList.add('shows__datelabel');
             showDefn.appendChild(dateLabel);
             dateLabel.innerText = 'Date';
         
             // //show date element
-            const dateEl = document.createElement('dd');
+            const dateEl = document.createElement('li');
             dateEl.classList.add('shows__date');
             showDefn.appendChild(dateEl);
             dateEl.innerText = arr[i].date;
 
             // Venue Label
-            const venueLabel = document.createElement('dt');
+            const venueLabel = document.createElement('li');
             venueLabel.classList.add('shows__venuelabel');
             showDefn.appendChild(venueLabel);
             venueLabel.innerText = 'Venue';
 
             //show venue element
-            const venueEl = document.createElement('dd');
+            const venueEl = document.createElement('li');
             venueEl.classList.add('shows__venue');
             showDefn.appendChild(venueEl);
             venueEl.innerText = arr[i].place;
 
             // location Label
-            const locationLabel = document.createElement('dt');
+            const locationLabel = document.createElement('li');
             locationLabel.classList.add('shows__locationlabel');
             showDefn.appendChild(locationLabel);
             locationLabel.innerText = 'Location';
     
             //show location element
-            const locationEl = document.createElement('dd');
+            const locationEl = document.createElement('li');
             locationEl.classList.add('shows__location');
             showDefn.appendChild(locationEl);
             locationEl.innerText = arr[i].location;

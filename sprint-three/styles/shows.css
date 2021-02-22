@@ -352,9 +352,12 @@ body {
 }
 .shows__card {
   border-bottom: 1px solid #e1e1e1;
+  max-width: 32rem;
+  margin: auto;
 }
 @media only screen and (min-width: 768px) {
   .shows__card {
+    max-width: 76.8rem;
     display: flex;
     justify-content: space-between;
   }
@@ -385,9 +388,11 @@ body {
 }
 .shows__venue {
   font-weight: 100;
+  padding-right: 3rem;
 }
 .shows__location {
   font-weight: 100;
+  padding-right: 3rem;
 }
 @media only screen and (min-width: 768px) {
   .shows__button {

@@ -29,26 +29,32 @@ create
 
 */
 
+// Global variables:
 let apiURL = 'https://project-1-api.herokuapp.com';
 let apiKey = '?api_key=2b9b5a96-ed1d-40a8-9268-fea0e31c8936'
 let route = "";
+
+let completeUrl = apiURL + route + apiKey;
     
-    function getResults() {
+// GET comments from API:
+function getResults() {
         axios
             .get(`https://project-1-api.herokuapp.com/comments?api_key=2b9b5a96-ed1d-40a8-9268-fea0e31c8936`)
             .then((result => {
                 console.log(result);
-                displayComment(result.data);
+                // displayComment(result.data);
+                iterateArr(result.data);
+                // console.log(result.data[0]);
+                // createElement();
+
             })
         );
-    }
+}
     
-    getResults();
-
-let formEl = document.querySelector('.comment__form');
+getResults();
 
 
-
+// POST comments to API:
 function postComment() {
     let userComment = event.target.comment.value;
     if (userComment.length > 0) {
@@ -70,185 +76,284 @@ function postComment() {
             }
 }
 
-
+// Send form data to API and get comments upon form submission:
+let formEl = document.querySelector('.comment__form');
 formEl.addEventListener('submit', (event) => {
     event.preventDefault();
     postComment();
     getResults();
-
-    // getResults();
+    let commentSectionReset = document.querySelector('.publ');
+    // console.log(commentSectionEl);
+    commentSectionReset.textContent = '';
 });
 
 
-// function likeComment(id) {
-//     axios.put('https://project-1-api.herokuapp.com/comments/:id/like?api_key=2b9b5a96-ed1d-40a8-9268-fea0e31c8936')
-//         .then(
-        
 
-//     )
-// }
+//function to create HTML elements
+function createElement(object) {
 
-// Function created to display comments
-    function displayComment(arr) {
-    formEl.reset();
-        let commentSectionEl = document.querySelector('.publ');
-        console.log(commentSectionEl);
-    commentSectionEl.textContent = '';
+    
 
-        arr.slice().reverse().forEach(element => {
-        
-            let elementId = element.id;
-            console.log(elementId);
-
-    // create article in comment section
-    // let articleEl = document.createElement('article');
-    // articleEl.classList.add('publ__comment');
-    // commentSectionEl.appendChild(articleEl);
+    let commentSectionEl = document.querySelector('.publ');
+    // // console.log(commentSectionEl);
+    // commentSectionEl.textContent = '';
+    
     let articleEl = document.createElement('ul');
     articleEl.classList.add('publ__comment');
+    articleEl.id = object.id;
     commentSectionEl.appendChild(articleEl);
 
-    // creating an image block
-            // let imageblkEl = document.createElement('div');
-            let imageblkEl = document.createElement('li');
+    let imageblkEl = document.createElement('li');
     imageblkEl.classList.add('publ__imageblock');
     articleEl.appendChild(imageblkEl);
 
-    //creating an image
-    // let imgEl = document.createElement('img');
-    // imgEl.classList.add('publ__img');
-    // imageblkEl.appendChild(imgEl);
+    let imgEl = document.createElement('img');
+    imgEl.classList.add('publ__img');
+    imgEl.id = object.id;
+    imageblkEl.appendChild(imgEl);
     // imgEl.setAttribute('src', element.image);
 
-    // creating a text block for content
-            // let contentEl = document.createElement('div');
+        // creating a text block for content
             let contentEl = document.createElement('li');
     contentEl.classList.add('publ__content');
     articleEl.appendChild(contentEl);
-        
+
     // creating a div for name and date
-            // let nametimeEl = document.createElement('div');
             let nametimeEl = document.createElement('li');
     nametimeEl.classList.add('publ__nametime');
     contentEl.appendChild(nametimeEl);
 
     //creating name element
-            // let nameEl = document.createElement('p');
             let nameEl = document.createElement('li');
     nameEl.classList.add('publ__name');
+    nameEl.id = object.id;
     nametimeEl.appendChild(nameEl);
-    nameEl.innerText = element.name;
+    
 
-    //creating a date element
-    let dateEl = document.createElement('time');
+     //creating a date element
+     let dateEl = document.createElement('time');
     dateEl.classList.add('publ__date');
-        nametimeEl.appendChild(dateEl);
-        let newDate = new Date(element.timestamp);
-    dateEl.innerText = newDate.toLocaleDateString('en-US');
-    // console.log(typeof(comment.date));
+    dateEl.id = object.id;
+    nametimeEl.appendChild(dateEl);
+    
 
-    //creating comment text element
-            // let comtextEl = document.createElement('p');
+//creating comment text element
+
             let comtextEl = document.createElement('li');
     comtextEl.classList.add('publ__text');
+    comtextEl.id = object.id;
     contentEl.appendChild(comtextEl);
-        comtextEl.innerText = element.comment;
+
+
+  let likeDelIcons = document.createElement('li');
+  likeDelIcons.classList.add('publ__likedel');
+      contentEl.appendChild(likeDelIcons);
+      
+      
+  let delEl = document.createElement('span');
+    delEl.classList.add('material-icons', 'publ__delete');
+    delEl.id = object.id;
+    likeDelIcons.appendChild(delEl);
+    
+    let likeEl = document.createElement('span');
+    likeEl.classList.add('material-icons', 'publ__like');
+    likeEl.id = object.id;
+    likeDelIcons.appendChild(likeEl);
+
+    let likeCount = document.createElement('li');
+    likeCount.classList.add('publ__likeCount');
+    likeCount.id = object.id;
+                likeDelIcons.appendChild(likeCount);
+    
+    return iterateArr;
+}
+
+
+//Iterate through each object in the array:
+function iterateArr(arr) {
+    // for (let i = 0; i < arr.length; i++)
+    arr.forEach((element, i) => {
+        console.log("creating for index", i);
+        createElement(element);
+        console.log("created element at index:", i);
+        console.log("displaying for index", i);
+        displayComment(element);
+        console.log('completed display and back to iterateARR');
+    })
+//     // {
+//     //     createElement(arr[i]);
+//     //     // console.log("created element at index:", element);
+//     //     displayComment(arr[i]);
+//     // };
+
+//     // let numEl = document.querySelectorAll('.publ__comment');
+//     // for (let i = 0; i <= numEl.length - 1; i++) {
+//     //     displayComment(element, i);
+//     // }
+//         // displayComment(arr[i]);
+//         // console.log("displayed element at index:", i);
+//     }
+
+}
+
+
+
+
+
+
+// Function created to display comments
+function displayComment(element) {
+    console.log("starting displayComments");
+
+    
+        // console.log(object);
+    //     let commentSectionEl = document.querySelector('.publ');
+    //     // console.log(commentSectionEl);
+    // commentSectionEl.textContent = '';
+    // createElement(arr);
+        // arr.slice().reverse().forEach((element) => {
+    
+            // let nameText = document.querySelectorAll('.publ__name');
+            // for (let i = 0; i < nameText.length; i++) {
+                
+            
+                let elementId = element.id;
+                console.log(elementId);
+    
+
+                // create article in comment section
+                // let articleEl = document.createElement('article');
+                // articleEl.classList.add('publ__comment');
+                // commentSectionEl.appendChild(articleEl);
+            
+            
+                // let articleEl = document.createElement('ul');
+                // articleEl.classList.add('publ__comment');
+                // commentSectionEl.appendChild(articleEl);
+
+                // creating an image block
+
+
+                //         let imageblkEl = document.createElement('li');
+                // imageblkEl.classList.add('publ__imageblock');
+                // articleEl.appendChild(imageblkEl);
+
+                // creating an image
+                // let imgEl = document.createElement('img');
+                // imgEl.classList.add('publ__img');
+                // imageblkEl.appendChild(imgEl);
+                // imgEl.setAttribute('src', element.image);
+
+                // creating a text block for content
+                // let contentEl = document.createElement('div');
+                //         let contentEl = document.createElement('li');
+                // contentEl.classList.add('publ__content');
+                // articleEl.appendChild(contentEl);
+        
+                // creating a div for name and date
+                // let nametimeEl = document.createElement('div');
+                //         let nametimeEl = document.createElement('li');
+                // nametimeEl.classList.add('publ__nametime');
+                // contentEl.appendChild(nametimeEl);
+
+                //creating name element
+                // let nameEl = document.createElement('p');
+                //         let nameEl = document.createElement('li');
+                // nameEl.classList.add('publ__name');
+                // nametimeEl.appendChild(nameEl);
+        // if (document.querySelectorAll('.publ__name') && document.querySelectorAll('.publ__name') === "") {
+        //     let nameEl = document.querySelectorAll('.publ__name');
+        // } else {
+        //     let nameEl = "";
+        //  }
+                // console.log(nameText);
+        let nameText = document.getElementById(`#${elementId}`).getElementsByClassName('.publ__name');
+        console.log(nameText)
+                // nameEl.innerText = element.name;
+                    console.log(element.name);
+                nameText['innerText'] = element.name;
+        
+                //creating a date element
+                // let dateText = document.querySelectorAll('.publ__date');
+                // // // dateEl.classList.add('publ__date');
+                // // //     nametimeEl.appendChild(dateEl);
+                // let newDate = new Date(element.timestamp);
+                // dateText[i].innerText = newDate.toLocaleDateString('en-US');
+                // // console.log(typeof (comment.date));
+
+                // // //creating comment text element
+                // // // let comtextEl = document.createElement('p');
+                // let comtextEl = document.querySelectorAll('.publ__text');
+                // // // comtextEl.classList.add('publ__text');
+                // // // contentEl.appendChild(comtextEl);
+                // comtextEl[i].innerText = element.comment;
         
 
-            // let likeDelIcons = document.createElement('div');
-            let likeDelIcons = document.createElement('li');
-        likeDelIcons.classList.add('publ__likedel');
-            contentEl.appendChild(likeDelIcons);
+                // // // let likeDelIcons = document.createElement('div');
+                // // //     let likeDelIcons = document.createElement('li');
+                // // // likeDelIcons.classList.add('publ__likedel');
+                // // // contentEl.appendChild(likeDelIcons);
             
             
-        let delEl = document.createElement('span');
-        delEl.classList.add('material-icons','publ__delete');
-            likeDelIcons.appendChild(delEl);
-            delEl.innerText = 'delete_outline';
+                // let delIcon = document.querySelectorAll('.publ__delete');
+                // // // delEl.classList.add('material-icons','publ__delete');
+                // // //     likeDelIcons.appendChild(delEl);
+                // delIcon[i].innerText = 'delete_outline';
 
             
             
-            let likeEl = document.createElement('span');
-            likeEl.classList.add('material-icons', 'publ__like');
-            likeEl.id = element.id;
-            likeDelIcons.appendChild(likeEl);
-            likeEl.innerText = 'favorite';
+                // let likeIcon = document.querySelectorAll('.publ__like');
+                // // // likeEl.classList.add('material-icons', 'publ__like');
+                // // likeIcon.id = object.id;
+                // // // likeDelIcons.appendChild(likeEl);
+                // likeIcon[i].innerText = 'favorite';
 
-            // let likeCount = document.createElement('p');
-            let likeCount = document.createElement('li');
-                likeCount.classList.add('publ__likeCount');
-                likeDelIcons.appendChild(likeCount);
-                likeCount.innerText = element.likes;
-                console.log(typeof (likeCount.innerText));
+                // // let likeCount = document.createElement('p');
+                // let likeTotal = document.querySelectorAll('.publ__likeCount');
+                // //     likeCount.classList.add('publ__likeCount');
+                // //     likeDelIcons.appendChild(likeCount);
+                // likeTotal.innerText = object.likes;
+                // console.log(typeof (likeTotal.innerText));
            
 
-            likeEl.addEventListener('click', (e) => { 
-                console.log(event.target);
-                let id = event.target.id;
-                console.log(id);
-                let completeUrl = apiURL + '/comments/' + id + '/like' + apiKey;
-                console.log(completeUrl);
-                axios.put(completeUrl).then(result => {
-                    console.log(result);
-                    likeEl.style.color = '#745669';
-                    // console.log(parseInt(likeCount.innerText) += 1);
-                }
-                ).then(result => {
-                    getResults();
-                    likeCount.innerText = element.likes;
-                    console.log(element.likes);
-                })
-             });
+                // likeEl.addEventListener('click', (e) => { 
+                //     console.log(event.target);
+                //     let id = event.target.id;
+                //     console.log(id);
+                //     let completeUrl = apiURL + '/comments/' + id + '/like' + apiKey;
+                //     console.log(completeUrl);
+                //     axios.put(completeUrl)
+                //     .then(result => {
+                //         console.log(result);
+                //         likeEl.style.color = '#745669';
+                //         // console.log(parseInt(likeCount.innerText) += 1);
+                //     }
+                //     ).then(result => {
+                //         getResults();
+                //         likeCount.innerText = element.likes;
+                //         console.log(element.likes);
+                //     })
+                //  });
 
-            // let likeCount = document.createElement('p');
-            // likeCount.classList.add('publ__likeCount');
-            // likeDelIcons.appendChild(likeCount);
-            // likeCount.innerText = element.likes;
+                // let likeCount = document.querySelector('p');
+                // likeCount.classList.add('publ__likeCount');
+                // likeDelIcons.appendChild(likeCount);
+                // likeCount.innerText = element.likes;
 
-            // let likedCommEl = document.querySelector('.publ__like');
-            // console.log(likedCommEl);
-            // likedCommEl.addEventListener("click", (event) => { console.log('clicked heart'); });
-
-
+                // let likedCommEl = document.querySelector('.publ__like');
+                // console.log(likedCommEl);
+                // likedCommEl.addEventListener("click", (event) => { console.log('clicked heart'); });
 
 
-    });
-        
+            // }
+            // for loop closure
+
+        // });
+    // return iterateArr;
     formEl.reset();
 }
     
     
 //display comment closure
-
-// window.onload = function() {
-//     // let likedCommEl = document.querySelector('.publ__like');
-//     // console.log(likedCommEl);
-//     document.querySelector('.publ__like').addEventListener('click', (event) => { console.log('clicked heart'); })
-// }
-    
-    // like comment-
-
-    // let likeEl = document.querySelector('.publ__like');
-    // console.log(likeEl);
-// 
-
-// likeEl.OnClick(console.log("please work!"));
-    //     event => {
-    //     axios
-    //         .get(`https://project-1-api.herokuapp.com/comments?api_key=2b9b5a96-ed1d-40a8-9268-fea0e31c8936`)
-    //         .then((result => {
-    //             console.log(result);
-    //             // displayComment(result.data.);
-    //         })
-    //     );
-
-    //     axios.put('https://project-1-api.herokuapp.com/comments/:id/like?api_key=2b9b5a96-ed1d-40a8-9268-fea0e31c8936')
-
-    // })
-// function likeComment() {
-    
-// }
-
-
 
 // };//window onload closure

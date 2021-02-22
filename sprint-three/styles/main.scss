@@ -389,12 +389,12 @@
   }
 
   &__nameinput:focus {
-    border: 2px solid $global;
+    border: 1px solid $global;
     outline: none;
   }
 
   &__nameinput:active {
-    border: 2px solid $global;
+    border: 1px solid $global;
     outline: none;
   }
 
@@ -491,9 +491,9 @@
   }
 
   &__likedel {
-    width: 5rem;
+    width: 8rem;
     display: flex;
-    // flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     margin: 1rem 0;
     // margin-left: auto;
@@ -501,10 +501,8 @@
     // height: 100%;
   }
 
-  .fa-trash-alt {
-    // display: inline-block;
-    font-family: "FontAwesome" !important;
-    font-size: 1.6rem;
+  &__delete {
+    font-size: 2rem;
     color: $global;
   }
 
@@ -512,11 +510,22 @@
     display: inline-block;
     font-size: 2rem;
     color: $global;
+    margin-left: auto;
     // fill: black;
   }
 
   &__like:hover {
     color: $accent-hover;
+  }
+
+  &__like--active {
+    color: $accent-hover;
+  }
+
+  &__likeCount {
+    font-size: 1.6rem;
+    position: relative;
+    top: 0.1rem;
   }
 }
 

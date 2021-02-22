@@ -618,11 +618,11 @@ body {
   }
 }
 .comment__nameinput:focus, .comment__commenttextinput:focus {
-  border: 2px solid #323232;
+  border: 1px solid #323232;
   outline: none;
 }
 .comment__nameinput:active, .comment__commenttextinput:active {
-  border: 2px solid #323232;
+  border: 1px solid #323232;
   outline: none;
 }
 .comment__commenttextinput {
@@ -730,23 +730,32 @@ body {
   }
 }
 .publ__likedel {
-  width: 5rem;
+  width: 8rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 1rem 0;
 }
-.publ .fa-trash-alt {
-  font-family: "FontAwesome" !important;
-  font-size: 1.6rem;
+.publ__delete {
+  font-size: 2rem;
   color: #323232;
 }
 .publ__like {
   display: inline-block;
   font-size: 2rem;
   color: #323232;
+  margin-left: auto;
 }
 .publ__like:hover {
   color: #0065ad;
+}
+.publ__like--active {
+  color: #0065ad;
+}
+.publ__likeCount {
+  font-size: 1.6rem;
+  position: relative;
+  top: 0.1rem;
 }
 
 .footer {
