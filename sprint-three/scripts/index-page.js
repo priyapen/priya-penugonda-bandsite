@@ -92,16 +92,12 @@ formEl.addEventListener('submit', (event) => {
 //function to create HTML elements
 function createElement(object) {
 
-    
-
     let commentSectionEl = document.querySelector('.publ');
-    // // console.log(commentSectionEl);
-    // commentSectionEl.textContent = '';
     
     let articleEl = document.createElement('ul');
     articleEl.classList.add('publ__comment');
     articleEl.id = object.id;
-    commentSectionEl.appendChild(articleEl);
+
 
     let imageblkEl = document.createElement('li');
     imageblkEl.classList.add('publ__imageblock');
@@ -128,6 +124,7 @@ function createElement(object) {
     nameEl.classList.add('publ__name');
     nameEl.id = object.id;
     nametimeEl.appendChild(nameEl);
+    nameEl.innerText = object.name;
     
 
      //creating a date element
@@ -135,225 +132,117 @@ function createElement(object) {
     dateEl.classList.add('publ__date');
     dateEl.id = object.id;
     nametimeEl.appendChild(dateEl);
+    let newDate = new Date(object.timestamp);
+    dateEl.innerText = newDate.toLocaleDateString('en-US');
+    
     
 
-//creating comment text element
-
-            let comtextEl = document.createElement('li');
+    //creating comment text element
+    let comtextEl = document.createElement('li');
     comtextEl.classList.add('publ__text');
     comtextEl.id = object.id;
     contentEl.appendChild(comtextEl);
+    comtextEl.innerText = object.comment;
 
-
-  let likeDelIcons = document.createElement('li');
-  likeDelIcons.classList.add('publ__likedel');
-      contentEl.appendChild(likeDelIcons);
+    let likeDelIcons = document.createElement('li');
+    likeDelIcons.classList.add('publ__likedel');
+    contentEl.appendChild(likeDelIcons);
       
       
-  let delEl = document.createElement('span');
+    let delEl = document.createElement('span');
     delEl.classList.add('material-icons', 'publ__delete');
     delEl.id = object.id;
     likeDelIcons.appendChild(delEl);
+    delEl.innerText = 'delete_outline';
+
+
     
     let likeEl = document.createElement('span');
     likeEl.classList.add('material-icons', 'publ__like');
     likeEl.id = object.id;
     likeDelIcons.appendChild(likeEl);
+    likeEl.innerText = 'favorite';
 
     let likeCount = document.createElement('li');
     likeCount.classList.add('publ__likeCount');
     likeCount.id = object.id;
-                likeDelIcons.appendChild(likeCount);
+    likeDelIcons.appendChild(likeCount);
+    likeCount.innerText = object.likes;
     
-    return iterateArr;
+    return articleEl;
 }
 
 
 //Iterate through each object in the array:
 function iterateArr(arr) {
-    // for (let i = 0; i < arr.length; i++)
-    arr.forEach((element, i) => {
-        console.log("creating for index", i);
-        createElement(element);
-        console.log("created element at index:", i);
-        console.log("displaying for index", i);
-        displayComment(element);
-        console.log('completed display and back to iterateARR');
-    })
-//     // {
-//     //     createElement(arr[i]);
-//     //     // console.log("created element at index:", element);
-//     //     displayComment(arr[i]);
-//     // };
-
-//     // let numEl = document.querySelectorAll('.publ__comment');
-//     // for (let i = 0; i <= numEl.length - 1; i++) {
-//     //     displayComment(element, i);
-//     // }
-//         // displayComment(arr[i]);
-//         // console.log("displayed element at index:", i);
-//     }
-
-}
-
-
-
-
-
-
-// Function created to display comments
-function displayComment(element) {
-    console.log("starting displayComments");
-
-    
-        // console.log(object);
-    //     let commentSectionEl = document.querySelector('.publ');
-    //     // console.log(commentSectionEl);
-    // commentSectionEl.textContent = '';
-    // createElement(arr);
-        // arr.slice().reverse().forEach((element) => {
-    
-            // let nameText = document.querySelectorAll('.publ__name');
-            // for (let i = 0; i < nameText.length; i++) {
-                
-            
-                let elementId = element.id;
-                console.log(elementId);
-    
-
-                // create article in comment section
-                // let articleEl = document.createElement('article');
-                // articleEl.classList.add('publ__comment');
-                // commentSectionEl.appendChild(articleEl);
-            
-            
-                // let articleEl = document.createElement('ul');
-                // articleEl.classList.add('publ__comment');
-                // commentSectionEl.appendChild(articleEl);
-
-                // creating an image block
-
-
-                //         let imageblkEl = document.createElement('li');
-                // imageblkEl.classList.add('publ__imageblock');
-                // articleEl.appendChild(imageblkEl);
-
-                // creating an image
-                // let imgEl = document.createElement('img');
-                // imgEl.classList.add('publ__img');
-                // imageblkEl.appendChild(imgEl);
-                // imgEl.setAttribute('src', element.image);
-
-                // creating a text block for content
-                // let contentEl = document.createElement('div');
-                //         let contentEl = document.createElement('li');
-                // contentEl.classList.add('publ__content');
-                // articleEl.appendChild(contentEl);
-        
-                // creating a div for name and date
-                // let nametimeEl = document.createElement('div');
-                //         let nametimeEl = document.createElement('li');
-                // nametimeEl.classList.add('publ__nametime');
-                // contentEl.appendChild(nametimeEl);
-
-                //creating name element
-                // let nameEl = document.createElement('p');
-                //         let nameEl = document.createElement('li');
-                // nameEl.classList.add('publ__name');
-                // nametimeEl.appendChild(nameEl);
-        // if (document.querySelectorAll('.publ__name') && document.querySelectorAll('.publ__name') === "") {
-        //     let nameEl = document.querySelectorAll('.publ__name');
-        // } else {
-        //     let nameEl = "";
-        //  }
-                // console.log(nameText);
-        let nameText = document.getElementById(`#${elementId}`).getElementsByClassName('.publ__name');
-        console.log(nameText)
-                // nameEl.innerText = element.name;
-                    console.log(element.name);
-                nameText['innerText'] = element.name;
-        
-                //creating a date element
-                // let dateText = document.querySelectorAll('.publ__date');
-                // // // dateEl.classList.add('publ__date');
-                // // //     nametimeEl.appendChild(dateEl);
-                // let newDate = new Date(element.timestamp);
-                // dateText[i].innerText = newDate.toLocaleDateString('en-US');
-                // // console.log(typeof (comment.date));
-
-                // // //creating comment text element
-                // // // let comtextEl = document.createElement('p');
-                // let comtextEl = document.querySelectorAll('.publ__text');
-                // // // comtextEl.classList.add('publ__text');
-                // // // contentEl.appendChild(comtextEl);
-                // comtextEl[i].innerText = element.comment;
-        
-
-                // // // let likeDelIcons = document.createElement('div');
-                // // //     let likeDelIcons = document.createElement('li');
-                // // // likeDelIcons.classList.add('publ__likedel');
-                // // // contentEl.appendChild(likeDelIcons);
-            
-            
-                // let delIcon = document.querySelectorAll('.publ__delete');
-                // // // delEl.classList.add('material-icons','publ__delete');
-                // // //     likeDelIcons.appendChild(delEl);
-                // delIcon[i].innerText = 'delete_outline';
-
-            
-            
-                // let likeIcon = document.querySelectorAll('.publ__like');
-                // // // likeEl.classList.add('material-icons', 'publ__like');
-                // // likeIcon.id = object.id;
-                // // // likeDelIcons.appendChild(likeEl);
-                // likeIcon[i].innerText = 'favorite';
-
-                // // let likeCount = document.createElement('p');
-                // let likeTotal = document.querySelectorAll('.publ__likeCount');
-                // //     likeCount.classList.add('publ__likeCount');
-                // //     likeDelIcons.appendChild(likeCount);
-                // likeTotal.innerText = object.likes;
-                // console.log(typeof (likeTotal.innerText));
-           
-
-                // likeEl.addEventListener('click', (e) => { 
-                //     console.log(event.target);
-                //     let id = event.target.id;
-                //     console.log(id);
-                //     let completeUrl = apiURL + '/comments/' + id + '/like' + apiKey;
-                //     console.log(completeUrl);
-                //     axios.put(completeUrl)
-                //     .then(result => {
-                //         console.log(result);
-                //         likeEl.style.color = '#745669';
-                //         // console.log(parseInt(likeCount.innerText) += 1);
-                //     }
-                //     ).then(result => {
-                //         getResults();
-                //         likeCount.innerText = element.likes;
-                //         console.log(element.likes);
-                //     })
-                //  });
-
-                // let likeCount = document.querySelector('p');
-                // likeCount.classList.add('publ__likeCount');
-                // likeDelIcons.appendChild(likeCount);
-                // likeCount.innerText = element.likes;
-
-                // let likedCommEl = document.querySelector('.publ__like');
-                // console.log(likedCommEl);
-                // likedCommEl.addEventListener("click", (event) => { console.log('clicked heart'); });
-
-
-            // }
-            // for loop closure
-
-        // });
-    // return iterateArr;
     formEl.reset();
+    
+    let commentSectionEl = document.querySelector('.publ');
+    commentSectionEl.textContent = '';
+    arr.reverse().forEach((element) => {
+        const returnvalue = createElement(element);
+        commentSectionEl.appendChild(returnvalue);
+    })
+    likeCommentEvent();
+    delCommentEvent();
 }
-    
-    
-//display comment closure
 
+    function likeCommentEvent() {
+        let likedComm = document.querySelectorAll('.publ__like');
+        likedComm.forEach(element => {
+            // console.log(element);
+            element.addEventListener('click', (e) => {
+                event.preventDefault();
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+                // element.classList.toggle('publ__like--active');
+                // console.log(event.target);
+                let id = event.target.id;
+                // console.log(id);
+                let completeUrl = apiURL + '/comments/' + id + '/like' + apiKey;
+                // console.log(completeUrl);
+                axios.put(completeUrl).then(result => {
+                    // console.log(result);
+                    element.classList.toggle('publ__like--active'); //not working toggle
+                    // element.style.color = "#0065ad";
+                    // console.log(parseInt(likeCount.innerText) += 1);
+                }
+                ).then(
+                    () => {
+                        getResults();
+                        
+                    })
+                //     .then(() => {
+                //         element.classList.toggle('publ__like--active');
+                // })
+            }
+            );
+    
+        });
+        // }
+    }
+    
+    
+    function delCommentEvent() {
+        let delComm = document.querySelectorAll('.publ__delete');
+        delComm.forEach(element => {
+            element.addEventListener('click', (e) => {
+                event.preventDefault();
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+                let id = event.target.id;
+                let completeUrl = apiURL + '/comments/' + id + apiKey;
+                let confirmation = window.confirm("Are you sure you want to delete this message?");
+                if(confirmation === true ) {
+                    axios.delete(completeUrl)
+                    .then(result => {
+                        getResults();
+                        });
+                }
+            
+            });
+    
+        });
+    }
+    
 // };//window onload closure
