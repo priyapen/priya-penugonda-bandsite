@@ -115,6 +115,7 @@ li {
   color: $global-light;
   font-weight: 600;
   text-transform: uppercase;
+  cursor: pointer;
   @include lists_contact;
   border-radius: 4px;
   border: none;

@@ -60,6 +60,7 @@ li {
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
+  cursor: pointer;
   font-size: 1.3rem;
   line-height: 1.8rem;
   border-radius: 4px;
@@ -739,12 +740,14 @@ body {
 .publ__delete {
   font-size: 2rem;
   color: #323232;
+  cursor: pointer;
 }
 .publ__like {
   display: inline-block;
   font-size: 2rem;
   color: #323232;
   margin-left: auto;
+  cursor: pointer;
 }
 .publ__like:hover {
   color: #0065ad;

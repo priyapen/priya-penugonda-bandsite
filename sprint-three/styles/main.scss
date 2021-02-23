@@ -504,6 +504,7 @@
   &__delete {
     font-size: 2rem;
     color: $global;
+    cursor: pointer;
   }
 
   &__like {
@@ -511,6 +512,7 @@
     font-size: 2rem;
     color: $global;
     margin-left: auto;
+    cursor: pointer;
     // fill: black;
   }
 

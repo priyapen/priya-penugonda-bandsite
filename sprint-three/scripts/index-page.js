@@ -1,5 +1,3 @@
-// let todate = new Date().toLocaleString('en-US');
-// window.onload = function () {
 
 // Pseudocode:
 /*
@@ -29,7 +27,7 @@ create
 
 */
 
-// Global variables:
+// // Global variables:
 let apiURL = 'https://project-1-api.herokuapp.com';
 let apiKey = '?api_key=2b9b5a96-ed1d-40a8-9268-fea0e31c8936'
 let route = "";
@@ -50,7 +48,6 @@ function getResults() {
             })
         );
 }
-    
 getResults();
 
 
@@ -65,9 +62,8 @@ function postComment() {
             {
                 name: userName,
                 comment: userComment
-            }
-
-        ).then(postedComment => {
+            })
+            .then(postedComment => {
             console.log(postedComment.data);
             getResults(postedComment.data);
         })
@@ -76,67 +72,65 @@ function postComment() {
             }
 }
 
+
+
 // Send form data to API and get comments upon form submission:
 let formEl = document.querySelector('.comment__form');
 formEl.addEventListener('submit', (event) => {
     event.preventDefault();
     postComment();
     getResults();
-    let commentSectionReset = document.querySelector('.publ');
-    // console.log(commentSectionEl);
-    commentSectionReset.textContent = '';
+    // let commentSectionReset = document.querySelector('.publ');
+    // commentSectionReset.textContent = '';
 });
 
 
 
 //function to create HTML elements
 function createElement(object) {
-
-    let commentSectionEl = document.querySelector('.publ');
     
+    // Block which contains user details, comments, delete and likes
     let articleEl = document.createElement('ul');
     articleEl.classList.add('publ__comment');
     articleEl.id = object.id;
 
-
+    // container for user image
     let imageblkEl = document.createElement('li');
     imageblkEl.classList.add('publ__imageblock');
     articleEl.appendChild(imageblkEl);
 
+    // User image element
     let imgEl = document.createElement('img');
     imgEl.classList.add('publ__img');
     imgEl.id = object.id;
     imageblkEl.appendChild(imgEl);
     // imgEl.setAttribute('src', element.image);
 
-        // creating a text block for content
-            let contentEl = document.createElement('li');
+    // creating a text block for content
+    let contentEl = document.createElement('li');
     contentEl.classList.add('publ__content');
     articleEl.appendChild(contentEl);
 
     // creating a div for name and date
-            let nametimeEl = document.createElement('li');
+    let nametimeEl = document.createElement('li');
     nametimeEl.classList.add('publ__nametime');
     contentEl.appendChild(nametimeEl);
 
     //creating name element
-            let nameEl = document.createElement('li');
+    let nameEl = document.createElement('li');
     nameEl.classList.add('publ__name');
     nameEl.id = object.id;
     nametimeEl.appendChild(nameEl);
     nameEl.innerText = object.name;
     
-
-     //creating a date element
-     let dateEl = document.createElement('time');
+    //creating a date element
+    let dateEl = document.createElement('time');
     dateEl.classList.add('publ__date');
     dateEl.id = object.id;
     nametimeEl.appendChild(dateEl);
     let newDate = new Date(object.timestamp);
     dateEl.innerText = newDate.toLocaleDateString('en-US');
     
-    
-
     //creating comment text element
     let comtextEl = document.createElement('li');
     comtextEl.classList.add('publ__text');
@@ -144,25 +138,26 @@ function createElement(object) {
     contentEl.appendChild(comtextEl);
     comtextEl.innerText = object.comment;
 
+    // container for delete and like icons
     let likeDelIcons = document.createElement('li');
     likeDelIcons.classList.add('publ__likedel');
     contentEl.appendChild(likeDelIcons);
       
-      
+    //icon for deleting a comment
     let delEl = document.createElement('span');
     delEl.classList.add('material-icons', 'publ__delete');
     delEl.id = object.id;
     likeDelIcons.appendChild(delEl);
     delEl.innerText = 'delete_outline';
 
-
-    
+    // icon for "liking" a comment
     let likeEl = document.createElement('span');
     likeEl.classList.add('material-icons', 'publ__like');
     likeEl.id = object.id;
     likeDelIcons.appendChild(likeEl);
     likeEl.innerText = 'favorite';
 
+    // Text displaying the total number of likes a comment's received
     let likeCount = document.createElement('li');
     likeCount.classList.add('publ__likeCount');
     likeCount.id = object.id;
@@ -173,10 +168,10 @@ function createElement(object) {
 }
 
 
+
 //Iterate through each object in the array:
 function iterateArr(arr) {
     formEl.reset();
-    
     let commentSectionEl = document.querySelector('.publ');
     commentSectionEl.textContent = '';
     arr.reverse().forEach((element) => {
@@ -187,46 +182,37 @@ function iterateArr(arr) {
     delCommentEvent();
 }
 
+
+// Functionality for liked comments- this will change the color of the "heart" icon and update the likecount.
     function likeCommentEvent() {
         let likedComm = document.querySelectorAll('.publ__like');
         likedComm.forEach(element => {
-            // console.log(element);
-            element.addEventListener('click', (e) => {
+            element.addEventListener('click', (event) => {
                 event.preventDefault();
                 event.stopPropagation();
                 event.stopImmediatePropagation();
-                // element.classList.toggle('publ__like--active');
-                // console.log(event.target);
                 let id = event.target.id;
-                // console.log(id);
                 let completeUrl = apiURL + '/comments/' + id + '/like' + apiKey;
-                // console.log(completeUrl);
-                axios.put(completeUrl).then(result => {
-                    // console.log(result);
-                    element.classList.toggle('publ__like--active'); //not working toggle
+                axios.put(completeUrl)
+                    .then(result => {
+                    element.classList.toggle('publ__like--active'); 
                     // element.style.color = "#0065ad";
-                    // console.log(parseInt(likeCount.innerText) += 1);
-                }
-                ).then(
-                    () => {
-                        getResults();
-                        
-                    })
-                //     .then(() => {
-                //         element.classList.toggle('publ__like--active');
-                // })
-            }
-            );
+                    let liketotal = document.querySelectorAll('.publ__likeCount');
+                    liketotal.forEach(listing => {
+                        (listing.id === id) ? listing.innerText = result.data.likes : listing.innerText;
+                    });
+                })
+            });
     
         });
-        // }
     }
     
-    
+
+// Delete comment upon clicking on the "trashbin" icon. It displays a message for the user to confirm if they'd like to delete the comment. If the user clicks on yes, then the comment is deleted.
     function delCommentEvent() {
         let delComm = document.querySelectorAll('.publ__delete');
         delComm.forEach(element => {
-            element.addEventListener('click', (e) => {
+            element.addEventListener('click', (event) => {
                 event.preventDefault();
                 event.stopPropagation();
                 event.stopImmediatePropagation();
@@ -237,12 +223,11 @@ function iterateArr(arr) {
                     axios.delete(completeUrl)
                     .then(result => {
                         getResults();
-                        });
+                    });
                 }
             
             });
     
         });
     }
-    
-// };//window onload closure
+
